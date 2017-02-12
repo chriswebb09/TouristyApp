@@ -49,7 +49,7 @@ class TourMapViewController: UIViewController {
     }
     
     private func setLocation() {
-        if let location = initializerLocationToUser() {
+        if let location = initializeLocationToUser() {
             userStartLocation = location
         }
     }
@@ -57,7 +57,7 @@ class TourMapViewController: UIViewController {
 
 extension TourMapViewController: CLLocationManagerDelegate {
     
-    func initializerLocationToUser() -> CLLocation? {
+    func initializeLocationToUser() -> CLLocation? {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
