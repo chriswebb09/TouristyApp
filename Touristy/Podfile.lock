@@ -1,0 +1,25 @@
+PODS:
+  - Mapbox-iOS-SDK (3.4.1)
+  - MapboxGeocoder.swift (0.5.1)
+
+DEPENDENCIES:
+  - Mapbox-iOS-SDK (~> 3.4)
+  - MapboxGeocoder.swift (from `https://github.com/mapbox/MapboxGeocoder.swift.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  MapboxGeocoder.swift:
+    :branch: swift3
+    :git: https://github.com/mapbox/MapboxGeocoder.swift.git
+
+CHECKOUT OPTIONS:
+  MapboxGeocoder.swift:
+    :commit: d1b168acc87378ee400065918a17e3f707e036d1
+    :git: https://github.com/mapbox/MapboxGeocoder.swift.git
+
+SPEC CHECKSUMS:
+  Mapbox-iOS-SDK: 9c0d23e9a3784e6c9e45af4339898e4598b5b09b
+  MapboxGeocoder.swift: 04f80b3856e5cd1ff0af9910dbf14d27058ce906
+
+PODFILE CHECKSUM: e651b87fa7b935937355287d6260105241114cbd
+
+COCOAPODS: 1.1.1

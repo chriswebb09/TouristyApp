@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Touristy' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Touristy
+  pod 'Mapbox-iOS-SDK', '~> 3.4'
+  pod 'MapboxGeocoder.swift', :git => 'https://github.com/mapbox/MapboxGeocoder.swift.git', :branch => 'swift3'
+  #  pod 'MapboxDirections.swift', :git => 'https://github.com/mapbox/MapboxDirections.swift.git', :tag => 'v0.6.0'
+ #   pod 'MapboxStatic.swift', :git => 'https://github.com/mapbox/MapboxStatic.swift.git', :tag => 'v0.6.0'
+   
+
+  target 'TouristyTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TouristyUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end 
+

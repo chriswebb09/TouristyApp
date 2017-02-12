@@ -1,0 +1,887 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E47BAAE9CB3377EDA60B40161162AD3 /* MBPlacemarkScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67A135BE796E009AEB7567CF3354A5 /* MBPlacemarkScope.swift */; };
+		233483B8A034F29BCC8BD162DE829151 /* Pods-TouristyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 029DAE2F94ACFC9ECF62CAE08C70C6E1 /* Pods-TouristyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FC172659AD0B06EE303095018B8FE32 /* MBGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E20F1B599F803D9DB732D34D1A9204 /* MBGeocoder.swift */; };
+		3FED188DFB9C0291C6C2CDA76F4C7D38 /* Pods-TouristyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 453CA8F2AE8E2491DC6BA8EA7EF3F0EB /* Pods-TouristyUITests-dummy.m */; };
+		5657D7ADE2E299CCDC0D37AA58CBC45A /* MapboxGeocoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6958922F7C326387C78F17D2F9843ACE /* MapboxGeocoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E2E9AF2FBDEBFAFC59977CD52B65605 /* MapboxGeocoder.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE99D77E6CDFD9407CD682066183620 /* MapboxGeocoder.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6331FA7A9087D9C07493D1C024CD4AD7 /* Pods-Touristy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75CA0F59E7043C5732A24229A9417C08 /* Pods-Touristy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DB9528A69BE07582F376F45DB83D99D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		717D0FA41FAA84E3FFFE0F72843F3CE2 /* MapboxGeocoder.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5347E174677D6FFA7EB5DCA78CA52AF /* MapboxGeocoder.swift-dummy.m */; };
+		7B10C9005B367D03FB7D58F7453658E6 /* Pods-TouristyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9F82642E175644F743AFFE0731DC59 /* Pods-TouristyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		801A1F5B36CDBEEC194E098224F24BFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		89B42321680F9E126DD513BE66AD5374 /* MBPlacemarkScope.h in Headers */ = {isa = PBXBuildFile; fileRef = 12B3604B95DE529A15EFDE17B4B2DCE2 /* MBPlacemarkScope.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91410BF0F2921351B2F994E3EBA05B14 /* MBRectangularRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062CE1C2D7FC8E778E76DC502AC7D07 /* MBRectangularRegion.swift */; };
+		B04F835CC9C7F3339E9061DB2DD2A090 /* MBGeocodeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D87EE0649E09523DE5FE7BE68F599F7 /* MBGeocodeOptions.swift */; };
+		B7502B7C50104C2968C463C52C51665B /* Pods-TouristyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CDA7267382F336E3D927D77F0FFC0F /* Pods-TouristyTests-dummy.m */; };
+		D54402CFDDDF2136475B32A44B0CC1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		D5D4DDBD6FCAD7289B14CF959E5E6E7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		D5E387436C8A8DA3D31998749BF6F3DF /* MBPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6498F4F5F857836E50EE3D3C137C32D /* MBPlacemark.swift */; };
+		F7645F745F975577D8AC1F8168CFA176 /* Pods-Touristy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 500F1B7632C3BC2DEA119523A42A10C9 /* Pods-Touristy-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93002320A6F02CDD4BAB672F6F4F09CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B0D303D1E2FEEE382F99CB69B2053C;
+			remoteInfo = MapboxGeocoder.swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		022DD12C7EE78380126EC8EE7F5FB9FB /* Pods-Touristy-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Touristy-frameworks.sh"; sourceTree = "<group>"; };
+		029DAE2F94ACFC9ECF62CAE08C70C6E1 /* Pods-TouristyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TouristyUITests-umbrella.h"; sourceTree = "<group>"; };
+		02ACC0C2A60C8B1950A00F5CCA760566 /* Pods-Touristy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Touristy.release.xcconfig"; sourceTree = "<group>"; };
+		12B3604B95DE529A15EFDE17B4B2DCE2 /* MBPlacemarkScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBPlacemarkScope.h; path = MapboxGeocoder/MBPlacemarkScope.h; sourceTree = "<group>"; };
+		1E2E14C45AABBAC65B50D51A035C2A48 /* Pods-TouristyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TouristyTests.release.xcconfig"; sourceTree = "<group>"; };
+		1F9F82642E175644F743AFFE0731DC59 /* Pods-TouristyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TouristyTests-umbrella.h"; sourceTree = "<group>"; };
+		29CE71C5B76AD047A0AFD184407A4DA0 /* Pods-Touristy-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Touristy-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2B996B1017EC39C79C9DA4CC1AC6934B /* Pods-TouristyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TouristyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		367C7D1C3644CF7D0581759D167766B4 /* MapboxGeocoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapboxGeocoder.framework; path = MapboxGeocoder.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A44E5940C4941C23D4CFBA256A23C4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CB64939D97DAF5D36AB2B7DDA369872 /* Pods-Touristy-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Touristy-resources.sh"; sourceTree = "<group>"; };
+		453CA8F2AE8E2491DC6BA8EA7EF3F0EB /* Pods-TouristyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TouristyUITests-dummy.m"; sourceTree = "<group>"; };
+		4AF8681B9D9D87DF282F3E73787E079D /* Pods-TouristyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TouristyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		500F1B7632C3BC2DEA119523A42A10C9 /* Pods-Touristy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Touristy-dummy.m"; sourceTree = "<group>"; };
+		5700D70931B37BD24FCB6EE19DEF7AE8 /* Pods-TouristyTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TouristyTests-frameworks.sh"; sourceTree = "<group>"; };
+		585F9056B6D616EDF0223E1CBFCC53E9 /* MapboxGeocoder.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MapboxGeocoder.swift.modulemap; sourceTree = "<group>"; };
+		68BB0185570237CFBBF3EB1D3AF93CA6 /* Pods-TouristyUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TouristyUITests-resources.sh"; sourceTree = "<group>"; };
+		6958922F7C326387C78F17D2F9843ACE /* MapboxGeocoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MapboxGeocoder.h; path = MapboxGeocoder/MapboxGeocoder.h; sourceTree = "<group>"; };
+		6D87EE0649E09523DE5FE7BE68F599F7 /* MBGeocodeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeocodeOptions.swift; path = MapboxGeocoder/MBGeocodeOptions.swift; sourceTree = "<group>"; };
+		6DAC24FBC5CA30304BDBE37408D78C07 /* Pods-TouristyTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TouristyTests-resources.sh"; sourceTree = "<group>"; };
+		6FDB7274B2DD4B311F8854938E967F05 /* MapboxGeocoder.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapboxGeocoder.swift-prefix.pch"; sourceTree = "<group>"; };
+		711DD603A5781DB0FAF4F3CBFC4AB2BB /* Pods_TouristyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TouristyUITests.framework; path = "Pods-TouristyUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75CA0F59E7043C5732A24229A9417C08 /* Pods-Touristy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Touristy-umbrella.h"; sourceTree = "<group>"; };
+		8062CE1C2D7FC8E778E76DC502AC7D07 /* MBRectangularRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRectangularRegion.swift; path = MapboxGeocoder/MBRectangularRegion.swift; sourceTree = "<group>"; };
+		86CDA7267382F336E3D927D77F0FFC0F /* Pods-TouristyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TouristyTests-dummy.m"; sourceTree = "<group>"; };
+		88681582823439CE6908AEDB1F78F46C /* Pods-TouristyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TouristyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8D853DAFB92D064790ED2E5C04B15897 /* Pods-Touristy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Touristy.debug.xcconfig"; sourceTree = "<group>"; };
+		8DF547F4E484AFE1C3945644B5261E8B /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = dynamic/Mapbox.framework; sourceTree = "<group>"; };
+		8F592C85E8705AF9B36E9A170E7D7169 /* Pods-Touristy-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Touristy-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9647A53D21E2E5CF307CC74F37C8052C /* Pods-TouristyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TouristyUITests-frameworks.sh"; sourceTree = "<group>"; };
+		AEBF0C34D749A4DFE230516F1F1868DA /* Pods-TouristyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TouristyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5347E174677D6FFA7EB5DCA78CA52AF /* MapboxGeocoder.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MapboxGeocoder.swift-dummy.m"; sourceTree = "<group>"; };
+		B94A4C2E63866B93663A0CCA575A348F /* Pods_Touristy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Touristy.framework; path = "Pods-Touristy.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA1FF84C0F898D868226567837ECCC3 /* Pods-TouristyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TouristyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C1907BCFA7313853FE79A741B289A225 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6498F4F5F857836E50EE3D3C137C32D /* MBPlacemark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPlacemark.swift; path = MapboxGeocoder/MBPlacemark.swift; sourceTree = "<group>"; };
+		C7A4F5E6177782E5F2531738BB340505 /* MapboxGeocoder.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapboxGeocoder.swift.xcconfig; sourceTree = "<group>"; };
+		C929950DEE7697242BF9549DB5F85846 /* Pods-TouristyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TouristyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CD62E5E055E8B3E0CFCDAA33A20406AD /* Pods-Touristy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Touristy.modulemap"; sourceTree = "<group>"; };
+		DC67A135BE796E009AEB7567CF3354A5 /* MBPlacemarkScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPlacemarkScope.swift; path = MapboxGeocoder/MBPlacemarkScope.swift; sourceTree = "<group>"; };
+		E2FD278A0D6472C1BC8CB73934DB829C /* Pods-TouristyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TouristyTests.modulemap"; sourceTree = "<group>"; };
+		E3CC86544E05A407CB4B6270A917E421 /* Pods_TouristyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TouristyTests.framework; path = "Pods-TouristyTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4261CCA17844C1C7F1F4E722B0D2094 /* Pods-TouristyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TouristyUITests.modulemap"; sourceTree = "<group>"; };
+		E92512FCC57F0C17541A947D83B0FA3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECE99D77E6CDFD9407CD682066183620 /* MapboxGeocoder.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapboxGeocoder.swift-umbrella.h"; sourceTree = "<group>"; };
+		F7A00950340A6198669D81058EC41E79 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E20F1B599F803D9DB732D34D1A9204 /* MBGeocoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeocoder.swift; path = MapboxGeocoder/MBGeocoder.swift; sourceTree = "<group>"; };
+		F82A236ECF89746C7670EF7A03DFC871 /* Pods-TouristyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TouristyTests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B70F49DD6ED7709A6E5944B6DAECADA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801A1F5B36CDBEEC194E098224F24BFA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7480247E06E07DD721B173140BD18842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5D4DDBD6FCAD7289B14CF959E5E6E7C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9418636F33537E154C741059D6CF9D7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DB9528A69BE07582F376F45DB83D99D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFB4C6777857DED8E0903588F87F446D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D54402CFDDDF2136475B32A44B0CC1A0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CF2C967AC8AB1B7771C27C401A8757D /* Pods-Touristy */ = {
+			isa = PBXGroup;
+			children = (
+				C1907BCFA7313853FE79A741B289A225 /* Info.plist */,
+				CD62E5E055E8B3E0CFCDAA33A20406AD /* Pods-Touristy.modulemap */,
+				29CE71C5B76AD047A0AFD184407A4DA0 /* Pods-Touristy-acknowledgements.markdown */,
+				8F592C85E8705AF9B36E9A170E7D7169 /* Pods-Touristy-acknowledgements.plist */,
+				500F1B7632C3BC2DEA119523A42A10C9 /* Pods-Touristy-dummy.m */,
+				022DD12C7EE78380126EC8EE7F5FB9FB /* Pods-Touristy-frameworks.sh */,
+				3CB64939D97DAF5D36AB2B7DDA369872 /* Pods-Touristy-resources.sh */,
+				75CA0F59E7043C5732A24229A9417C08 /* Pods-Touristy-umbrella.h */,
+				8D853DAFB92D064790ED2E5C04B15897 /* Pods-Touristy.debug.xcconfig */,
+				02ACC0C2A60C8B1950A00F5CCA760566 /* Pods-Touristy.release.xcconfig */,
+			);
+			name = "Pods-Touristy";
+			path = "Target Support Files/Pods-Touristy";
+			sourceTree = "<group>";
+		};
+		172A4A382E1662A390EB35DFD61A34DE /* MapboxGeocoder.swift */ = {
+			isa = PBXGroup;
+			children = (
+				6958922F7C326387C78F17D2F9843ACE /* MapboxGeocoder.h */,
+				6D87EE0649E09523DE5FE7BE68F599F7 /* MBGeocodeOptions.swift */,
+				F7E20F1B599F803D9DB732D34D1A9204 /* MBGeocoder.swift */,
+				C6498F4F5F857836E50EE3D3C137C32D /* MBPlacemark.swift */,
+				12B3604B95DE529A15EFDE17B4B2DCE2 /* MBPlacemarkScope.h */,
+				DC67A135BE796E009AEB7567CF3354A5 /* MBPlacemarkScope.swift */,
+				8062CE1C2D7FC8E778E76DC502AC7D07 /* MBRectangularRegion.swift */,
+				A2E5ADAF79F9C2C97F3311D8E5E4E086 /* Support Files */,
+			);
+			name = MapboxGeocoder.swift;
+			path = MapboxGeocoder.swift;
+			sourceTree = "<group>";
+		};
+		180F85AA05FFE7A425444945F305DD1B /* Pods-TouristyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A00950340A6198669D81058EC41E79 /* Info.plist */,
+				E4261CCA17844C1C7F1F4E722B0D2094 /* Pods-TouristyUITests.modulemap */,
+				88681582823439CE6908AEDB1F78F46C /* Pods-TouristyUITests-acknowledgements.markdown */,
+				BBA1FF84C0F898D868226567837ECCC3 /* Pods-TouristyUITests-acknowledgements.plist */,
+				453CA8F2AE8E2491DC6BA8EA7EF3F0EB /* Pods-TouristyUITests-dummy.m */,
+				9647A53D21E2E5CF307CC74F37C8052C /* Pods-TouristyUITests-frameworks.sh */,
+				68BB0185570237CFBBF3EB1D3AF93CA6 /* Pods-TouristyUITests-resources.sh */,
+				029DAE2F94ACFC9ECF62CAE08C70C6E1 /* Pods-TouristyUITests-umbrella.h */,
+				2B996B1017EC39C79C9DA4CC1AC6934B /* Pods-TouristyUITests.debug.xcconfig */,
+				C929950DEE7697242BF9549DB5F85846 /* Pods-TouristyUITests.release.xcconfig */,
+			);
+			name = "Pods-TouristyUITests";
+			path = "Target Support Files/Pods-TouristyUITests";
+			sourceTree = "<group>";
+		};
+		58154A5A4DD1C9DA79998D1F1EAD1133 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CF2C967AC8AB1B7771C27C401A8757D /* Pods-Touristy */,
+				BCBD2EEE1635312C60A595AF0D821E63 /* Pods-TouristyTests */,
+				180F85AA05FFE7A425444945F305DD1B /* Pods-TouristyUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6482CB1E4054F0488C7E23B6778B3F0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DF547F4E484AFE1C3945644B5261E8B /* Mapbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				8C64DF29952A4C61234CE6243F8E467F /* Pods */,
+				BEB05E0D81192800B662455AC6EC32B6 /* Products */,
+				58154A5A4DD1C9DA79998D1F1EAD1133 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8C64DF29952A4C61234CE6243F8E467F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B55E463AC17D1C54A19BF132E046D126 /* Mapbox-iOS-SDK */,
+				172A4A382E1662A390EB35DFD61A34DE /* MapboxGeocoder.swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2E5ADAF79F9C2C97F3311D8E5E4E086 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E92512FCC57F0C17541A947D83B0FA3A /* Info.plist */,
+				585F9056B6D616EDF0223E1CBFCC53E9 /* MapboxGeocoder.swift.modulemap */,
+				C7A4F5E6177782E5F2531738BB340505 /* MapboxGeocoder.swift.xcconfig */,
+				B5347E174677D6FFA7EB5DCA78CA52AF /* MapboxGeocoder.swift-dummy.m */,
+				6FDB7274B2DD4B311F8854938E967F05 /* MapboxGeocoder.swift-prefix.pch */,
+				ECE99D77E6CDFD9407CD682066183620 /* MapboxGeocoder.swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MapboxGeocoder.swift";
+			sourceTree = "<group>";
+		};
+		B55E463AC17D1C54A19BF132E046D126 /* Mapbox-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				6482CB1E4054F0488C7E23B6778B3F0C /* Frameworks */,
+			);
+			name = "Mapbox-iOS-SDK";
+			path = "Mapbox-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCBD2EEE1635312C60A595AF0D821E63 /* Pods-TouristyTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A44E5940C4941C23D4CFBA256A23C4A /* Info.plist */,
+				E2FD278A0D6472C1BC8CB73934DB829C /* Pods-TouristyTests.modulemap */,
+				4AF8681B9D9D87DF282F3E73787E079D /* Pods-TouristyTests-acknowledgements.markdown */,
+				F82A236ECF89746C7670EF7A03DFC871 /* Pods-TouristyTests-acknowledgements.plist */,
+				86CDA7267382F336E3D927D77F0FFC0F /* Pods-TouristyTests-dummy.m */,
+				5700D70931B37BD24FCB6EE19DEF7AE8 /* Pods-TouristyTests-frameworks.sh */,
+				6DAC24FBC5CA30304BDBE37408D78C07 /* Pods-TouristyTests-resources.sh */,
+				1F9F82642E175644F743AFFE0731DC59 /* Pods-TouristyTests-umbrella.h */,
+				AEBF0C34D749A4DFE230516F1F1868DA /* Pods-TouristyTests.debug.xcconfig */,
+				1E2E14C45AABBAC65B50D51A035C2A48 /* Pods-TouristyTests.release.xcconfig */,
+			);
+			name = "Pods-TouristyTests";
+			path = "Target Support Files/Pods-TouristyTests";
+			sourceTree = "<group>";
+		};
+		BEB05E0D81192800B662455AC6EC32B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				367C7D1C3644CF7D0581759D167766B4 /* MapboxGeocoder.framework */,
+				B94A4C2E63866B93663A0CCA575A348F /* Pods_Touristy.framework */,
+				E3CC86544E05A407CB4B6270A917E421 /* Pods_TouristyTests.framework */,
+				711DD603A5781DB0FAF4F3CBFC4AB2BB /* Pods_TouristyUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0450D9B3E30276AB9BBC5AD52E281C00 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5657D7ADE2E299CCDC0D37AA58CBC45A /* MapboxGeocoder.h in Headers */,
+				5E2E9AF2FBDEBFAFC59977CD52B65605 /* MapboxGeocoder.swift-umbrella.h in Headers */,
+				89B42321680F9E126DD513BE66AD5374 /* MBPlacemarkScope.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0D6C63EECF578195CCC685FA69AA59 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B10C9005B367D03FB7D58F7453658E6 /* Pods-TouristyTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9464A9E88BE64500EA2267F09B3E1F18 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6331FA7A9087D9C07493D1C024CD4AD7 /* Pods-Touristy-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2AF35744866E518E2C7D2DB4852A24E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				233483B8A034F29BCC8BD162DE829151 /* Pods-TouristyUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5A8EB528170BA6B7F280D82B55F8AB53 /* Pods-TouristyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43CB335B2C8C37A257F17D6B599EE88D /* Build configuration list for PBXNativeTarget "Pods-TouristyTests" */;
+			buildPhases = (
+				BE8D6F1DAD08462B2A73980D8DFE043B /* Sources */,
+				6B70F49DD6ED7709A6E5944B6DAECADA /* Frameworks */,
+				8D0D6C63EECF578195CCC685FA69AA59 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TouristyTests";
+			productName = "Pods-TouristyTests";
+			productReference = E3CC86544E05A407CB4B6270A917E421 /* Pods_TouristyTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B122E110DE1F0403E1CFFB027BFFF0ED /* Pods-Touristy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 251DFCF963E3978C7EE7CE2E7557F59A /* Build configuration list for PBXNativeTarget "Pods-Touristy" */;
+			buildPhases = (
+				6E877B4606349E5043B999F51265D123 /* Sources */,
+				9418636F33537E154C741059D6CF9D7A /* Frameworks */,
+				9464A9E88BE64500EA2267F09B3E1F18 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B925508CF38E16461F666544C85BF8A1 /* PBXTargetDependency */,
+			);
+			name = "Pods-Touristy";
+			productName = "Pods-Touristy";
+			productReference = B94A4C2E63866B93663A0CCA575A348F /* Pods_Touristy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C2423B2515E97726BE5CB8ADDE74F1E2 /* Pods-TouristyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3E29B15350C92A5B1B016BE5B8CEE7A /* Build configuration list for PBXNativeTarget "Pods-TouristyUITests" */;
+			buildPhases = (
+				2AC9C005460BA3D09890FA64C3225AF2 /* Sources */,
+				7480247E06E07DD721B173140BD18842 /* Frameworks */,
+				C2AF35744866E518E2C7D2DB4852A24E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TouristyUITests";
+			productName = "Pods-TouristyUITests";
+			productReference = 711DD603A5781DB0FAF4F3CBFC4AB2BB /* Pods_TouristyUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F3B0D303D1E2FEEE382F99CB69B2053C /* MapboxGeocoder.swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05A6FF4492A83291D9D5F25292D0A021 /* Build configuration list for PBXNativeTarget "MapboxGeocoder.swift" */;
+			buildPhases = (
+				EF9B86F6405D1CBDF74341F8C6DACD4C /* Sources */,
+				DFB4C6777857DED8E0903588F87F446D /* Frameworks */,
+				0450D9B3E30276AB9BBC5AD52E281C00 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapboxGeocoder.swift;
+			productName = MapboxGeocoder.swift;
+			productReference = 367C7D1C3644CF7D0581759D167766B4 /* MapboxGeocoder.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = BEB05E0D81192800B662455AC6EC32B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3B0D303D1E2FEEE382F99CB69B2053C /* MapboxGeocoder.swift */,
+				B122E110DE1F0403E1CFFB027BFFF0ED /* Pods-Touristy */,
+				5A8EB528170BA6B7F280D82B55F8AB53 /* Pods-TouristyTests */,
+				C2423B2515E97726BE5CB8ADDE74F1E2 /* Pods-TouristyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AC9C005460BA3D09890FA64C3225AF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FED188DFB9C0291C6C2CDA76F4C7D38 /* Pods-TouristyUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E877B4606349E5043B999F51265D123 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7645F745F975577D8AC1F8168CFA176 /* Pods-Touristy-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE8D6F1DAD08462B2A73980D8DFE043B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7502B7C50104C2968C463C52C51665B /* Pods-TouristyTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF9B86F6405D1CBDF74341F8C6DACD4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				717D0FA41FAA84E3FFFE0F72843F3CE2 /* MapboxGeocoder.swift-dummy.m in Sources */,
+				B04F835CC9C7F3339E9061DB2DD2A090 /* MBGeocodeOptions.swift in Sources */,
+				2FC172659AD0B06EE303095018B8FE32 /* MBGeocoder.swift in Sources */,
+				D5E387436C8A8DA3D31998749BF6F3DF /* MBPlacemark.swift in Sources */,
+				1E47BAAE9CB3377EDA60B40161162AD3 /* MBPlacemarkScope.swift in Sources */,
+				91410BF0F2921351B2F994E3EBA05B14 /* MBRectangularRegion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B925508CF38E16461F666544C85BF8A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MapboxGeocoder.swift;
+			target = F3B0D303D1E2FEEE382F99CB69B2053C /* MapboxGeocoder.swift */;
+			targetProxy = 93002320A6F02CDD4BAB672F6F4F09CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		11175CC419CED6F614F833CB3FBFD22C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEBF0C34D749A4DFE230516F1F1868DA /* Pods-TouristyTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TouristyTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TouristyTests/Pods-TouristyTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TouristyTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1C184FF261CCB1BEEE288B93FE6C8D2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7A4F5E6177782E5F2531738BB340505 /* MapboxGeocoder.swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapboxGeocoder.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MapboxGeocoder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2191BF631A7CC283E6DA6822DB7DB76F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02ACC0C2A60C8B1950A00F5CCA760566 /* Pods-Touristy.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Touristy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Touristy/Pods-Touristy.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Touristy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4BF2498986670A15494815AADB63567A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C929950DEE7697242BF9549DB5F85846 /* Pods-TouristyUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TouristyUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TouristyUITests/Pods-TouristyUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TouristyUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56388A332C0EEEA2D6B5DD48CA63E36C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7A4F5E6177782E5F2531738BB340505 /* MapboxGeocoder.swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MapboxGeocoder.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MapboxGeocoder.swift/MapboxGeocoder.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MapboxGeocoder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85C4B24FE4918252D51BA7F3B0B1BF08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B996B1017EC39C79C9DA4CC1AC6934B /* Pods-TouristyUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TouristyUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TouristyUITests/Pods-TouristyUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TouristyUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		86DF8EFE07B44D6A9694BFBC97D7BE6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E2E14C45AABBAC65B50D51A035C2A48 /* Pods-TouristyTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TouristyTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TouristyTests/Pods-TouristyTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TouristyTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9C8FF195E91202E8032C6286F81020EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D853DAFB92D064790ED2E5C04B15897 /* Pods-Touristy.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Touristy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Touristy/Pods-Touristy.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Touristy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05A6FF4492A83291D9D5F25292D0A021 /* Build configuration list for PBXNativeTarget "MapboxGeocoder.swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C184FF261CCB1BEEE288B93FE6C8D2B /* Debug */,
+				56388A332C0EEEA2D6B5DD48CA63E36C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		251DFCF963E3978C7EE7CE2E7557F59A /* Build configuration list for PBXNativeTarget "Pods-Touristy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C8FF195E91202E8032C6286F81020EB /* Debug */,
+				2191BF631A7CC283E6DA6822DB7DB76F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43CB335B2C8C37A257F17D6B599EE88D /* Build configuration list for PBXNativeTarget "Pods-TouristyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11175CC419CED6F614F833CB3FBFD22C /* Debug */,
+				86DF8EFE07B44D6A9694BFBC97D7BE6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3E29B15350C92A5B1B016BE5B8CEE7A /* Build configuration list for PBXNativeTarget "Pods-TouristyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C4B24FE4918252D51BA7F3B0B1BF08 /* Debug */,
+				4BF2498986670A15494815AADB63567A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
