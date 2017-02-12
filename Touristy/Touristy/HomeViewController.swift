@@ -10,5 +10,4 @@ class HomeViewController: UIViewController {
         view.addSubview(homeView)
         homeView.layoutSubviews()
     }
-    
 }

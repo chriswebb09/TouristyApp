@@ -33,7 +33,7 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     private func setupMapView() {
         let styleURL = NSURL(string: "mapbox://styles/chriswebb/ciz2oxgoh002s2sprtfmaeo5m")
         mapView  = MGLMapView(frame: view.bounds,
-                                 styleURL: styleURL as URL?)
+                              styleURL: styleURL as URL?)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         mapView.userTrackingMode = .follow
@@ -50,7 +50,7 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: 40.706697302800182, longitude: -74.014699650804047)
         annotation.title = "New York City"
-       // annotation.subtitle = "\(annotation.coordinate.latitude), \(annotation.coordinate.longitude)"
+        // annotation.subtitle = "\(annotation.coordinate.latitude), \(annotation.coordinate.longitude)"
         mapView.addAnnotation(annotation)
         mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
         mapView.selectAnnotation(annotation, animated: true)

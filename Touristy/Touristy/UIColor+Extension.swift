@@ -40,5 +40,4 @@ extension UIColor {
     class func experienceBackground() -> UIColor {
         return UIColor(red:0.29, green:0.85, blue:0.39, alpha:1.0)
     }
-    
 }

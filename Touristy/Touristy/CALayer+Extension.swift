@@ -1,6 +1,5 @@
 import UIKit
 
-
 extension CALayer {
     
     var center: CGPoint {
@@ -24,5 +23,4 @@ extension CALayer {
     var origin: CGPoint {
         return CGPoint(x: self.center.x - (self.width / 2), y: self.center.y - (self.height / 2))
     }
-    
 }

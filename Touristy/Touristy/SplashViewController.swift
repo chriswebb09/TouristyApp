@@ -7,7 +7,6 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = []
-        //view.backgroundColor = .white
         splashView.layoutSubviews()
     }
     

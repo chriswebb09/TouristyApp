@@ -4,7 +4,6 @@ import CoreMotion
 import CoreImage
 
 class CameraViewController: UIViewController {
-    
     var camera = Camera()
     
     lazy var cameraSession: AVCaptureSession = {

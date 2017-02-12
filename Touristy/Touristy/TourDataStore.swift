@@ -13,5 +13,5 @@ class TourDataStore {
     init(tourist: Tourist) {
         self.tour = tourist
     }
-
+    
 }

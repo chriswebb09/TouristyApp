@@ -9,7 +9,4 @@ struct SplashViewModel {
         self.splashImage = splashImage
         self.animationDuration = animationDuration
     }
-    
-
-    
 }

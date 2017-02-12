@@ -21,7 +21,6 @@ class TabBarController: UITabBarController {
     private func setTabTitles(controllers: [UINavigationController]) {
         DispatchQueue.main.async {
             self.viewControllers = controllers
-            
             self.tabBar.items?[0].title = "Home"
             self.tabBar.items?[1].title = "Map"
             self.selectedIndex = 0
@@ -62,7 +61,6 @@ class TabBarController: UITabBarController {
         homeTab.navigationBar.topItem?.title = "TaskHero"
         return homeTab
     }
-    
     
     fileprivate func setupMapTab(mapVC: TourMapViewController) -> UINavigationController {
         let mapTab = UINavigationController(rootViewController: mapVC)

@@ -28,7 +28,7 @@ struct Coordinates {
 
 final class Destination {
     let location: Coordinates
-   
+    
     var name: String
     var item = CALayer()
     var description: String
