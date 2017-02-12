@@ -41,7 +41,11 @@ class TourMapViewController: UIViewController {
     
     func setupAnnotation() {
         var tourStop = MGLPointAnnotation()
-        let centralPark = Location(streetAddress: "Central ParK", distanceTo: "0", locationName: "Central Park" , coordinates: CLLocationCoordinate2D(latitude: 40.782865, longitude: -73.965355))
+        let centralPark = Location(streetAddress: "Central ParK",
+                                   distanceTo: "0",
+                                   locationName: "Central Park" ,
+                                   coordinates: CLLocationCoordinate2D(latitude: 40.782865,
+                                                                       longitude: -73.965355))
         tourStop.coordinate = centralPark.coordinates
         tourStop.title = centralPark.locationName
         mapView.addAnnotation(tourStop)
@@ -58,12 +62,25 @@ class TourMapViewController: UIViewController {
 extension TourMapViewController: CLLocationManagerDelegate {
     
     func initializeLocationToUser() -> CLLocation? {
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
-        let userAuth = (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways)
-        if userAuth { return locationManager.location } else { return nil }
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            return locationManager.location
+        case .authorizedAlways:
+            return locationManager.location
+        case .denied:
+            return nil
+        case .notDetermined:
+            return nil
+        case .restricted:
+            return nil
+        }
     }
 }
 
