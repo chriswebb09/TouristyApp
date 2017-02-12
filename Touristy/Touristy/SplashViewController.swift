@@ -28,6 +28,13 @@ class SplashViewController: UIViewController {
                 print("Animating")
             }
         }
+        setupTabBar()
+    }
+    
+    fileprivate func setupTabBar() {
+        let tabBar = TabBarController()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = tabBar
     }
 }
 

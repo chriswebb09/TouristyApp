@@ -19,6 +19,7 @@
 		A7563F7E1E5040D5003252FA /* TourMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F7D1E5040D5003252FA /* TourMapViewController.swift */; };
 		A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0031E50767A00432288 /* UIColor+Extension.swift */; };
 		A757E0061E5076D900432288 /* ConcurrentOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0051E5076D900432288 /* ConcurrentOperations.swift */; };
+		A757E0081E50787900432288 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0071E50787900432288 /* TabBarController.swift */; };
 		A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22D1E505F0D0061C155 /* Location.swift */; };
 		A7FDF2301E505F190061C155 /* TourStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22F1E505F190061C155 /* TourStop.swift */; };
 		A7FDF2321E505F800061C155 /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2311E505F800061C155 /* Tourist.swift */; };
@@ -91,6 +92,7 @@
 		A7563F7D1E5040D5003252FA /* TourMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourMapViewController.swift; sourceTree = "<group>"; };
 		A757E0031E50767A00432288 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A757E0051E5076D900432288 /* ConcurrentOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperations.swift; sourceTree = "<group>"; };
+		A757E0071E50787900432288 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A7FDF22D1E505F0D0061C155 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A7FDF22F1E505F190061C155 /* TourStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourStop.swift; sourceTree = "<group>"; };
 		A7FDF2311E505F800061C155 /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
 				A7FDF24D1E50729E0061C155 /* Buttons.swift */,
 				A757E0051E5076D900432288 /* ConcurrentOperations.swift */,
+				A757E0071E50787900432288 /* TabBarController.swift */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				A7FDF24C1E5071FE0061C155 /* TriviaAPIClient.swift in Sources */,
 				A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */,
 				A7FDF2401E506C7A0061C155 /* HomeView.swift in Sources */,
+				A757E0081E50787900432288 /* TabBarController.swift in Sources */,
 				A757E0061E5076D900432288 /* ConcurrentOperations.swift in Sources */,
 				A7FDF2481E5071DD0061C155 /* FirebaseAPIClient.swift in Sources */,
 				A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */,

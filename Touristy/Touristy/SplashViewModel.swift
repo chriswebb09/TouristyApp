@@ -18,5 +18,6 @@ struct SplashViewModel {
         self.animationDuration = animationDuration
     }
     
+
     
 }
