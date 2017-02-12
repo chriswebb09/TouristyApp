@@ -8,4 +8,5 @@ struct Tourist {
     var pictureTaken: [UIImage]?
     var levelOfActivity: String
     var distanceToTravel: String
+    
 }

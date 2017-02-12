@@ -31,7 +31,6 @@ class TabBarController: UITabBarController {
     func setupTabs() {
         super.viewDidLoad()
         DispatchQueue.main.async {
-            // print(tabBa)
             self.setupControllers()
         }
     }

@@ -9,11 +9,14 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     
     var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
-    var userStartLocation = CLLocation()
+    var startCoordinates = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
+        if let location = initializeLocationToUser()  {
+            self.startCoordinates = location
+        }
         view.backgroundColor = .white
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -22,11 +25,9 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
         addAnnotation()
     }
     
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {
-            let locValue:CLLocationCoordinate2D = location.coordinate
-            print("locations = \(locValue.latitude) \(locValue.longitude)")
+            self.startCoordinates = location
         }
     }
     
@@ -48,9 +49,8 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     
     func addAnnotation() {
         let annotation = MGLPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 40.706697302800182, longitude: -74.014699650804047)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
         annotation.title = "New York City"
-        // annotation.subtitle = "\(annotation.coordinate.latitude), \(annotation.coordinate.longitude)"
         mapView.addAnnotation(annotation)
         mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
         mapView.selectAnnotation(annotation, animated: true)
@@ -81,13 +81,15 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     
     private func setLocation() {
         if let location = initializeLocationToUser() {
-            userStartLocation = location
+           startCoordinates = location
         }
     }
     
     private func setCenterCoordinateOnMapView() {
+        
         let lat: CLLocationDegrees = 40.706697302800182
         let lng: CLLocationDegrees = -74.014699650804047
+        
         let downtownManhattan = CLLocationCoordinate2D(latitude: lat, longitude: lng)
         mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
     }
@@ -102,10 +104,8 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
 extension TourMapViewController: CLLocationManagerDelegate {
     
     func initializeLocationToUser() -> CLLocation? {
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
         
