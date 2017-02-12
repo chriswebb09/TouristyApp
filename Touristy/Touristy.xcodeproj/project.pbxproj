@@ -24,6 +24,16 @@
 		A7FDF2361E5066860061C155 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2351E5066860061C155 /* Constants.swift */; };
 		A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2371E50677F0061C155 /* Secrets.swift */; };
 		A7FDF23A1E506A730061C155 /* TourSpotAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */; };
+		A7FDF23C1E506C620061C155 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF23B1E506C620061C155 /* SplashView.swift */; };
+		A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */; };
+		A7FDF2401E506C7A0061C155 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF23F1E506C7A0061C155 /* HomeView.swift */; };
+		A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2411E506C850061C155 /* HomeViewController.swift */; };
+		A7FDF2441E506D0E0061C155 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2431E506D0E0061C155 /* MenuView.swift */; };
+		A7FDF2461E506D470061C155 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2451E506D470061C155 /* SplashViewModel.swift */; };
+		A7FDF2481E5071DD0061C155 /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */; };
+		A7FDF24A1E5071EF0061C155 /* DataDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2491E5071EF0061C155 /* DataDefaults.swift */; };
+		A7FDF24C1E5071FE0061C155 /* TriviaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */; };
+		A7FDF24E1E50729E0061C155 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF24D1E50729E0061C155 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +94,16 @@
 		A7FDF2351E5066860061C155 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7FDF2371E50677F0061C155 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSpotAnnotationView.swift; sourceTree = "<group>"; };
+		A7FDF23B1E506C620061C155 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A7FDF23F1E506C7A0061C155 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A7FDF2411E506C850061C155 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A7FDF2431E506D0E0061C155 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A7FDF2451E506D470061C155 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
+		A7FDF2491E5071EF0061C155 /* DataDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDefaults.swift; sourceTree = "<group>"; };
+		A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaAPIClient.swift; sourceTree = "<group>"; };
+		A7FDF24D1E50729E0061C155 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		FAF5817D633A407A91290535 /* Pods-Touristy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Touristy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Touristy/Pods-Touristy.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF540511C46731EC82F7BC3 /* Pods-TouristyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +187,16 @@
 				A7FDF22F1E505F190061C155 /* TourStop.swift */,
 				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
 				A7FDF2371E50677F0061C155 /* Secrets.swift */,
+				A7FDF23B1E506C620061C155 /* SplashView.swift */,
+				A7FDF2451E506D470061C155 /* SplashViewModel.swift */,
+				A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */,
+				A7FDF23F1E506C7A0061C155 /* HomeView.swift */,
+				A7FDF2411E506C850061C155 /* HomeViewController.swift */,
+				A7FDF2431E506D0E0061C155 /* MenuView.swift */,
+				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
+				A7FDF2491E5071EF0061C155 /* DataDefaults.swift */,
+				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
+				A7FDF24D1E50729E0061C155 /* Buttons.swift */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -487,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7FDF2461E506D470061C155 /* SplashViewModel.swift in Sources */,
 				A7563F7E1E5040D5003252FA /* TourMapViewController.swift in Sources */,
 				A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */,
 				A7FDF2301E505F190061C155 /* TourStop.swift in Sources */,
@@ -494,8 +525,17 @@
 				A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */,
 				A7FDF2361E5066860061C155 /* Constants.swift in Sources */,
 				A7FDF23A1E506A730061C155 /* TourSpotAnnotationView.swift in Sources */,
+				A7FDF2441E506D0E0061C155 /* MenuView.swift in Sources */,
+				A7FDF23C1E506C620061C155 /* SplashView.swift in Sources */,
+				A7FDF24C1E5071FE0061C155 /* TriviaAPIClient.swift in Sources */,
 				A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */,
+				A7FDF2401E506C7A0061C155 /* HomeView.swift in Sources */,
+				A7FDF2481E5071DD0061C155 /* FirebaseAPIClient.swift in Sources */,
 				A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */,
+				A7FDF24A1E5071EF0061C155 /* DataDefaults.swift in Sources */,
+				A7FDF24E1E50729E0061C155 /* Buttons.swift in Sources */,
+				A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */,
+				A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

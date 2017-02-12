@@ -1,25 +1,92 @@
 PODS:
+  - Firebase (3.12.0):
+    - Firebase/Core (= 3.12.0)
+  - Firebase/Auth (3.12.0):
+    - Firebase/Core
+    - FirebaseAuth (= 3.1.0)
+  - Firebase/Core (3.12.0):
+    - FirebaseAnalytics (= 3.6.0)
+    - FirebaseCore (= 3.4.7)
+  - FirebaseAnalytics (3.6.0):
+    - FirebaseCore (~> 3.4)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseAuth (3.1.0):
+    - FirebaseAnalytics (~> 3.6)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (3.4.7):
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (3.1.1):
+    - FirebaseAnalytics (~> 3.5)
+  - FirebaseInstanceID (1.0.8)
+  - GoogleInterchangeUtilities (1.2.2):
+    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleSymbolUtilities (1.1.2)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMSessionFetcher/Core (1.1.8)
   - Mapbox-iOS-SDK (3.4.1)
+  - MapboxDirections.swift (0.6.0):
+    - Polyline (~> 4.0.0)
   - MapboxGeocoder.swift (0.5.1)
+  - Polyline (4.0.0)
+  - SnapKit (3.1.2)
 
 DEPENDENCIES:
+  - Firebase
+  - Firebase/Auth
+  - FirebaseDatabase
   - Mapbox-iOS-SDK (~> 3.4)
+  - MapboxDirections.swift (from `https://github.com/mapbox/MapboxDirections.swift.git`, branch `swift3`)
   - MapboxGeocoder.swift (from `https://github.com/mapbox/MapboxGeocoder.swift.git`, branch `swift3`)
+  - SnapKit
 
 EXTERNAL SOURCES:
+  MapboxDirections.swift:
+    :branch: swift3
+    :git: https://github.com/mapbox/MapboxDirections.swift.git
   MapboxGeocoder.swift:
     :branch: swift3
     :git: https://github.com/mapbox/MapboxGeocoder.swift.git
 
 CHECKOUT OPTIONS:
+  MapboxDirections.swift:
+    :commit: 581f246ae4f821a62af6bbe8c4ea1aac67b0cf9b
+    :git: https://github.com/mapbox/MapboxDirections.swift.git
   MapboxGeocoder.swift:
     :commit: d1b168acc87378ee400065918a17e3f707e036d1
     :git: https://github.com/mapbox/MapboxGeocoder.swift.git
 
 SPEC CHECKSUMS:
+  Firebase: 8e99eb1ff553ad5bcc6072cc3d925bb89c1244d6
+  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
+  FirebaseAuth: b436e4ecebe068bf8e8c6e4e29de5756ffe7ee24
+  FirebaseCore: 46afaf2c2e0419ea7d3acfb08cf26a461a75fe85
+  FirebaseDatabase: 6de92187481ff0e8e124064f21742e95ee883b02
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
+  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   Mapbox-iOS-SDK: 9c0d23e9a3784e6c9e45af4339898e4598b5b09b
+  MapboxDirections.swift: 4acd753d0079bae4f2fae2b2cbda98922909de09
   MapboxGeocoder.swift: 04f80b3856e5cd1ff0af9910dbf14d27058ce906
+  Polyline: c6de7430bf6ff0bfff1f087343597b83b38fdb69
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
 
-PODFILE CHECKSUM: e651b87fa7b935937355287d6260105241114cbd
+PODFILE CHECKSUM: 7afc090a695228b70b1bad84d99b51f83b6107c1
 
 COCOAPODS: 1.1.1
