@@ -6,13 +6,13 @@ target 'Touristy' do
   use_frameworks!
 
   # Pods for Touristy
-    pod 'SnapKit'
-    pod 'Mapbox-iOS-SDK', '~> 3.4'
-    pod 'MapboxGeocoder.swift', :git => 'https://github.com/mapbox/MapboxGeocoder.swift.git', :branch => 'swift3'
-    pod 'Firebase'
-    pod 'Firebase/Auth'
-    pod 'FirebaseDatabase'
-    pod 'MapboxDirections.swift', :git => 'https://github.com/mapbox/MapboxDirections.swift.git', :branch => 'swift3'
+ # pod 'SnapKit'
+ #  pod 'Mapbox-iOS-SDK', '~> 3.4'
+ #  pod 'MapboxGeocoder.swift', :git => 'https://github.com/mapbox/MapboxGeocoder.swift.git', :branch => 'swift3'
+  # pod 'Firebase'
+ #  pod 'Firebase/Auth'
+ #  pod 'FirebaseDatabase'
+  # pod 'MapboxDirections.swift', :git => 'https://github.com/mapbox/MapboxDirections.swift.git', :branch => 'swift3'
   # pod 'MapboxStatic.swift', :git => 'https://github.com/mapbox/MapboxStatic.swift.git', :branch => 'swift3'
    
 
