@@ -28,6 +28,7 @@
 		A7CEC4301E50BC0300AB4559 /* AppScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */; };
 		A7CEC4321E50D97D00AB4559 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4311E50D97D00AB4559 /* QueryView.swift */; };
 		A7CEC4351E50D99500AB4559 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4341E50D99500AB4559 /* QueryViewController.swift */; };
+		A7CEC4371E50EB7000AB4559 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4361E50EB7000AB4559 /* Query.swift */; };
 		A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22D1E505F0D0061C155 /* Location.swift */; };
 		A7FDF2301E505F190061C155 /* TourStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22F1E505F190061C155 /* TourStop.swift */; };
 		A7FDF2321E505F800061C155 /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2311E505F800061C155 /* Tourist.swift */; };
@@ -109,6 +110,7 @@
 		A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewModel.swift; sourceTree = "<group>"; };
 		A7CEC4311E50D97D00AB4559 /* QueryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
 		A7CEC4341E50D99500AB4559 /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
+		A7CEC4361E50EB7000AB4559 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		A7FDF22D1E505F0D0061C155 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A7FDF22F1E505F190061C155 /* TourStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourStop.swift; sourceTree = "<group>"; };
 		A7FDF2311E505F800061C155 /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				A7CEC4331E50D98500AB4559 /* AppScreen */,
 				A7CEC4311E50D97D00AB4559 /* QueryView.swift */,
 				A7CEC4341E50D99500AB4559 /* QueryViewController.swift */,
+				A7CEC4361E50EB7000AB4559 /* Query.swift */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				A70766871E50A28A00F6F1DB /* LocationServices.swift in Sources */,
 				A751E44C1E508F5200015B42 /* Camera.swift in Sources */,
 				A7FDF24E1E50729E0061C155 /* Buttons.swift in Sources */,
+				A7CEC4371E50EB7000AB4559 /* Query.swift in Sources */,
 				A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */,
 				A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */,
 				A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */,

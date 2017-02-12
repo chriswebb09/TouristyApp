@@ -31,7 +31,7 @@ extension AppScreenViewController {
     
     func mapButtonTapped() {
         navigationController?.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        navigationController?.pushViewController(TabBarController(), animated: true)
+        navigationController?.pushViewController(QueryViewController(), animated: true)
     }
     //
     //    func signupButtonTapped() {

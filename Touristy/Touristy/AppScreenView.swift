@@ -65,14 +65,11 @@ extension AppScreenView {
     }
     
     private func setupLogoImage(logoImageView: UIView) {
-        
         addSubview(logoImageView)
-        
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.78).isActive = true
         logoImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.42).isActive = true
         logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-       // logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: bounds.height * -0.01)
         logoImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: bounds.height * -0.1).isActive = true
     }
     

@@ -6,6 +6,7 @@ typealias completion = () -> Void
 final class SplashView: UIView {
     
     var animationDuration: Double = 1
+    
     //  let splashViewModel = SplashViewModel(splashImage: UIImage(named: "mapbox-logo-ihs-upload")!, animationDuration: 20)
     
     var splashImageView: UIImageView = {
@@ -15,7 +16,6 @@ final class SplashView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         backgroundColor = .white
         frame = UIScreen.main.bounds
         setupConstraints()
