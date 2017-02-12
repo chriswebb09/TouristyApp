@@ -47,9 +47,10 @@ extension SplashView {
             self?.alpha = 0
             }, completion: { finished in
                 DispatchQueue.main.async {
-                    let appScreenVC = UINavigationController(rootViewController:HomeViewController())
+                   
+                    //let appScreenVC = UINavigationController(rootViewController:)
                     weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
-                    appDelegate?.window?.rootViewController = appScreenVC
+                    appDelegate?.window?.rootViewController = TabBarController()
                 }
                 handler?()
         })

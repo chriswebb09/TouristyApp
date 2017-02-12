@@ -9,12 +9,12 @@
 import UIKit
 import CoreLocation
 import Mapbox
-import MapboxGeocoder
+//import MapboxGeocoder
 
 let MapboxAccessToken = Secrets.mapKey
 
-
 class TourMapViewController: UIViewController, MGLMapViewDelegate {
+    
     var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
     var userStartLocation = CLLocation()
@@ -22,9 +22,7 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
-       // mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-       // view.addSubview(mapView)
-       // mapView.delegate = self
+        view.backgroundColor = .white
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()

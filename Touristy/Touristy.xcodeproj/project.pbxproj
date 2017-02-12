@@ -182,15 +182,14 @@
 				A7563F561E503E9D003252FA /* Assets.xcassets */,
 				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
 				A7563F5B1E503E9D003252FA /* Info.plist */,
-				A757E0071E50787900432288 /* TabBarController.swift */,
 				A7563F7D1E5040D5003252FA /* TourMapViewController.swift */,
 				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
+				A757E00A1E5083B300432288 /* Home */,
 				A757E00B1E5083BF00432288 /* Shared */,
 				A757E00D1E5083DD00432288 /* Models */,
 				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
 				A7FDF2371E50677F0061C155 /* Secrets.swift */,
 				A757E0091E5083AB00432288 /* Splash */,
-				A757E00A1E5083B300432288 /* Home */,
 				A7FDF2431E506D0E0061C155 /* MenuView.swift */,
 				A757E00C1E5083CC00432288 /* DataServices */,
 				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
@@ -240,6 +239,7 @@
 		A757E00B1E5083BF00432288 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A757E0071E50787900432288 /* TabBarController.swift */,
 				A7FDF2351E5066860061C155 /* Constants.swift */,
 				A757E0031E50767A00432288 /* UIColor+Extension.swift */,
 			);
