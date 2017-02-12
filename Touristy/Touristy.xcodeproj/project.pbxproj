@@ -22,6 +22,7 @@
 		A7FDF2321E505F800061C155 /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2311E505F800061C155 /* Tourist.swift */; };
 		A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2331E5060690061C155 /* TourDataStore.swift */; };
 		A7FDF2361E5066860061C155 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2351E5066860061C155 /* Constants.swift */; };
+		A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2371E50677F0061C155 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		A7FDF2311E505F800061C155 /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
 		A7FDF2331E5060690061C155 /* TourDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDataStore.swift; sourceTree = "<group>"; };
 		A7FDF2351E5066860061C155 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A7FDF2371E50677F0061C155 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FAF5817D633A407A91290535 /* Pods-Touristy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Touristy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Touristy/Pods-Touristy.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF540511C46731EC82F7BC3 /* Pods-TouristyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				A7FDF2311E505F800061C155 /* Tourist.swift */,
 				A7FDF22F1E505F190061C155 /* TourStop.swift */,
 				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
+				A7FDF2371E50677F0061C155 /* Secrets.swift */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7563F7E1E5040D5003252FA /* TourMapViewController.swift in Sources */,
+				A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */,
 				A7FDF2301E505F190061C155 /* TourStop.swift in Sources */,
 				A7FDF2321E505F800061C155 /* Tourist.swift in Sources */,
 				A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */,

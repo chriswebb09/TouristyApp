@@ -11,7 +11,7 @@ import CoreLocation
 import Mapbox
 import MapboxGeocoder
 
-let MapboxAccessToken = Constants.mapKey
+let MapboxAccessToken = Secrets.mapKey 
 
 
 class TourMapViewController: UIViewController, MGLMapViewDelegate, CLLocationManagerDelegate {
