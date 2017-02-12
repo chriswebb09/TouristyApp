@@ -22,11 +22,21 @@ class SplashView: UIView {
     }
     
     override func layoutSubviews() {
-        // Not implemented yet 
+        setupConstraints()
+    }
+    
+    private func setupConstraints() {
+        addSubview(splashImageView)
+        splashImageView.translatesAutoresizingMaskIntoConstraints = false
+        splashImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
+        splashImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
+        splashImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        splashImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
 }
 
 extension SplashView {
+    
     func zoomAnimation(_ handler: completion? = nil) {
         let duration: TimeInterval = animationDuration * 0.5
         UIView.animate(withDuration: duration, animations:{ [weak self] in
@@ -48,5 +58,4 @@ extension SplashView {
         let zoomOutTranform: CGAffineTransform = CGAffineTransform(scaleX: 05, y: 05)
         return zoomOutTranform
     }
-    
 }
