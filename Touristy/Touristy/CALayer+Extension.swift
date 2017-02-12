@@ -8,6 +8,33 @@
 
 import UIKit
 
+// MARK: - Center Point to CALayer
+extension CALayer {
+    
+    var center: CGPoint {
+        get {
+            return CGPoint(x: self.frame.midX, y: self.frame.midY)
+        }
+        set {
+            self.frame.origin.x = newValue.x - (self.frame.size.width / 2)
+            self.frame.origin.y = newValue.y - (self.frame.size.height / 2)
+        }
+    }
+    
+    var width: CGFloat {
+        return self.bounds.width
+    }
+    
+    var height: CGFloat {
+        return self.bounds.height
+    }
+    
+    var origin: CGPoint {
+        return CGPoint(x: self.center.x - (self.width / 2), y: self.center.y - (self.height / 2))
+    }
+    
+}
+
 extension CALayer {
     
     func springToMiddle(withDuration duration: CFTimeInterval, damping: CGFloat, inView view: UIView) {
@@ -32,7 +59,6 @@ extension CALayer {
     
     func fadeOutWithDuration(duration: CFTimeInterval) {
         let fadeOut = CABasicAnimation(keyPath: "opacity")
-        //fadeOut.delegate = self
         fadeOut.duration = duration
         fadeOut.autoreverses = false
         fadeOut.fromValue = 1.0

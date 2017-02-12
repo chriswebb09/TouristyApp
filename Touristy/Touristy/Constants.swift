@@ -10,6 +10,7 @@ import UIKit
 
 
 struct Constants {
+    
     public struct Font {
         public static let fontNormal = UIFont(name: "HelveticaNeue-Light", size: 18)
         public static let fontSmall = UIFont(name: "HelveticaNeue-Light", size: 12)
