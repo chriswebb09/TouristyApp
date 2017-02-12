@@ -23,6 +23,11 @@
 		A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0031E50767A00432288 /* UIColor+Extension.swift */; };
 		A757E0061E5076D900432288 /* ConcurrentOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0051E5076D900432288 /* ConcurrentOperations.swift */; };
 		A757E0081E50787900432288 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0071E50787900432288 /* TabBarController.swift */; };
+		A7CEC42C1E50BB7E00AB4559 /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */; };
+		A7CEC42E1E50BB8D00AB4559 /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */; };
+		A7CEC4301E50BC0300AB4559 /* AppScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */; };
+		A7CEC4321E50D97D00AB4559 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4311E50D97D00AB4559 /* QueryView.swift */; };
+		A7CEC4351E50D99500AB4559 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4341E50D99500AB4559 /* QueryViewController.swift */; };
 		A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22D1E505F0D0061C155 /* Location.swift */; };
 		A7FDF2301E505F190061C155 /* TourStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22F1E505F190061C155 /* TourStop.swift */; };
 		A7FDF2321E505F800061C155 /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2311E505F800061C155 /* Tourist.swift */; };
@@ -99,6 +104,11 @@
 		A757E0031E50767A00432288 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A757E0051E5076D900432288 /* ConcurrentOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperations.swift; sourceTree = "<group>"; };
 		A757E0071E50787900432288 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
+		A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
+		A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewModel.swift; sourceTree = "<group>"; };
+		A7CEC4311E50D97D00AB4559 /* QueryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
+		A7CEC4341E50D99500AB4559 /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
 		A7FDF22D1E505F0D0061C155 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A7FDF22F1E505F190061C155 /* TourStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourStop.swift; sourceTree = "<group>"; };
 		A7FDF2311E505F800061C155 /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
@@ -224,6 +234,9 @@
 				A757E00B1E5083BF00432288 /* Shared */,
 				A751E44A1E508EDF00015B42 /* Extras */,
 				A751E44F1E508F7800015B42 /* Camera */,
+				A7CEC4331E50D98500AB4559 /* AppScreen */,
+				A7CEC4311E50D97D00AB4559 /* QueryView.swift */,
+				A7CEC4341E50D99500AB4559 /* QueryViewController.swift */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -299,6 +312,16 @@
 				A7FDF22F1E505F190061C155 /* TourStop.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A7CEC4331E50D98500AB4559 /* AppScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */,
+				A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */,
+				A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */,
+			);
+			name = AppScreen;
 			sourceTree = "<group>";
 		};
 		BFB47BF43CE089D2D6A2E07D /* Frameworks */ = {
@@ -598,6 +621,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7CEC4301E50BC0300AB4559 /* AppScreenViewModel.swift in Sources */,
+				A7CEC4351E50D99500AB4559 /* QueryViewController.swift in Sources */,
+				A7CEC4321E50D97D00AB4559 /* QueryView.swift in Sources */,
 				A7FDF2461E506D470061C155 /* SplashViewModel.swift in Sources */,
 				A7563F7E1E5040D5003252FA /* TourMapViewController.swift in Sources */,
 				A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */,
@@ -611,8 +637,10 @@
 				A7FDF2441E506D0E0061C155 /* MenuView.swift in Sources */,
 				A7FDF23C1E506C620061C155 /* SplashView.swift in Sources */,
 				A7FDF24C1E5071FE0061C155 /* TriviaAPIClient.swift in Sources */,
+				A7CEC42C1E50BB7E00AB4559 /* AppScreenView.swift in Sources */,
 				A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */,
 				A7FDF2401E506C7A0061C155 /* HomeView.swift in Sources */,
+				A7CEC42E1E50BB8D00AB4559 /* AppScreenViewController.swift in Sources */,
 				A757E0081E50787900432288 /* TabBarController.swift in Sources */,
 				A757E0061E5076D900432288 /* ConcurrentOperations.swift in Sources */,
 				A7FDF2481E5071DD0061C155 /* FirebaseAPIClient.swift in Sources */,

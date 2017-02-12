@@ -9,8 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return window
     }()
     
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barTintColor = .navigationBarColor()

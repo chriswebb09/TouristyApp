@@ -4,7 +4,7 @@ import SnapKit
 class HomeView: UIView {
     
     var logoImageView: UIImageView {
-        let logoView = UIImageView()
+        let logoView = UIImageView(image: UIImage(named: "mapbox-logo-ihs-upload"))
         return logoView
     }
     

@@ -21,18 +21,16 @@ class TabBarController: UITabBarController {
     private func setTabTitles(controllers: [UINavigationController]) {
         DispatchQueue.main.async {
             self.viewControllers = controllers
-            self.tabBar.items?[0].title = "Home"
-            self.tabBar.items?[1].title = "Map"
+            self.tabBar.items?[0].title = "Map"
+            self.tabBar.items?[1].title = "Home"
             self.selectedIndex = 0
-            self.tabBar.layoutSubviews()
+           // self.tabBar.layoutSubviews()
         }
     }
     
     func setupTabs() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.setupControllers()
-        }
+        self.setupControllers()
     }
     
     fileprivate func setupControllers() {
@@ -55,7 +53,7 @@ class TabBarController: UITabBarController {
     }
     
     fileprivate func setupHomeTab(homeVC: HomeViewController) -> UINavigationController {
-        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "sattelite")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "sattelite")?.withRenderingMode(.alwaysTemplate))
+        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "sattelite")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "sattelite")?.withRenderingMode(.alwaysOriginal))
         let homeTab = UINavigationController(rootViewController: homeVC)
         configureNav(nav: homeTab.navigationBar, view:view)
         homeTab.navigationBar.topItem?.title = "Home"
@@ -63,7 +61,7 @@ class TabBarController: UITabBarController {
     }
     
     fileprivate func setupMapTab(mapVC: TourMapViewController) -> UINavigationController {
-         mapVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "planet")?.withRenderingMode(.alwaysTemplate))
+         mapVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal))
         let mapTab = UINavigationController(rootViewController: mapVC)
         configureNav(nav: mapTab.navigationBar, view: view)
         mapTab.navigationBar.topItem?.title = "Map"
