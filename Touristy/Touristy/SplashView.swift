@@ -23,21 +23,22 @@ class SplashView: UIView {
     
     override func layoutSubviews() {
         setupConstraints()
+        super.layoutSubviews()
     }
     
     private func setupConstraints() {
         addSubview(splashImageView)
-        splashImageView.translatesAutoresizingMaskIntoConstraints = false
-        splashImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
-        splashImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2).isActive = true
-        splashImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        splashImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        self.snp.makeConstraints { make in
+            make.width.height.equalTo(50)
+            make.center.equalTo(self)
+        }
     }
 }
 
 extension SplashView {
     
     func zoomAnimation(_ handler: completion? = nil) {
+        
         let duration: TimeInterval = animationDuration * 0.5
         UIView.animate(withDuration: duration, animations:{ [weak self] in
             if let zoom = self?.zoomOut() {

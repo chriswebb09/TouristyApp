@@ -11,7 +11,6 @@
 		7CEC08CF3A75032CE7505417 /* Pods_TouristyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141921D74F37B4D043D42C39 /* Pods_TouristyUITests.framework */; };
 		8E6ABE91B36933341F41DD9E /* Pods_TouristyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D11CFCDC95C5D19059A9F7 /* Pods_TouristyTests.framework */; };
 		A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F4F1E503E9D003252FA /* AppDelegate.swift */; };
-		A7563F551E503E9D003252FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7563F531E503E9D003252FA /* Main.storyboard */; };
 		A7563F571E503E9D003252FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7563F561E503E9D003252FA /* Assets.xcassets */; };
 		A7563F5A1E503E9D003252FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7563F581E503E9D003252FA /* LaunchScreen.storyboard */; };
 		A7563F651E503E9D003252FA /* TouristyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F641E503E9D003252FA /* TouristyTests.swift */; };
@@ -79,7 +78,6 @@
 		9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Touristy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F4C1E503E9D003252FA /* Touristy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touristy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F4F1E503E9D003252FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7563F541E503E9D003252FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7563F561E503E9D003252FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7563F591E503E9D003252FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7563F5B1E503E9D003252FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,31 +179,23 @@
 			isa = PBXGroup;
 			children = (
 				A7563F4F1E503E9D003252FA /* AppDelegate.swift */,
-				A7563F531E503E9D003252FA /* Main.storyboard */,
 				A7563F561E503E9D003252FA /* Assets.xcassets */,
 				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
 				A7563F5B1E503E9D003252FA /* Info.plist */,
+				A757E0071E50787900432288 /* TabBarController.swift */,
 				A7563F7D1E5040D5003252FA /* TourMapViewController.swift */,
 				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
-				A7FDF2351E5066860061C155 /* Constants.swift */,
-				A757E0031E50767A00432288 /* UIColor+Extension.swift */,
-				A7FDF22D1E505F0D0061C155 /* Location.swift */,
-				A7FDF2311E505F800061C155 /* Tourist.swift */,
-				A7FDF22F1E505F190061C155 /* TourStop.swift */,
+				A757E00B1E5083BF00432288 /* Shared */,
+				A757E00D1E5083DD00432288 /* Models */,
 				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
 				A7FDF2371E50677F0061C155 /* Secrets.swift */,
-				A7FDF23B1E506C620061C155 /* SplashView.swift */,
-				A7FDF2451E506D470061C155 /* SplashViewModel.swift */,
-				A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */,
-				A7FDF23F1E506C7A0061C155 /* HomeView.swift */,
-				A7FDF2411E506C850061C155 /* HomeViewController.swift */,
+				A757E0091E5083AB00432288 /* Splash */,
+				A757E00A1E5083B300432288 /* Home */,
 				A7FDF2431E506D0E0061C155 /* MenuView.swift */,
-				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
-				A7FDF2491E5071EF0061C155 /* DataDefaults.swift */,
+				A757E00C1E5083CC00432288 /* DataServices */,
 				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
 				A7FDF24D1E50729E0061C155 /* Buttons.swift */,
 				A757E0051E5076D900432288 /* ConcurrentOperations.swift */,
-				A757E0071E50787900432288 /* TabBarController.swift */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -226,6 +216,53 @@
 				A7563F711E503E9D003252FA /* Info.plist */,
 			);
 			path = TouristyUITests;
+			sourceTree = "<group>";
+		};
+		A757E0091E5083AB00432288 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDF23B1E506C620061C155 /* SplashView.swift */,
+				A7FDF2451E506D470061C155 /* SplashViewModel.swift */,
+				A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
+		A757E00A1E5083B300432288 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDF23F1E506C7A0061C155 /* HomeView.swift */,
+				A7FDF2411E506C850061C155 /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		A757E00B1E5083BF00432288 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDF2351E5066860061C155 /* Constants.swift */,
+				A757E0031E50767A00432288 /* UIColor+Extension.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		A757E00C1E5083CC00432288 /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
+				A7FDF2491E5071EF0061C155 /* DataDefaults.swift */,
+			);
+			name = DataServices;
+			sourceTree = "<group>";
+		};
+		A757E00D1E5083DD00432288 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDF22D1E505F0D0061C155 /* Location.swift */,
+				A7FDF2311E505F800061C155 /* Tourist.swift */,
+				A7FDF22F1E505F190061C155 /* TourStop.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		BFB47BF43CE089D2D6A2E07D /* Frameworks */ = {
@@ -363,7 +400,6 @@
 			files = (
 				A7563F5A1E503E9D003252FA /* LaunchScreen.storyboard in Resources */,
 				A7563F571E503E9D003252FA /* Assets.xcassets in Resources */,
-				A7563F551E503E9D003252FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,14 +619,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A7563F531E503E9D003252FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7563F541E503E9D003252FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A7563F581E503E9D003252FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

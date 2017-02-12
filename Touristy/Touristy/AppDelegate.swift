@@ -11,14 +11,19 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? = {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UINavigationController(rootViewController: SplashViewController())
+        return window
+    }()
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barTintColor = .navigationBarColor()
         navigationBarAppearace.tintColor = .white
-        // Override point for customization after application launch.
+        window?.makeKeyAndVisible()
         return true
     }
 

@@ -14,29 +14,50 @@ import MapboxGeocoder
 let MapboxAccessToken = Secrets.mapKey
 
 
-class TourMapViewController: UIViewController {
-    
-    let tourManager = TourDataStore.shared
-    
-    @IBOutlet var mapView: MGLMapView!
+class TourMapViewController: UIViewController, MGLMapViewDelegate {
+    var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
     var userStartLocation = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView = MGLMapView(frame: view.bounds)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(mapView)
+        mapView.delegate = self
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        mapView.delegate = self
-        setupAnnotation()
+        addAnnotation()
     }
+
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {
             let locValue:CLLocationCoordinate2D = location.coordinate
             print("locations = \(locValue.latitude) \(locValue.longitude)")
         }
+    }
+    
+    func addAnnotation() {
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 35.03946, longitude: 135.72956)
+        annotation.title = "Kinkaku-ji"
+        annotation.subtitle = "\(annotation.coordinate.latitude), \(annotation.coordinate.longitude)"
+        mapView.addAnnotation(annotation)
+        mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
+        mapView.selectAnnotation(annotation, animated: true)
+    }
+    
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        return true
+    }
+    
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        guard annotation is MGLPointAnnotation else { return nil }
+        let reuseIdentifier = String(annotation.coordinate.longitude)
+        return mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as! MGLAnnotationView?
     }
     
     func setupAnnotation() {
@@ -84,10 +105,3 @@ extension TourMapViewController: CLLocationManagerDelegate {
     }
 }
 
-extension TourMapViewController: MGLMapViewDelegate {
-    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        guard annotation is MGLPointAnnotation else { return nil }
-        let reuseIdentifier = String(annotation.coordinate.longitude)
-        return mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as! MGLAnnotationView?
-    }
-}
