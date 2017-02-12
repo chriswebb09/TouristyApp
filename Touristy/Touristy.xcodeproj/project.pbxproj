@@ -23,6 +23,7 @@
 		A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2331E5060690061C155 /* TourDataStore.swift */; };
 		A7FDF2361E5066860061C155 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2351E5066860061C155 /* Constants.swift */; };
 		A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2371E50677F0061C155 /* Secrets.swift */; };
+		A7FDF23A1E506A730061C155 /* TourSpotAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		A7FDF2331E5060690061C155 /* TourDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDataStore.swift; sourceTree = "<group>"; };
 		A7FDF2351E5066860061C155 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7FDF2371E50677F0061C155 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSpotAnnotationView.swift; sourceTree = "<group>"; };
 		FAF5817D633A407A91290535 /* Pods-Touristy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Touristy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Touristy/Pods-Touristy.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF540511C46731EC82F7BC3 /* Pods-TouristyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
 				A7563F5B1E503E9D003252FA /* Info.plist */,
 				A7563F7D1E5040D5003252FA /* TourMapViewController.swift */,
+				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
 				A7FDF2351E5066860061C155 /* Constants.swift */,
 				A7FDF22D1E505F0D0061C155 /* Location.swift */,
 				A7FDF2311E505F800061C155 /* Tourist.swift */,
@@ -490,6 +493,7 @@
 				A7FDF2321E505F800061C155 /* Tourist.swift in Sources */,
 				A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */,
 				A7FDF2361E5066860061C155 /* Constants.swift in Sources */,
+				A7FDF23A1E506A730061C155 /* TourSpotAnnotationView.swift in Sources */,
 				A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */,
 				A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */,
 			);

@@ -45,6 +45,13 @@ class TourMapViewController: UIViewController {
         tourStop.coordinate = centralPark.coordinates
         tourStop.title = centralPark.locationName
         mapView.addAnnotation(tourStop)
+        setLocation()
+    }
+    
+    private func setLocation() {
+        if let location = initializerLocationToUser() {
+            userStartLocation = location
+        }
     }
 }
 
@@ -57,12 +64,6 @@ extension TourMapViewController: CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
         let userAuth = (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways)
         if userAuth { return locationManager.location } else { return nil }
-    }
-    
-    private func setupCurrentLocation() {
-        if let location = initializerLocationToUser() {
-            userStartLocation = location
-        }
     }
 }
 
