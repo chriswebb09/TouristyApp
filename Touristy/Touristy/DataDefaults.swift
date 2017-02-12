@@ -1,5 +1,5 @@
 //
-//  MenuView.swift
+//  DataDefaults.swift
 //  Touristy
 //
 //  Created by Christopher Webb-Orenstein on 2/12/17.
@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import SnapKit
 
-class MenuView: UIView {
+struct DataDefaults {
     
 }
