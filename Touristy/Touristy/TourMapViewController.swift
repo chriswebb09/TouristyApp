@@ -1,15 +1,7 @@
-//
-//  TourMapViewController.swift
-//  Touristy
-//
-//  Created by Christopher Webb-Orenstein on 2/12/17.
-//  Copyright © 2017 Christopher Webb-Orenstein. All rights reserved.
-//
-
 import UIKit
 import CoreLocation
 import Mapbox
-//import MapboxGeocoder
+import MapboxGeocoder
 
 let MapboxAccessToken = Secrets.mapKey
 
@@ -39,11 +31,12 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     private func setupMapView() {
-        mapView = MGLMapView(frame: view.bounds)
+        let styleURL = NSURL(string: "mapbox://styles/chriswebb/ciz2oxgoh002s2sprtfmaeo5m")
+        mapView  = MGLMapView(frame: view.bounds,
+                                 styleURL: styleURL as URL?)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         mapView.userTrackingMode = .follow
-        // mapView.pitchEnabled = true
         
         view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,9 +48,9 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     
     func addAnnotation() {
         let annotation = MGLPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 35.03946, longitude: 135.72956)
-        annotation.title = "Kinkaku-ji"
-        annotation.subtitle = "\(annotation.coordinate.latitude), \(annotation.coordinate.longitude)"
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 40.706697302800182, longitude: -74.014699650804047)
+        annotation.title = "New York City"
+       // annotation.subtitle = "\(annotation.coordinate.latitude), \(annotation.coordinate.longitude)"
         mapView.addAnnotation(annotation)
         mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
         mapView.selectAnnotation(annotation, animated: true)
