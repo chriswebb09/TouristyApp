@@ -11,10 +11,10 @@ import CoreLocation
 import Mapbox
 import MapboxGeocoder
 
-let MapboxAccessToken = Secrets.mapKey 
+let MapboxAccessToken = Secrets.mapKey
 
 
-class TourMapViewController: UIViewController, MGLMapViewDelegate, CLLocationManagerDelegate {
+class TourMapViewController: UIViewController {
     
     let tourManager = TourDataStore.shared
     
@@ -45,5 +45,31 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate, CLLocationMan
         tourStop.coordinate = centralPark.coordinates
         tourStop.title = centralPark.locationName
         mapView.addAnnotation(tourStop)
+    }
+}
+
+extension TourMapViewController: CLLocationManagerDelegate {
+    
+    func initializerLocationToUser() -> CLLocation? {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
+        let userAuth = (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways)
+        if userAuth { return locationManager.location } else { return nil }
+    }
+    
+    private func setupCurrentLocation() {
+        if let location = initializerLocationToUser() {
+            userStartLocation = location
+        }
+    }
+}
+
+extension TourMapViewController: MGLMapViewDelegate {
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        guard annotation is MGLPointAnnotation else { return nil }
+        let reuseIdentifier = String(annotation.coordinate.longitude)
+        return mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as! MGLAnnotationView?
     }
 }
