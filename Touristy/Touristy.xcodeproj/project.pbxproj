@@ -10,6 +10,9 @@
 		17FDBA67C046219896B687A1 /* Pods_Touristy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */; };
 		7CEC08CF3A75032CE7505417 /* Pods_TouristyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141921D74F37B4D043D42C39 /* Pods_TouristyUITests.framework */; };
 		8E6ABE91B36933341F41DD9E /* Pods_TouristyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D11CFCDC95C5D19059A9F7 /* Pods_TouristyTests.framework */; };
+		A751E44C1E508F5200015B42 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E44B1E508F5200015B42 /* Camera.swift */; };
+		A751E44E1E508F7200015B42 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E44D1E508F7200015B42 /* CameraViewController.swift */; };
+		A751E48F1E50931300015B42 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E48E1E50931300015B42 /* CALayer+Extension.swift */; };
 		A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F4F1E503E9D003252FA /* AppDelegate.swift */; };
 		A7563F571E503E9D003252FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7563F561E503E9D003252FA /* Assets.xcassets */; };
 		A7563F5A1E503E9D003252FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7563F581E503E9D003252FA /* LaunchScreen.storyboard */; };
@@ -76,6 +79,9 @@
 		33192084FC4A1513003DEBC7 /* Pods-TouristyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyUITests/Pods-TouristyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A4AB0C357325C50140BA1C2 /* Pods-TouristyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Touristy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A751E44B1E508F5200015B42 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		A751E44D1E508F7200015B42 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		A751E48E1E50931300015B42 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		A7563F4C1E503E9D003252FA /* Touristy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touristy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F4F1E503E9D003252FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7563F561E503E9D003252FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +159,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A751E4491E508EA900015B42 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
+				A7563F7D1E5040D5003252FA /* TourMapViewController.swift */,
+				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		A751E44A1E508EDF00015B42 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				A7563F4F1E503E9D003252FA /* AppDelegate.swift */,
+				A7563F561E503E9D003252FA /* Assets.xcassets */,
+				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
+				A7563F5B1E503E9D003252FA /* Info.plist */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
+		A751E44F1E508F7800015B42 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				A751E44B1E508F5200015B42 /* Camera.swift */,
+				A751E44D1E508F7200015B42 /* CameraViewController.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
 		A7563F431E503E9D003252FA = {
 			isa = PBXGroup;
 			children = (
@@ -178,23 +214,14 @@
 		A7563F4E1E503E9D003252FA /* Touristy */ = {
 			isa = PBXGroup;
 			children = (
-				A7563F4F1E503E9D003252FA /* AppDelegate.swift */,
-				A7563F561E503E9D003252FA /* Assets.xcassets */,
-				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
-				A7563F5B1E503E9D003252FA /* Info.plist */,
-				A7563F7D1E5040D5003252FA /* TourMapViewController.swift */,
-				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
-				A757E00A1E5083B300432288 /* Home */,
-				A757E00B1E5083BF00432288 /* Shared */,
-				A757E00D1E5083DD00432288 /* Models */,
-				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
-				A7FDF2371E50677F0061C155 /* Secrets.swift */,
-				A757E0091E5083AB00432288 /* Splash */,
-				A7FDF2431E506D0E0061C155 /* MenuView.swift */,
 				A757E00C1E5083CC00432288 /* DataServices */,
-				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
-				A7FDF24D1E50729E0061C155 /* Buttons.swift */,
-				A757E0051E5076D900432288 /* ConcurrentOperations.swift */,
+				A757E00D1E5083DD00432288 /* Models */,
+				A751E4491E508EA900015B42 /* Maps */,
+				A757E00A1E5083B300432288 /* Home */,
+				A757E0091E5083AB00432288 /* Splash */,
+				A757E00B1E5083BF00432288 /* Shared */,
+				A751E44A1E508EDF00015B42 /* Extras */,
+				A751E44F1E508F7800015B42 /* Camera */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -239,9 +266,13 @@
 		A757E00B1E5083BF00432288 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A7FDF24D1E50729E0061C155 /* Buttons.swift */,
+				A7FDF2431E506D0E0061C155 /* MenuView.swift */,
+				A7FDF2371E50677F0061C155 /* Secrets.swift */,
 				A757E0071E50787900432288 /* TabBarController.swift */,
 				A7FDF2351E5066860061C155 /* Constants.swift */,
 				A757E0031E50767A00432288 /* UIColor+Extension.swift */,
+				A751E48E1E50931300015B42 /* CALayer+Extension.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -249,6 +280,8 @@
 		A757E00C1E5083CC00432288 /* DataServices */ = {
 			isa = PBXGroup;
 			children = (
+				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
+				A757E0051E5076D900432288 /* ConcurrentOperations.swift */,
 				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
 				A7FDF2491E5071EF0061C155 /* DataDefaults.swift */,
 			);
@@ -567,8 +600,10 @@
 				A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */,
 				A7FDF2301E505F190061C155 /* TourStop.swift in Sources */,
 				A7FDF2321E505F800061C155 /* Tourist.swift in Sources */,
+				A751E44E1E508F7200015B42 /* CameraViewController.swift in Sources */,
 				A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */,
 				A7FDF2361E5066860061C155 /* Constants.swift in Sources */,
+				A751E48F1E50931300015B42 /* CALayer+Extension.swift in Sources */,
 				A7FDF23A1E506A730061C155 /* TourSpotAnnotationView.swift in Sources */,
 				A7FDF2441E506D0E0061C155 /* MenuView.swift in Sources */,
 				A7FDF23C1E506C620061C155 /* SplashView.swift in Sources */,
@@ -580,6 +615,7 @@
 				A7FDF2481E5071DD0061C155 /* FirebaseAPIClient.swift in Sources */,
 				A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */,
 				A7FDF24A1E5071EF0061C155 /* DataDefaults.swift in Sources */,
+				A751E44C1E508F5200015B42 /* Camera.swift in Sources */,
 				A7FDF24E1E50729E0061C155 /* Buttons.swift in Sources */,
 				A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */,
 				A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */,
