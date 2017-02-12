@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-struct LocationService {
+public struct LocationService {
     func getClosestDestination(locations: [CLLocation]) -> CLLocation {
         var totalLat = 0.0
         var totalLong = 0.0

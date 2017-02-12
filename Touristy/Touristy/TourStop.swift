@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-struct TourStop {
+public struct TourStop {
     var location: Location
     let locationName: String
     let locationCoords: CLLocationCoordinate2D
@@ -10,7 +10,7 @@ struct TourStop {
     var trivia: [String]
 }
 
-struct Stops {
+public struct Stops {
     var stops: [TourStop]
     mutating func setupLocations(locations: [Location]) {
         self.stops = [TourStop]()

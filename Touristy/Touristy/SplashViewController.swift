@@ -1,16 +1,16 @@
 import UIKit
 
-class SplashViewController: UIViewController {
+public final class SplashViewController: UIViewController {
     
     var splashView = SplashView()
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = []
         splashView.layoutSubviews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
         let when = DispatchTime.now() + 0.5 //

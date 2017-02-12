@@ -3,7 +3,7 @@ import SnapKit
 
 typealias completion = () -> Void
 
-class SplashView: UIView {
+final class SplashView: UIView {
     
     var animationDuration: Double = 0.8
     let splashViewModel = SplashViewModel(splashImage: UIImage(), animationDuration: 20)

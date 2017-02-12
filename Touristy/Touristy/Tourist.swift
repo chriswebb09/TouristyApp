@@ -1,6 +1,6 @@
 import UIKit
 
-struct Tourist {
+public struct Tourist {
     let tourPartyName: String
     let tourType: String
     let distanceTravelled: String
@@ -8,5 +8,4 @@ struct Tourist {
     var pictureTaken: [UIImage]?
     var levelOfActivity: String
     var distanceToTravel: String
-    
 }

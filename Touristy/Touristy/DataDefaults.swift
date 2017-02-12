@@ -3,7 +3,7 @@ import CoreLocation
 
 
 struct DataDefaults {
-    
+    // DataDefaults 
 }
 
 

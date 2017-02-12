@@ -5,7 +5,7 @@ import MapboxGeocoder
 
 let MapboxAccessToken = Secrets.mapKey
 
-class TourMapViewController: UIViewController, MGLMapViewDelegate {
+final class TourMapViewController: UIViewController, MGLMapViewDelegate {
     
     var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
@@ -14,32 +14,36 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
-        if let location = initializeLocationToUser()  {
-            self.startCoordinates = location
-        }
+        if let location = initializeLocationToUser()  { self.startCoordinates = location }
+        
         view.backgroundColor = .white
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
         addAnnotation()
     }
-    
+}
+
+extension TourMapViewController {
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {
             self.startCoordinates = location
         }
     }
     
-    private func setupMapView() {
+    fileprivate func setupMapView() {
         let styleURL = NSURL(string: "mapbox://styles/chriswebb/ciz2oxgoh002s2sprtfmaeo5m")
         mapView  = MGLMapView(frame: view.bounds,
                               styleURL: styleURL as URL?)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         mapView.delegate = self
         mapView.userTrackingMode = .follow
-        
         view.addSubview(mapView)
+        
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -51,6 +55,7 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
         annotation.title = "New York City"
+        
         mapView.addAnnotation(annotation)
         mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
         mapView.selectAnnotation(annotation, animated: true)
@@ -68,6 +73,7 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     
     func setupAnnotation() {
         var tourStop = MGLPointAnnotation()
+        
         let centralPark = Location(streetAddress: "Central ParK",
                                    distanceTo: "0",
                                    locationName: "Central Park" ,
@@ -75,6 +81,7 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
                                                                        longitude: -73.965355))
         tourStop.coordinate = centralPark.coordinates
         tourStop.title = centralPark.locationName
+        
         mapView.addAnnotation(tourStop)
         setLocation()
     }
@@ -106,10 +113,11 @@ extension TourMapViewController: CLLocationManagerDelegate {
     func initializeLocationToUser() -> CLLocation? {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
-        
         switch CLLocationManager.authorizationStatus() {
+            
         case .authorizedWhenInUse:
             return locationManager.location
         case .authorizedAlways:

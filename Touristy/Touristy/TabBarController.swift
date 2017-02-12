@@ -40,7 +40,7 @@ class TabBarController: UITabBarController {
         let homeTab = self.setupHomeTab(homeVC: HomeViewController())
         let controllers = [mapTab, homeTab]
         setTabTitles(controllers: controllers)
-        tabBar.reloadInputViews()
+       // tabBar.reloadInputViews()
     }
     
     func setupTabBar(tabBar:UITabBar, view:UIView) {
@@ -55,16 +55,18 @@ class TabBarController: UITabBarController {
     }
     
     fileprivate func setupHomeTab(homeVC: HomeViewController) -> UINavigationController {
+        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "sattelite")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "sattelite")?.withRenderingMode(.alwaysTemplate))
         let homeTab = UINavigationController(rootViewController: homeVC)
         configureNav(nav: homeTab.navigationBar, view:view)
-        homeTab.navigationBar.topItem?.title = "TaskHero"
+        homeTab.navigationBar.topItem?.title = "Home"
         return homeTab
     }
     
     fileprivate func setupMapTab(mapVC: TourMapViewController) -> UINavigationController {
+         mapVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "planet")?.withRenderingMode(.alwaysTemplate))
         let mapTab = UINavigationController(rootViewController: mapVC)
         configureNav(nav: mapTab.navigationBar, view: view)
-        mapTab.navigationBar.topItem?.title = "MAP"
+        mapTab.navigationBar.topItem?.title = "Map"
         return mapTab
     }
     

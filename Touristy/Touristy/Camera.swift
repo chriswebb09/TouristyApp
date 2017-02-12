@@ -1,6 +1,6 @@
 import UIKit
 
-class Camera: UIView {
+final class Camera: UIView {
     var backgroundView: UIView {
         return UIView()
     }

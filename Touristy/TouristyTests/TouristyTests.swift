@@ -21,9 +21,9 @@ class TouristyTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSplashScreen() {
+        let splashVC = SplashViewController()
+        splashVC.viewDidLoad()
     }
     
     func testPerformanceExample() {

@@ -14,6 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barTintColor = .navigationBarColor()
+      //  navigationBarAppearace.tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "HelveticaNeue", size: 12)], for: .normal)
+        
+        //setTitleTextAttributes()
         navigationBarAppearace.tintColor = .white
         window?.makeKeyAndVisible()
         return true

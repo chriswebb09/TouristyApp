@@ -3,7 +3,6 @@ import UIKit
 import CoreLocation
 
 struct Location {
-    
     let streetAddress: String
     let distanceTo: String
     let locationName: String
@@ -26,8 +25,7 @@ struct Coordinates {
     var longitude: Float
 }
 
-
-final class Destination {
+struct Destination {
     let location: Coordinates
     var name: String
     var item = CALayer()
@@ -46,7 +44,6 @@ final class Destination {
         self.downloadingImage = false
     }
 }
-
 
 struct UserLocationData {
     

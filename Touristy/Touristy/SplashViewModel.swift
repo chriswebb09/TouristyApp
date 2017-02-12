@@ -1,6 +1,6 @@
 import UIKit
 
-struct SplashViewModel {
+public struct SplashViewModel {
     
     var splashImage: UIImage
     var animationDuration: Double
