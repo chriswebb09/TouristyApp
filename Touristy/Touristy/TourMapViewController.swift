@@ -21,23 +21,38 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView = MGLMapView(frame: view.bounds)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(mapView)
-        mapView.delegate = self
+        setupMapView()
+       // mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+       // view.addSubview(mapView)
+       // mapView.delegate = self
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         addAnnotation()
     }
-
-
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {
             let locValue:CLLocationCoordinate2D = location.coordinate
             print("locations = \(locValue.latitude) \(locValue.longitude)")
         }
+    }
+    
+    private func setupMapView() {
+        mapView = MGLMapView(frame: view.bounds)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView.delegate = self
+        mapView.userTrackingMode = .follow
+        // mapView.pitchEnabled = true
+        
+        view.addSubview(mapView)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     }
     
     func addAnnotation() {
@@ -77,6 +92,19 @@ class TourMapViewController: UIViewController, MGLMapViewDelegate {
         if let location = initializeLocationToUser() {
             userStartLocation = location
         }
+    }
+    
+    private func setCenterCoordinateOnMapView() {
+        let lat: CLLocationDegrees = 40.706697302800182
+        let lng: CLLocationDegrees = -74.014699650804047
+        let downtownManhattan = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
+    }
+    
+    func mapViewDidFinishLoadingMap(mapView: MGLMapView) {
+        let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate, fromDistance: 200, pitch: 60, heading: 0)
+        mapView.setCamera(camera, withDuration: 2, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        mapView.resetNorth()
     }
 }
 

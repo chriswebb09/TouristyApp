@@ -15,9 +15,10 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // view.backgroundColor = .white
-        self.setupTabs()
-        
+        view.backgroundColor = .white
+        DispatchQueue.main.async {
+            self.setupTabs()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -26,15 +27,20 @@ class TabBarController: UITabBarController {
     }
     
     private func setTabTitles(controllers: [UINavigationController]) {
-        viewControllers = controllers
-        tabBar.items?[0].title = "Home"
-        tabBar.items?[1].title = "Map"
-        selectedIndex = 0
+        DispatchQueue.main.async {
+            self.viewControllers = controllers
+            self.tabBar.items?[0].title = "Home"
+            self.tabBar.items?[1].title = "Map"
+            self.selectedIndex = 0
+        }
     }
     
     func setupTabs() {
         super.viewDidLoad()
-        setupControllers()
+        DispatchQueue.main.async {
+           // print(tabBa)
+            self.setupControllers()
+        }
     }
 //
     fileprivate func setupControllers() {
@@ -42,6 +48,7 @@ class TabBarController: UITabBarController {
         let homeTab = self.setupHomeTab(homeVC: HomeViewController())
         let controllers = [mapTab, homeTab]
         setTabTitles(controllers: controllers)
+        tabBar.reloadInputViews()
     }
     
 //    private func setTabTitles(controllers: [UINavigationController]) {
