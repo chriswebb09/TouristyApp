@@ -10,45 +10,46 @@
 		17FDBA67C046219896B687A1 /* Pods_Touristy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */; };
 		7CEC08CF3A75032CE7505417 /* Pods_TouristyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141921D74F37B4D043D42C39 /* Pods_TouristyUITests.framework */; };
 		8E6ABE91B36933341F41DD9E /* Pods_TouristyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D11CFCDC95C5D19059A9F7 /* Pods_TouristyTests.framework */; };
-		A70766871E50A28A00F6F1DB /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70766861E50A28A00F6F1DB /* LocationServices.swift */; };
-		A70B7EF81E54DEB3003E587A /* UserLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EF71E54DEB3003E587A /* UserLocationData.swift */; };
-		A751E44C1E508F5200015B42 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E44B1E508F5200015B42 /* Camera.swift */; };
-		A751E44E1E508F7200015B42 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E44D1E508F7200015B42 /* CameraViewController.swift */; };
-		A751E48F1E50931300015B42 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E48E1E50931300015B42 /* CALayer+Extension.swift */; };
-		A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F4F1E503E9D003252FA /* AppDelegate.swift */; };
-		A7563F571E503E9D003252FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7563F561E503E9D003252FA /* Assets.xcassets */; };
-		A7563F5A1E503E9D003252FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7563F581E503E9D003252FA /* LaunchScreen.storyboard */; };
+		A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EF91E54F038003E587A /* AppDelegate.swift */; };
+		A70B7F201E54F038003E587A /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFA1E54F038003E587A /* AppScreenView.swift */; };
+		A70B7F211E54F038003E587A /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */; };
+		A70B7F221E54F038003E587A /* AppScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFC1E54F038003E587A /* AppScreenViewModel.swift */; };
+		A70B7F231E54F038003E587A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70B7EFD1E54F038003E587A /* Assets.xcassets */; };
+		A70B7F241E54F038003E587A /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A70B7EFE1E54F038003E587A /* Base.lproj */; };
+		A70B7F251E54F038003E587A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFF1E54F038003E587A /* Buttons.swift */; };
+		A70B7F261E54F038003E587A /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F001E54F038003E587A /* CALayer+Extension.swift */; };
+		A70B7F271E54F038003E587A /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F011E54F038003E587A /* Camera.swift */; };
+		A70B7F281E54F038003E587A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F021E54F038003E587A /* CameraViewController.swift */; };
+		A70B7F291E54F038003E587A /* ConcurrentOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F031E54F038003E587A /* ConcurrentOperations.swift */; };
+		A70B7F2A1E54F038003E587A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F041E54F038003E587A /* Constants.swift */; };
+		A70B7F2B1E54F038003E587A /* DataDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F051E54F038003E587A /* DataDefaults.swift */; };
+		A70B7F2C1E54F038003E587A /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F061E54F038003E587A /* FirebaseAPIClient.swift */; };
+		A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F071E54F038003E587A /* HomeView.swift */; };
+		A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F081E54F038003E587A /* HomeViewController.swift */; };
+		A70B7F2F1E54F038003E587A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A70B7F091E54F038003E587A /* Info.plist */; };
+		A70B7F301E54F038003E587A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0A1E54F038003E587A /* Location.swift */; };
+		A70B7F311E54F038003E587A /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0B1E54F038003E587A /* LocationServices.swift */; };
+		A70B7F321E54F038003E587A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0C1E54F038003E587A /* MenuView.swift */; };
+		A70B7F331E54F038003E587A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0D1E54F038003E587A /* Query.swift */; };
+		A70B7F341E54F038003E587A /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0E1E54F038003E587A /* QueryView.swift */; };
+		A70B7F351E54F038003E587A /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0F1E54F038003E587A /* QueryViewController.swift */; };
+		A70B7F361E54F038003E587A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F101E54F038003E587A /* Secrets.swift */; };
+		A70B7F371E54F038003E587A /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F111E54F038003E587A /* SettingsCell.swift */; };
+		A70B7F381E54F038003E587A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F121E54F038003E587A /* SettingsViewController.swift */; };
+		A70B7F391E54F038003E587A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F131E54F038003E587A /* SplashView.swift */; };
+		A70B7F3A1E54F038003E587A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F141E54F038003E587A /* SplashViewController.swift */; };
+		A70B7F3B1E54F038003E587A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F151E54F038003E587A /* SplashViewModel.swift */; };
+		A70B7F3C1E54F038003E587A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F161E54F038003E587A /* TabBarController.swift */; };
+		A70B7F3D1E54F038003E587A /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F171E54F038003E587A /* TourDataStore.swift */; };
+		A70B7F3E1E54F038003E587A /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F181E54F038003E587A /* Tourist.swift */; };
+		A70B7F3F1E54F038003E587A /* TourMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F191E54F038003E587A /* TourMapViewController.swift */; };
+		A70B7F401E54F038003E587A /* TourSpotAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */; };
+		A70B7F411E54F038003E587A /* TourStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1B1E54F038003E587A /* TourStop.swift */; };
+		A70B7F421E54F038003E587A /* TriviaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */; };
+		A70B7F431E54F038003E587A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */; };
+		A70B7F441E54F038003E587A /* UserLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1E1E54F038003E587A /* UserLocationData.swift */; };
 		A7563F651E503E9D003252FA /* TouristyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F641E503E9D003252FA /* TouristyTests.swift */; };
 		A7563F701E503E9D003252FA /* TouristyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F6F1E503E9D003252FA /* TouristyUITests.swift */; };
-		A7563F7E1E5040D5003252FA /* TourMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F7D1E5040D5003252FA /* TourMapViewController.swift */; };
-		A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0031E50767A00432288 /* UIColor+Extension.swift */; };
-		A757E0061E5076D900432288 /* ConcurrentOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0051E5076D900432288 /* ConcurrentOperations.swift */; };
-		A757E0081E50787900432288 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0071E50787900432288 /* TabBarController.swift */; };
-		A79391FE1E547CAB001E6836 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79391FD1E547CAB001E6836 /* SettingsCell.swift */; };
-		A79392001E547CB7001E6836 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79391FF1E547CB7001E6836 /* SettingsViewController.swift */; };
-		A7CEC42C1E50BB7E00AB4559 /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */; };
-		A7CEC42E1E50BB8D00AB4559 /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */; };
-		A7CEC4301E50BC0300AB4559 /* AppScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */; };
-		A7CEC4321E50D97D00AB4559 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4311E50D97D00AB4559 /* QueryView.swift */; };
-		A7CEC4351E50D99500AB4559 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4341E50D99500AB4559 /* QueryViewController.swift */; };
-		A7CEC4371E50EB7000AB4559 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC4361E50EB7000AB4559 /* Query.swift */; };
-		A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22D1E505F0D0061C155 /* Location.swift */; };
-		A7FDF2301E505F190061C155 /* TourStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF22F1E505F190061C155 /* TourStop.swift */; };
-		A7FDF2321E505F800061C155 /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2311E505F800061C155 /* Tourist.swift */; };
-		A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2331E5060690061C155 /* TourDataStore.swift */; };
-		A7FDF2361E5066860061C155 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2351E5066860061C155 /* Constants.swift */; };
-		A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2371E50677F0061C155 /* Secrets.swift */; };
-		A7FDF23A1E506A730061C155 /* TourSpotAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */; };
-		A7FDF23C1E506C620061C155 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF23B1E506C620061C155 /* SplashView.swift */; };
-		A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */; };
-		A7FDF2401E506C7A0061C155 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF23F1E506C7A0061C155 /* HomeView.swift */; };
-		A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2411E506C850061C155 /* HomeViewController.swift */; };
-		A7FDF2441E506D0E0061C155 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2431E506D0E0061C155 /* MenuView.swift */; };
-		A7FDF2461E506D470061C155 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2451E506D470061C155 /* SplashViewModel.swift */; };
-		A7FDF2481E5071DD0061C155 /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */; };
-		A7FDF24A1E5071EF0061C155 /* DataDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF2491E5071EF0061C155 /* DataDefaults.swift */; };
-		A7FDF24C1E5071FE0061C155 /* TriviaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */; };
-		A7FDF24E1E50729E0061C155 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDF24D1E50729E0061C155 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,51 +90,51 @@
 		33192084FC4A1513003DEBC7 /* Pods-TouristyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyUITests/Pods-TouristyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A4AB0C357325C50140BA1C2 /* Pods-TouristyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Touristy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A70766861E50A28A00F6F1DB /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
-		A70B7EF71E54DEB3003E587A /* UserLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationData.swift; sourceTree = "<group>"; };
-		A751E44B1E508F5200015B42 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		A751E44D1E508F7200015B42 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		A751E48E1E50931300015B42 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		A70B7EF91E54F038003E587A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A70B7EFA1E54F038003E587A /* AppScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
+		A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
+		A70B7EFC1E54F038003E587A /* AppScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewModel.swift; sourceTree = "<group>"; };
+		A70B7EFD1E54F038003E587A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A70B7EFE1E54F038003E587A /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		A70B7EFF1E54F038003E587A /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		A70B7F001E54F038003E587A /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		A70B7F011E54F038003E587A /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		A70B7F021E54F038003E587A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		A70B7F031E54F038003E587A /* ConcurrentOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperations.swift; sourceTree = "<group>"; };
+		A70B7F041E54F038003E587A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A70B7F051E54F038003E587A /* DataDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDefaults.swift; sourceTree = "<group>"; };
+		A70B7F061E54F038003E587A /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
+		A70B7F071E54F038003E587A /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A70B7F081E54F038003E587A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A70B7F091E54F038003E587A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70B7F0A1E54F038003E587A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A70B7F0B1E54F038003E587A /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
+		A70B7F0C1E54F038003E587A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A70B7F0D1E54F038003E587A /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		A70B7F0E1E54F038003E587A /* QueryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
+		A70B7F0F1E54F038003E587A /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
+		A70B7F101E54F038003E587A /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A70B7F111E54F038003E587A /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		A70B7F121E54F038003E587A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A70B7F131E54F038003E587A /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		A70B7F141E54F038003E587A /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A70B7F151E54F038003E587A /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		A70B7F161E54F038003E587A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A70B7F171E54F038003E587A /* TourDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDataStore.swift; sourceTree = "<group>"; };
+		A70B7F181E54F038003E587A /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
+		A70B7F191E54F038003E587A /* TourMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourMapViewController.swift; sourceTree = "<group>"; };
+		A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSpotAnnotationView.swift; sourceTree = "<group>"; };
+		A70B7F1B1E54F038003E587A /* TourStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourStop.swift; sourceTree = "<group>"; };
+		A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaAPIClient.swift; sourceTree = "<group>"; };
+		A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A70B7F1E1E54F038003E587A /* UserLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationData.swift; sourceTree = "<group>"; };
 		A7563F4C1E503E9D003252FA /* Touristy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touristy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7563F4F1E503E9D003252FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7563F561E503E9D003252FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A7563F591E503E9D003252FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A7563F5B1E503E9D003252FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7563F601E503E9D003252FA /* TouristyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F641E503E9D003252FA /* TouristyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristyTests.swift; sourceTree = "<group>"; };
 		A7563F661E503E9D003252FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7563F6B1E503E9D003252FA /* TouristyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F6F1E503E9D003252FA /* TouristyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristyUITests.swift; sourceTree = "<group>"; };
 		A7563F711E503E9D003252FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7563F7D1E5040D5003252FA /* TourMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourMapViewController.swift; sourceTree = "<group>"; };
-		A757E0031E50767A00432288 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		A757E0051E5076D900432288 /* ConcurrentOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperations.swift; sourceTree = "<group>"; };
-		A757E0071E50787900432288 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		A79391FD1E547CAB001E6836 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		A79391FF1E547CB7001E6836 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
-		A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
-		A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewModel.swift; sourceTree = "<group>"; };
-		A7CEC4311E50D97D00AB4559 /* QueryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
-		A7CEC4341E50D99500AB4559 /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
-		A7CEC4361E50EB7000AB4559 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
-		A7FDF22D1E505F0D0061C155 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		A7FDF22F1E505F190061C155 /* TourStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourStop.swift; sourceTree = "<group>"; };
-		A7FDF2311E505F800061C155 /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
-		A7FDF2331E5060690061C155 /* TourDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDataStore.swift; sourceTree = "<group>"; };
-		A7FDF2351E5066860061C155 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A7FDF2371E50677F0061C155 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSpotAnnotationView.swift; sourceTree = "<group>"; };
-		A7FDF23B1E506C620061C155 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		A7FDF23F1E506C7A0061C155 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		A7FDF2411E506C850061C155 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A7FDF2431E506D0E0061C155 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		A7FDF2451E506D470061C155 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
-		A7FDF2491E5071EF0061C155 /* DataDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDefaults.swift; sourceTree = "<group>"; };
-		A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaAPIClient.swift; sourceTree = "<group>"; };
-		A7FDF24D1E50729E0061C155 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		FAF5817D633A407A91290535 /* Pods-Touristy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Touristy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Touristy/Pods-Touristy.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF540511C46731EC82F7BC3 /* Pods-TouristyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,55 +180,246 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A7150A5B1E53EB9700686FD9 /* Query */ = {
+		A70B7F451E54F044003E587A /* AppScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A7CEC4311E50D97D00AB4559 /* QueryView.swift */,
-				A7CEC4341E50D99500AB4559 /* QueryViewController.swift */,
+				A70B7F581E54F1CC003E587A /* View */,
+				A70B7F571E54F1C4003E587A /* Controller */,
 			);
-			name = Query;
-			path = Query;
+			name = AppScreen;
 			sourceTree = "<group>";
 		};
-		A751E4491E508EA900015B42 /* Maps */ = {
+		A70B7F461E54F054003E587A /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A7563F7D1E5040D5003252FA /* TourMapViewController.swift */,
-				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
+				A70B7F071E54F038003E587A /* HomeView.swift */,
+				A70B7F081E54F038003E587A /* HomeViewController.swift */,
 			);
-			name = Maps;
-			path = Maps;
+			name = HomeScreen;
 			sourceTree = "<group>";
 		};
-		A751E44A1E508EDF00015B42 /* Extras */ = {
+		A70B7F471E54F05D003E587A /* QueryScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A7563F4F1E503E9D003252FA /* AppDelegate.swift */,
-				A7563F561E503E9D003252FA /* Assets.xcassets */,
-				A7563F5B1E503E9D003252FA /* Info.plist */,
-				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
+				A70B7F0E1E54F038003E587A /* QueryView.swift */,
+				A70B7F0F1E54F038003E587A /* QueryViewController.swift */,
 			);
-			name = Extras;
-			path = Extras;
+			name = QueryScreen;
 			sourceTree = "<group>";
 		};
-		A751E44F1E508F7800015B42 /* Camera */ = {
+		A70B7F481E54F078003E587A /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A751E44B1E508F5200015B42 /* Camera.swift */,
-				A751E44D1E508F7200015B42 /* CameraViewController.swift */,
+				A70B7F561E54F1B5003E587A /* View */,
+				A70B7F551E54F1AD003E587A /* Controller */,
+			);
+			name = SplashScreen;
+			sourceTree = "<group>";
+		};
+		A70B7F491E54F083003E587A /* TourScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F191E54F038003E587A /* TourMapViewController.swift */,
+				A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */,
+			);
+			name = TourScreen;
+			sourceTree = "<group>";
+		};
+		A70B7F4A1E54F096003E587A /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F111E54F038003E587A /* SettingsCell.swift */,
+				A70B7F121E54F038003E587A /* SettingsViewController.swift */,
+			);
+			name = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		A70B7F4B1E54F0BA003E587A /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F011E54F038003E587A /* Camera.swift */,
+				A70B7F021E54F038003E587A /* CameraViewController.swift */,
 			);
 			name = Camera;
-			path = Camera;
+			sourceTree = "<group>";
+		};
+		A70B7F4C1E54F11B003E587A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F5A1E54F1EF003E587A /* DataModels */,
+				A70B7F591E54F1E3003E587A /* LocationModels */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A70B7F4D1E54F125003E587A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F051E54F038003E587A /* DataDefaults.swift */,
+				A70B7F4F1E54F154003E587A /* Network */,
+				A70B7F501E54F15D003E587A /* Location */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		A70B7F4E1E54F130003E587A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F511E54F178003E587A /* Variables */,
+				A70B7F521E54F188003E587A /* Views */,
+				A70B7F531E54F192003E587A /* Extensions */,
+				A70B7F541E54F199003E587A /* UI */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		A70B7F4F1E54F154003E587A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */,
+				A70B7F061E54F038003E587A /* FirebaseAPIClient.swift */,
+				A70B7F031E54F038003E587A /* ConcurrentOperations.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		A70B7F501E54F15D003E587A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F171E54F038003E587A /* TourDataStore.swift */,
+				A70B7F1E1E54F038003E587A /* UserLocationData.swift */,
+				A70B7F0B1E54F038003E587A /* LocationServices.swift */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		A70B7F511E54F178003E587A /* Variables */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F101E54F038003E587A /* Secrets.swift */,
+				A70B7F041E54F038003E587A /* Constants.swift */,
+			);
+			name = Variables;
+			sourceTree = "<group>";
+		};
+		A70B7F521E54F188003E587A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F161E54F038003E587A /* TabBarController.swift */,
+				A70B7F0C1E54F038003E587A /* MenuView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A70B7F531E54F192003E587A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */,
+				A70B7F001E54F038003E587A /* CALayer+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A70B7F541E54F199003E587A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7EFF1E54F038003E587A /* Buttons.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A70B7F551E54F1AD003E587A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F141E54F038003E587A /* SplashViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A70B7F561E54F1B5003E587A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F131E54F038003E587A /* SplashView.swift */,
+				A70B7F151E54F038003E587A /* SplashViewModel.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A70B7F571E54F1C4003E587A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A70B7F581E54F1CC003E587A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7EFA1E54F038003E587A /* AppScreenView.swift */,
+				A70B7EFC1E54F038003E587A /* AppScreenViewModel.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A70B7F591E54F1E3003E587A /* LocationModels */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F1B1E54F038003E587A /* TourStop.swift */,
+				A70B7F0A1E54F038003E587A /* Location.swift */,
+			);
+			name = LocationModels;
+			sourceTree = "<group>";
+		};
+		A70B7F5A1E54F1EF003E587A /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F0D1E54F038003E587A /* Query.swift */,
+				A70B7F181E54F038003E587A /* Tourist.swift */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		A70B7F5B1E54F213003E587A /* AppIncludes */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7EFD1E54F038003E587A /* Assets.xcassets */,
+				A70B7EFE1E54F038003E587A /* Base.lproj */,
+				A70B7F091E54F038003E587A /* Info.plist */,
+				A70B7EF91E54F038003E587A /* AppDelegate.swift */,
+			);
+			name = AppIncludes;
+			sourceTree = "<group>";
+		};
+		A70B7F5C1E54F223003E587A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F4D1E54F125003E587A /* Data */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		A70B7F5D1E54F238003E587A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A70B7F451E54F044003E587A /* AppScreen */,
+				A70B7F4B1E54F0BA003E587A /* Camera */,
+				A70B7F461E54F054003E587A /* HomeScreen */,
+				A70B7F471E54F05D003E587A /* QueryScreen */,
+				A70B7F4A1E54F096003E587A /* SettingsScreen */,
+				A70B7F481E54F078003E587A /* SplashScreen */,
+				A70B7F491E54F083003E587A /* TourScreen */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		A7563F431E503E9D003252FA = {
 			isa = PBXGroup;
 			children = (
+				A7563F4E1E503E9D003252FA /* Touristy */,
 				BFB47BF43CE089D2D6A2E07D /* Frameworks */,
 				708C9C4CFE96240C939FD169 /* Pods */,
 				A7563F4D1E503E9D003252FA /* Products */,
-				A7563F4E1E503E9D003252FA /* Touristy */,
 				A7563F631E503E9D003252FA /* TouristyTests */,
 				A7563F6E1E503E9D003252FA /* TouristyUITests */,
 			);
@@ -246,16 +438,11 @@
 		A7563F4E1E503E9D003252FA /* Touristy */ = {
 			isa = PBXGroup;
 			children = (
-				A7CEC4331E50D98500AB4559 /* AppScreen */,
-				A751E44F1E508F7800015B42 /* Camera */,
-				A757E00C1E5083CC00432288 /* DataServices */,
-				A751E44A1E508EDF00015B42 /* Extras */,
-				A757E00A1E5083B300432288 /* Home */,
-				A751E4491E508EA900015B42 /* Maps */,
-				A757E00D1E5083DD00432288 /* Models */,
-				A7150A5B1E53EB9700686FD9 /* Query */,
-				A757E00B1E5083BF00432288 /* Shared */,
-				A757E0091E5083AB00432288 /* Splash */,
+				A70B7F5B1E54F213003E587A /* AppIncludes */,
+				A70B7F4C1E54F11B003E587A /* Models */,
+				A70B7F5C1E54F223003E587A /* Application */,
+				A70B7F5D1E54F238003E587A /* UI */,
+				A70B7F4E1E54F130003E587A /* Shared */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -276,82 +463,6 @@
 				A7563F6F1E503E9D003252FA /* TouristyUITests.swift */,
 			);
 			path = TouristyUITests;
-			sourceTree = "<group>";
-		};
-		A757E0091E5083AB00432288 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				A7FDF23B1E506C620061C155 /* SplashView.swift */,
-				A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */,
-				A7FDF2451E506D470061C155 /* SplashViewModel.swift */,
-			);
-			name = Splash;
-			path = Splash;
-			sourceTree = "<group>";
-		};
-		A757E00A1E5083B300432288 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				A7FDF23F1E506C7A0061C155 /* HomeView.swift */,
-				A7FDF2411E506C850061C155 /* HomeViewController.swift */,
-				A79391FD1E547CAB001E6836 /* SettingsCell.swift */,
-				A79391FF1E547CB7001E6836 /* SettingsViewController.swift */,
-			);
-			name = Home;
-			path = Home;
-			sourceTree = "<group>";
-		};
-		A757E00B1E5083BF00432288 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				A7FDF24D1E50729E0061C155 /* Buttons.swift */,
-				A751E48E1E50931300015B42 /* CALayer+Extension.swift */,
-				A7FDF2351E5066860061C155 /* Constants.swift */,
-				A7FDF2431E506D0E0061C155 /* MenuView.swift */,
-				A7FDF2371E50677F0061C155 /* Secrets.swift */,
-				A757E0071E50787900432288 /* TabBarController.swift */,
-				A757E0031E50767A00432288 /* UIColor+Extension.swift */,
-			);
-			name = Shared;
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		A757E00C1E5083CC00432288 /* DataServices */ = {
-			isa = PBXGroup;
-			children = (
-				A757E0051E5076D900432288 /* ConcurrentOperations.swift */,
-				A7FDF2491E5071EF0061C155 /* DataDefaults.swift */,
-				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
-				A70766861E50A28A00F6F1DB /* LocationServices.swift */,
-				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
-				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
-			);
-			name = DataServices;
-			path = DataServices;
-			sourceTree = "<group>";
-		};
-		A757E00D1E5083DD00432288 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A7FDF22D1E505F0D0061C155 /* Location.swift */,
-				A7CEC4361E50EB7000AB4559 /* Query.swift */,
-				A7FDF22F1E505F190061C155 /* TourStop.swift */,
-				A7FDF2311E505F800061C155 /* Tourist.swift */,
-				A70B7EF71E54DEB3003E587A /* UserLocationData.swift */,
-			);
-			name = Models;
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A7CEC4331E50D98500AB4559 /* AppScreen */ = {
-			isa = PBXGroup;
-			children = (
-				A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */,
-				A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */,
-				A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */,
-			);
-			name = AppScreen;
-			path = AppScreen;
 			sourceTree = "<group>";
 		};
 		BFB47BF43CE089D2D6A2E07D /* Frameworks */ = {
@@ -487,8 +598,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7563F5A1E503E9D003252FA /* LaunchScreen.storyboard in Resources */,
-				A7563F571E503E9D003252FA /* Assets.xcassets in Resources */,
+				A70B7F241E54F038003E587A /* Base.lproj in Resources */,
+				A70B7F231E54F038003E587A /* Assets.xcassets in Resources */,
+				A70B7F2F1E54F038003E587A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,41 +763,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7CEC4301E50BC0300AB4559 /* AppScreenViewModel.swift in Sources */,
-				A7CEC4351E50D99500AB4559 /* QueryViewController.swift in Sources */,
-				A7CEC4321E50D97D00AB4559 /* QueryView.swift in Sources */,
-				A7FDF2461E506D470061C155 /* SplashViewModel.swift in Sources */,
-				A7563F7E1E5040D5003252FA /* TourMapViewController.swift in Sources */,
-				A7FDF2381E50677F0061C155 /* Secrets.swift in Sources */,
-				A7FDF2301E505F190061C155 /* TourStop.swift in Sources */,
-				A7FDF2321E505F800061C155 /* Tourist.swift in Sources */,
-				A751E44E1E508F7200015B42 /* CameraViewController.swift in Sources */,
-				A7FDF22E1E505F0D0061C155 /* Location.swift in Sources */,
-				A7FDF2361E5066860061C155 /* Constants.swift in Sources */,
-				A751E48F1E50931300015B42 /* CALayer+Extension.swift in Sources */,
-				A7FDF23A1E506A730061C155 /* TourSpotAnnotationView.swift in Sources */,
-				A7FDF2441E506D0E0061C155 /* MenuView.swift in Sources */,
-				A7FDF23C1E506C620061C155 /* SplashView.swift in Sources */,
-				A7FDF24C1E5071FE0061C155 /* TriviaAPIClient.swift in Sources */,
-				A7CEC42C1E50BB7E00AB4559 /* AppScreenView.swift in Sources */,
-				A7563F501E503E9D003252FA /* AppDelegate.swift in Sources */,
-				A7FDF2401E506C7A0061C155 /* HomeView.swift in Sources */,
-				A7CEC42E1E50BB8D00AB4559 /* AppScreenViewController.swift in Sources */,
-				A757E0081E50787900432288 /* TabBarController.swift in Sources */,
-				A757E0061E5076D900432288 /* ConcurrentOperations.swift in Sources */,
-				A7FDF2481E5071DD0061C155 /* FirebaseAPIClient.swift in Sources */,
-				A7FDF2341E5060690061C155 /* TourDataStore.swift in Sources */,
-				A7FDF24A1E5071EF0061C155 /* DataDefaults.swift in Sources */,
-				A70766871E50A28A00F6F1DB /* LocationServices.swift in Sources */,
-				A751E44C1E508F5200015B42 /* Camera.swift in Sources */,
-				A7FDF24E1E50729E0061C155 /* Buttons.swift in Sources */,
-				A7CEC4371E50EB7000AB4559 /* Query.swift in Sources */,
-				A79392001E547CB7001E6836 /* SettingsViewController.swift in Sources */,
-				A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */,
-				A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */,
-				A70B7EF81E54DEB3003E587A /* UserLocationData.swift in Sources */,
-				A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */,
-				A79391FE1E547CAB001E6836 /* SettingsCell.swift in Sources */,
+				A70B7F2C1E54F038003E587A /* FirebaseAPIClient.swift in Sources */,
+				A70B7F251E54F038003E587A /* Buttons.swift in Sources */,
+				A70B7F3E1E54F038003E587A /* Tourist.swift in Sources */,
+				A70B7F341E54F038003E587A /* QueryView.swift in Sources */,
+				A70B7F3C1E54F038003E587A /* TabBarController.swift in Sources */,
+				A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */,
+				A70B7F221E54F038003E587A /* AppScreenViewModel.swift in Sources */,
+				A70B7F201E54F038003E587A /* AppScreenView.swift in Sources */,
+				A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */,
+				A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */,
+				A70B7F321E54F038003E587A /* MenuView.swift in Sources */,
+				A70B7F3A1E54F038003E587A /* SplashViewController.swift in Sources */,
+				A70B7F351E54F038003E587A /* QueryViewController.swift in Sources */,
+				A70B7F371E54F038003E587A /* SettingsCell.swift in Sources */,
+				A70B7F301E54F038003E587A /* Location.swift in Sources */,
+				A70B7F211E54F038003E587A /* AppScreenViewController.swift in Sources */,
+				A70B7F331E54F038003E587A /* Query.swift in Sources */,
+				A70B7F2A1E54F038003E587A /* Constants.swift in Sources */,
+				A70B7F381E54F038003E587A /* SettingsViewController.swift in Sources */,
+				A70B7F281E54F038003E587A /* CameraViewController.swift in Sources */,
+				A70B7F391E54F038003E587A /* SplashView.swift in Sources */,
+				A70B7F431E54F038003E587A /* UIColor+Extension.swift in Sources */,
+				A70B7F3F1E54F038003E587A /* TourMapViewController.swift in Sources */,
+				A70B7F2B1E54F038003E587A /* DataDefaults.swift in Sources */,
+				A70B7F361E54F038003E587A /* Secrets.swift in Sources */,
+				A70B7F3B1E54F038003E587A /* SplashViewModel.swift in Sources */,
+				A70B7F411E54F038003E587A /* TourStop.swift in Sources */,
+				A70B7F271E54F038003E587A /* Camera.swift in Sources */,
+				A70B7F291E54F038003E587A /* ConcurrentOperations.swift in Sources */,
+				A70B7F421E54F038003E587A /* TriviaAPIClient.swift in Sources */,
+				A70B7F311E54F038003E587A /* LocationServices.swift in Sources */,
+				A70B7F401E54F038003E587A /* TourSpotAnnotationView.swift in Sources */,
+				A70B7F441E54F038003E587A /* UserLocationData.swift in Sources */,
+				A70B7F261E54F038003E587A /* CALayer+Extension.swift in Sources */,
+				A70B7F3D1E54F038003E587A /* TourDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,18 +831,6 @@
 			targetProxy = A7563F6C1E503E9D003252FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A7563F581E503E9D003252FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7563F591E503E9D003252FA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A7563F721E503E9D003252FA /* Debug */ = {
@@ -830,6 +930,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4SZP4Q326F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -856,6 +957,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.froleeyo.Touristy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -866,6 +968,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4SZP4Q326F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
