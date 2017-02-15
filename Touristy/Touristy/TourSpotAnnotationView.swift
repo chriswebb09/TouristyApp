@@ -2,6 +2,7 @@ import UIKit
 import Mapbox
 
 class TourSpotAnnotationView: MGLAnnotationView {
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }

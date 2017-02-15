@@ -6,6 +6,7 @@ class QueryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        edgesForExtendedLayout = []
         view.addSubview(queryView)
         queryView.layoutSubviews()
     }

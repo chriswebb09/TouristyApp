@@ -19,7 +19,6 @@ public final class SplashViewController: UIViewController {
             self.splashView.zoomAnimation() {
                 print("Animating")
             }
-                //self.view.backgroundColor = UIColor(red:0.30, green:0.40, blue:0.50, alpha:1.0)
         }
     }
     

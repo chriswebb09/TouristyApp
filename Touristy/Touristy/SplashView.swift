@@ -28,6 +28,7 @@ final class SplashView: UIView {
         splashImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
         splashImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         splashImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        print(splashImageView.bounds)
     }
 
    
@@ -36,7 +37,6 @@ final class SplashView: UIView {
         UIView.animate(withDuration: duration, animations:{ [weak self] in
             if let zoom = self?.zoomOut() {
                 self?.splashImageView.transform = zoom
-                
                 self?.layoutIfNeeded()
             }
             self?.alpha = 0

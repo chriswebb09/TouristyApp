@@ -15,13 +15,11 @@ final class TourMapViewController: UIViewController, MGLMapViewDelegate {
         super.viewDidLoad()
         setupMapView()
         if let location = initializeLocationToUser()  { self.startCoordinates = location }
-        
         view.backgroundColor = .white
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
         addAnnotation()
     }
 }
@@ -42,6 +40,7 @@ extension TourMapViewController {
         
         mapView.delegate = self
         mapView.userTrackingMode = .follow
+        
         view.addSubview(mapView)
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
