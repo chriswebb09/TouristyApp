@@ -186,6 +186,7 @@
 				A7CEC4341E50D99500AB4559 /* QueryViewController.swift */,
 			);
 			name = Query;
+			path = Query;
 			sourceTree = "<group>";
 		};
 		A751E4491E508EA900015B42 /* Maps */ = {
@@ -195,6 +196,7 @@
 				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
 			);
 			name = Maps;
+			path = Maps;
 			sourceTree = "<group>";
 		};
 		A751E44A1E508EDF00015B42 /* Extras */ = {
@@ -202,10 +204,11 @@
 			children = (
 				A7563F4F1E503E9D003252FA /* AppDelegate.swift */,
 				A7563F561E503E9D003252FA /* Assets.xcassets */,
-				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
 				A7563F5B1E503E9D003252FA /* Info.plist */,
+				A7563F581E503E9D003252FA /* LaunchScreen.storyboard */,
 			);
 			name = Extras;
+			path = Extras;
 			sourceTree = "<group>";
 		};
 		A751E44F1E508F7800015B42 /* Camera */ = {
@@ -215,17 +218,18 @@
 				A751E44D1E508F7200015B42 /* CameraViewController.swift */,
 			);
 			name = Camera;
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		A7563F431E503E9D003252FA = {
 			isa = PBXGroup;
 			children = (
+				BFB47BF43CE089D2D6A2E07D /* Frameworks */,
+				708C9C4CFE96240C939FD169 /* Pods */,
+				A7563F4D1E503E9D003252FA /* Products */,
 				A7563F4E1E503E9D003252FA /* Touristy */,
 				A7563F631E503E9D003252FA /* TouristyTests */,
 				A7563F6E1E503E9D003252FA /* TouristyUITests */,
-				A7563F4D1E503E9D003252FA /* Products */,
-				708C9C4CFE96240C939FD169 /* Pods */,
-				BFB47BF43CE089D2D6A2E07D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,16 +246,16 @@
 		A7563F4E1E503E9D003252FA /* Touristy */ = {
 			isa = PBXGroup;
 			children = (
-				A757E00C1E5083CC00432288 /* DataServices */,
-				A757E00D1E5083DD00432288 /* Models */,
-				A751E4491E508EA900015B42 /* Maps */,
-				A757E00A1E5083B300432288 /* Home */,
-				A757E0091E5083AB00432288 /* Splash */,
-				A757E00B1E5083BF00432288 /* Shared */,
-				A751E44A1E508EDF00015B42 /* Extras */,
-				A751E44F1E508F7800015B42 /* Camera */,
 				A7CEC4331E50D98500AB4559 /* AppScreen */,
+				A751E44F1E508F7800015B42 /* Camera */,
+				A757E00C1E5083CC00432288 /* DataServices */,
+				A751E44A1E508EDF00015B42 /* Extras */,
+				A757E00A1E5083B300432288 /* Home */,
+				A751E4491E508EA900015B42 /* Maps */,
+				A757E00D1E5083DD00432288 /* Models */,
 				A7150A5B1E53EB9700686FD9 /* Query */,
+				A757E00B1E5083BF00432288 /* Shared */,
+				A757E0091E5083AB00432288 /* Splash */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -259,8 +263,8 @@
 		A7563F631E503E9D003252FA /* TouristyTests */ = {
 			isa = PBXGroup;
 			children = (
-				A7563F641E503E9D003252FA /* TouristyTests.swift */,
 				A7563F661E503E9D003252FA /* Info.plist */,
+				A7563F641E503E9D003252FA /* TouristyTests.swift */,
 			);
 			path = TouristyTests;
 			sourceTree = "<group>";
@@ -268,8 +272,8 @@
 		A7563F6E1E503E9D003252FA /* TouristyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A7563F6F1E503E9D003252FA /* TouristyUITests.swift */,
 				A7563F711E503E9D003252FA /* Info.plist */,
+				A7563F6F1E503E9D003252FA /* TouristyUITests.swift */,
 			);
 			path = TouristyUITests;
 			sourceTree = "<group>";
@@ -278,10 +282,11 @@
 			isa = PBXGroup;
 			children = (
 				A7FDF23B1E506C620061C155 /* SplashView.swift */,
-				A7FDF2451E506D470061C155 /* SplashViewModel.swift */,
 				A7FDF23D1E506C6F0061C155 /* SplashViewController.swift */,
+				A7FDF2451E506D470061C155 /* SplashViewModel.swift */,
 			);
 			name = Splash;
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		A757E00A1E5083B300432288 /* Home */ = {
@@ -293,55 +298,60 @@
 				A79391FF1E547CB7001E6836 /* SettingsViewController.swift */,
 			);
 			name = Home;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		A757E00B1E5083BF00432288 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				A7FDF24D1E50729E0061C155 /* Buttons.swift */,
+				A751E48E1E50931300015B42 /* CALayer+Extension.swift */,
+				A7FDF2351E5066860061C155 /* Constants.swift */,
 				A7FDF2431E506D0E0061C155 /* MenuView.swift */,
 				A7FDF2371E50677F0061C155 /* Secrets.swift */,
 				A757E0071E50787900432288 /* TabBarController.swift */,
-				A7FDF2351E5066860061C155 /* Constants.swift */,
 				A757E0031E50767A00432288 /* UIColor+Extension.swift */,
-				A751E48E1E50931300015B42 /* CALayer+Extension.swift */,
 			);
 			name = Shared;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		A757E00C1E5083CC00432288 /* DataServices */ = {
 			isa = PBXGroup;
 			children = (
-				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
 				A757E0051E5076D900432288 /* ConcurrentOperations.swift */,
-				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
 				A7FDF2491E5071EF0061C155 /* DataDefaults.swift */,
-				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
+				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
 				A70766861E50A28A00F6F1DB /* LocationServices.swift */,
+				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
+				A7FDF24B1E5071FE0061C155 /* TriviaAPIClient.swift */,
 			);
 			name = DataServices;
+			path = DataServices;
 			sourceTree = "<group>";
 		};
 		A757E00D1E5083DD00432288 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A7CEC4361E50EB7000AB4559 /* Query.swift */,
-				A7FDF2311E505F800061C155 /* Tourist.swift */,
 				A7FDF22D1E505F0D0061C155 /* Location.swift */,
+				A7CEC4361E50EB7000AB4559 /* Query.swift */,
 				A7FDF22F1E505F190061C155 /* TourStop.swift */,
+				A7FDF2311E505F800061C155 /* Tourist.swift */,
 				A70B7EF71E54DEB3003E587A /* UserLocationData.swift */,
 			);
 			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A7CEC4331E50D98500AB4559 /* AppScreen */ = {
 			isa = PBXGroup;
 			children = (
 				A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */,
-				A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */,
 				A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */,
+				A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */,
 			);
 			name = AppScreen;
+			path = AppScreen;
 			sourceTree = "<group>";
 		};
 		BFB47BF43CE089D2D6A2E07D /* Frameworks */ = {
@@ -717,6 +727,7 @@
 				A7563F591E503E9D003252FA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -841,7 +852,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
 					"\"${PODS_ROOT}/Headers/Public/Mapbox-iOS-SDK\"",
 				);
-				INFOPLIST_FILE = Touristy/Info.plist;
+				INFOPLIST_FILE = Touristy/Extras/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.froleeyo.Touristy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -877,7 +888,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
 					"\"${PODS_ROOT}/Headers/Public/Mapbox-iOS-SDK\"",
 				);
-				INFOPLIST_FILE = Touristy/Info.plist;
+				INFOPLIST_FILE = Touristy/Extras/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.froleeyo.Touristy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
