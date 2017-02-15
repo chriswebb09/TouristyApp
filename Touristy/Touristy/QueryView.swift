@@ -33,7 +33,7 @@ class QueryView: UIView {
     }()
     
     var queryViews = [UIView]()
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         frame = UIScreen.main.bounds
@@ -48,10 +48,12 @@ class QueryView: UIView {
     }
     
     func setupConstraints() {
+        questionLabel.text = questions.queryOne.questionText
+        firstChoiceButton.setTitle("Hell yeah", for: .normal)
+        secondChoiceButton.setTitle("Shnope", for: .normal)
         queryViews.forEach { view in
             addSubviewsToView(subview: view)
         }
-        questionLabel.text = questions.queryOne.questionText
         questionLabel.snp.makeConstraints { make in
             make.centerX.equalTo(self)
             make.centerY.equalTo(self).offset(UIScreen.main.bounds.height * -0.2)
@@ -62,14 +64,12 @@ class QueryView: UIView {
             make.centerX.equalTo(self)
             make.centerY.equalTo(self)
         }
-        firstChoiceButton.setTitle("Hell yeah", for: .normal)
         secondChoiceButton.snp.makeConstraints { make in
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)
             make.height.equalTo(self).multipliedBy(Constants.Login.loginFieldHeight)
             make.centerX.equalTo(self)
             make.top.equalTo(firstChoiceButton.snp.bottom).offset(UIScreen.main.bounds.height * 0.05)
         }
-        secondChoiceButton.setTitle("Shnope", for: .normal)
     }
     
     
