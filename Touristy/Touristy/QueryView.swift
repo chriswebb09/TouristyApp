@@ -56,29 +56,19 @@ class QueryView: UIView {
             make.centerX.equalTo(self)
             make.centerY.equalTo(self).offset(UIScreen.main.bounds.height * -0.2)
         }
-        
         firstChoiceButton.snp.makeConstraints { make in
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)
             make.height.equalTo(self).multipliedBy(Constants.Login.loginFieldHeight)
             make.centerX.equalTo(self)
             make.centerY.equalTo(self)
         }
-        
         firstChoiceButton.setTitle("Hell yeah", for: .normal)
-        
         secondChoiceButton.snp.makeConstraints { make in
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)
             make.height.equalTo(self).multipliedBy(Constants.Login.loginFieldHeight)
             make.centerX.equalTo(self)
             make.top.equalTo(firstChoiceButton.snp.bottom).offset(UIScreen.main.bounds.height * 0.05)
-        
         }
-//        
-//        secondChoiceButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: Constants.Login.loginFieldWidth).isActive = true
-//        secondChoiceButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.Login.loginFieldHeight).isActive = true
-//        secondChoiceButton.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-//        secondChoiceButton.topAnchor.constraint(equalTo: firstChoiceButton.bottomAnchor, constant: UIScreen.main.bounds.height * 0.05).isActive = true
-//        //firstChoiceButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: UIScreen.main.bounds.height * 0.0).isActive = true
         secondChoiceButton.setTitle("Shnope", for: .normal)
     }
     
