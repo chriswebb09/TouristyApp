@@ -11,6 +11,7 @@
 		7CEC08CF3A75032CE7505417 /* Pods_TouristyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141921D74F37B4D043D42C39 /* Pods_TouristyUITests.framework */; };
 		8E6ABE91B36933341F41DD9E /* Pods_TouristyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D11CFCDC95C5D19059A9F7 /* Pods_TouristyTests.framework */; };
 		A70766871E50A28A00F6F1DB /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70766861E50A28A00F6F1DB /* LocationServices.swift */; };
+		A70B7EF81E54DEB3003E587A /* UserLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EF71E54DEB3003E587A /* UserLocationData.swift */; };
 		A751E44C1E508F5200015B42 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E44B1E508F5200015B42 /* Camera.swift */; };
 		A751E44E1E508F7200015B42 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E44D1E508F7200015B42 /* CameraViewController.swift */; };
 		A751E48F1E50931300015B42 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A751E48E1E50931300015B42 /* CALayer+Extension.swift */; };
@@ -89,6 +90,7 @@
 		7A4AB0C357325C50140BA1C2 /* Pods-TouristyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Touristy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70766861E50A28A00F6F1DB /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
+		A70B7EF71E54DEB3003E587A /* UserLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationData.swift; sourceTree = "<group>"; };
 		A751E44B1E508F5200015B42 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		A751E44D1E508F7200015B42 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A751E48E1E50931300015B42 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
@@ -324,9 +326,10 @@
 			isa = PBXGroup;
 			children = (
 				A7CEC4361E50EB7000AB4559 /* Query.swift */,
-				A7FDF22D1E505F0D0061C155 /* Location.swift */,
 				A7FDF2311E505F800061C155 /* Tourist.swift */,
+				A7FDF22D1E505F0D0061C155 /* Location.swift */,
 				A7FDF22F1E505F190061C155 /* TourStop.swift */,
+				A70B7EF71E54DEB3003E587A /* UserLocationData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				A79392001E547CB7001E6836 /* SettingsViewController.swift in Sources */,
 				A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */,
 				A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */,
+				A70B7EF81E54DEB3003E587A /* UserLocationData.swift in Sources */,
 				A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */,
 				A79391FE1E547CAB001E6836 /* SettingsCell.swift in Sources */,
 			);

@@ -14,10 +14,10 @@ class QueryViewController: UIViewController {
     }
     
     func loadTabbar() {
-       // let tabBar = TabBarController()
-        let settings = SettingsViewController()
+        let tabBar = TabBarController()
+        //let settings = SettingsViewController()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = settings
-       // appDelegate.window?.rootViewController = tabBar
+        //appDelegate.window?.rootViewController = settings
+        appDelegate.window?.rootViewController = tabBar
     }
 }

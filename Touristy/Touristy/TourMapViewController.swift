@@ -13,30 +13,20 @@ final class TourMapViewController: UIViewController {
     var startCoordinates = CLLocation()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         setupMapView()
-        
         if let location = initializeLocationToUser()  { self.startCoordinates = location }
-        
         view.backgroundColor = .white
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
         addAnnotation()
+        //setupAnnotation()
     }
 }
 
 extension TourMapViewController: MGLMapViewDelegate {
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = manager.location {
-            self.startCoordinates = location
-        }
-    }
     
     fileprivate func setupMapView() {
         let styleURL = NSURL(string: "mapbox://styles/chriswebb/ciz2oxgoh002s2sprtfmaeo5m")
@@ -67,6 +57,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         mapView.addAnnotation(annotation)
         mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
         mapView.selectAnnotation(annotation, animated: true)
+        setupAnnotation()
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
@@ -87,19 +78,25 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func setupAnnotation() {
-        var tourStop = MGLPointAnnotation()
-        
-        let centralPark = Location(streetAddress: "Central ParK",
-                                   distanceTo: "0",
-                                   locationName: "Central Park" ,
-                                   coordinates: CLLocationCoordinate2D(latitude: 40.782865,
-                                                                       longitude: -73.965355))
-        tourStop.coordinate = centralPark.coordinates
-        tourStop.title = centralPark.locationName
-        
-        mapView.addAnnotation(tourStop)
+        var stops = TourStop.stops
+        for stop in stops {
+            var tourStop = MGLPointAnnotation()
+            tourStop.coordinate = stop.location.coordinates
+            tourStop.title = stop.location.locationName
+            mapView.addAnnotation(tourStop)
+        }
         setLocation()
     }
+    
+//    func addAnnotation() {
+//        let annotation = MGLPointAnnotation()
+//        annotation.coordinate = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
+//        annotation.title = "New York City"
+//        
+//        mapView.addAnnotation(annotation)
+//        mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
+//        mapView.selectAnnotation(annotation, animated: true)
+//    }
     
     private func setLocation() {
         if let location = initializeLocationToUser() {
@@ -133,21 +130,15 @@ extension TourMapViewController: MGLMapViewDelegate {
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
-    
-    
-//    func mapViewDidFinishLoadingMap(mapView: MGLMapView) {
-//        // Wait for the map to load before initiating the first camera movement.
-//        
-//        // Create a camera that rotates around the same center point, rotating 180°.
-//        // `fromDistance:` is meters above mean sea level that an eye would have to be in order to see what the map view is showing.
-//        let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate, fromDistance: 200, pitch: 60, heading: 180)
-//        
-//        // Animate the camera movement over 5 seconds.
-//        mapView.setCamera(camera, withDuration: 5, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
-//    }
 }
 
 extension TourMapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = manager.location {
+            self.startCoordinates = location
+        }
+    }
     
     func initializeLocationToUser() -> CLLocation? {
         locationManager.delegate = self
