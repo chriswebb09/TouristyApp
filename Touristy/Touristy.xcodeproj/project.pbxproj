@@ -23,6 +23,8 @@
 		A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0031E50767A00432288 /* UIColor+Extension.swift */; };
 		A757E0061E5076D900432288 /* ConcurrentOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0051E5076D900432288 /* ConcurrentOperations.swift */; };
 		A757E0081E50787900432288 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E0071E50787900432288 /* TabBarController.swift */; };
+		A79391FE1E547CAB001E6836 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79391FD1E547CAB001E6836 /* SettingsCell.swift */; };
+		A79392001E547CB7001E6836 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79391FF1E547CB7001E6836 /* SettingsViewController.swift */; };
 		A7CEC42C1E50BB7E00AB4559 /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */; };
 		A7CEC42E1E50BB8D00AB4559 /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */; };
 		A7CEC4301E50BC0300AB4559 /* AppScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */; };
@@ -105,6 +107,8 @@
 		A757E0031E50767A00432288 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A757E0051E5076D900432288 /* ConcurrentOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperations.swift; sourceTree = "<group>"; };
 		A757E0071E50787900432288 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A79391FD1E547CAB001E6836 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		A79391FF1E547CB7001E6836 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A7CEC42B1E50BB7E00AB4559 /* AppScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
 		A7CEC42D1E50BB8D00AB4559 /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
 		A7CEC42F1E50BC0300AB4559 /* AppScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewModel.swift; sourceTree = "<group>"; };
@@ -173,10 +177,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A7150A5B1E53EB9700686FD9 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				A7CEC4311E50D97D00AB4559 /* QueryView.swift */,
+				A7CEC4341E50D99500AB4559 /* QueryViewController.swift */,
+			);
+			name = Query;
+			sourceTree = "<group>";
+		};
 		A751E4491E508EA900015B42 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
 				A7563F7D1E5040D5003252FA /* TourMapViewController.swift */,
 				A7FDF2391E506A730061C155 /* TourSpotAnnotationView.swift */,
 			);
@@ -237,9 +249,7 @@
 				A751E44A1E508EDF00015B42 /* Extras */,
 				A751E44F1E508F7800015B42 /* Camera */,
 				A7CEC4331E50D98500AB4559 /* AppScreen */,
-				A7CEC4311E50D97D00AB4559 /* QueryView.swift */,
-				A7CEC4341E50D99500AB4559 /* QueryViewController.swift */,
-				A7CEC4361E50EB7000AB4559 /* Query.swift */,
+				A7150A5B1E53EB9700686FD9 /* Query */,
 			);
 			path = Touristy;
 			sourceTree = "<group>";
@@ -277,6 +287,8 @@
 			children = (
 				A7FDF23F1E506C7A0061C155 /* HomeView.swift */,
 				A7FDF2411E506C850061C155 /* HomeViewController.swift */,
+				A79391FD1E547CAB001E6836 /* SettingsCell.swift */,
+				A79391FF1E547CB7001E6836 /* SettingsViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -302,6 +314,7 @@
 				A757E0051E5076D900432288 /* ConcurrentOperations.swift */,
 				A7FDF2471E5071DD0061C155 /* FirebaseAPIClient.swift */,
 				A7FDF2491E5071EF0061C155 /* DataDefaults.swift */,
+				A7FDF2331E5060690061C155 /* TourDataStore.swift */,
 				A70766861E50A28A00F6F1DB /* LocationServices.swift */,
 			);
 			name = DataServices;
@@ -310,6 +323,7 @@
 		A757E00D1E5083DD00432288 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A7CEC4361E50EB7000AB4559 /* Query.swift */,
 				A7FDF22D1E505F0D0061C155 /* Location.swift */,
 				A7FDF2311E505F800061C155 /* Tourist.swift */,
 				A7FDF22F1E505F190061C155 /* TourStop.swift */,
@@ -653,9 +667,11 @@
 				A751E44C1E508F5200015B42 /* Camera.swift in Sources */,
 				A7FDF24E1E50729E0061C155 /* Buttons.swift in Sources */,
 				A7CEC4371E50EB7000AB4559 /* Query.swift in Sources */,
+				A79392001E547CB7001E6836 /* SettingsViewController.swift in Sources */,
 				A7FDF2421E506C850061C155 /* HomeViewController.swift in Sources */,
 				A7FDF23E1E506C6F0061C155 /* SplashViewController.swift in Sources */,
 				A757E0041E50767A00432288 /* UIColor+Extension.swift in Sources */,
+				A79391FE1E547CAB001E6836 /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

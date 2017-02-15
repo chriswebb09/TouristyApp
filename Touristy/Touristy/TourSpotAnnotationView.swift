@@ -1,5 +1,7 @@
 import UIKit
 import Mapbox
+import RxSwift
+import RxCocoa
 
 class TourSpotAnnotationView: MGLAnnotationView {
     

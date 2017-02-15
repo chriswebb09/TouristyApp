@@ -23,12 +23,12 @@ final class SplashView: UIView {
     
     func setupConstraints() {
         addSubview(splashImageView)
-        splashImageView.translatesAutoresizingMaskIntoConstraints = false
-        splashImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
-        splashImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
-        splashImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        splashImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        print(splashImageView.bounds)
+        splashImageView.snp.makeConstraints { make in
+            make.width.equalTo(self).multipliedBy(0.6)
+            make.height.equalTo(self).multipliedBy(0.3)
+            make.centerX.equalTo(self)
+            make.centerY.equalTo(self)
+        }
     }
 
    

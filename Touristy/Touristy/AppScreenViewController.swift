@@ -25,8 +25,4 @@ extension AppScreenViewController {
         navigationController?.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         navigationController?.pushViewController(QueryViewController(), animated: true)
     }
-    //
-    //    func signupButtonTapped() {
-    //        navigationController?.pushViewController(SignupViewController(), animated: true)
-    //    }
 }

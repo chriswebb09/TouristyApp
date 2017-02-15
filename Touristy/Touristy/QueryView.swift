@@ -71,9 +71,4 @@ class QueryView: UIView {
             make.top.equalTo(firstChoiceButton.snp.bottom).offset(UIScreen.main.bounds.height * 0.05)
         }
     }
-    
-    
-    func tapFirstAnswer() {
-        
-    }
 }

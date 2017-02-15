@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 public final class SplashViewController: UIViewController {
     
@@ -13,7 +15,7 @@ public final class SplashViewController: UIViewController {
     }
     
     override public func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
         let when = DispatchTime.now() + 0.5 //
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.splashView.zoomAnimation() {
