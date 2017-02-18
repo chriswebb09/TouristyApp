@@ -48,6 +48,7 @@
 		A70B7F421E54F038003E587A /* TriviaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */; };
 		A70B7F431E54F038003E587A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */; };
 		A70B7F441E54F038003E587A /* UserLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1E1E54F038003E587A /* UserLocationData.swift */; };
+		A70B7F5F1E54FCFF003E587A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */; };
 		A7563F651E503E9D003252FA /* TouristyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F641E503E9D003252FA /* TouristyTests.swift */; };
 		A7563F701E503E9D003252FA /* TouristyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F6F1E503E9D003252FA /* TouristyUITests.swift */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaAPIClient.swift; sourceTree = "<group>"; };
 		A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A70B7F1E1E54F038003E587A /* UserLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationData.swift; sourceTree = "<group>"; };
+		A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A7563F4C1E503E9D003252FA /* Touristy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touristy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F601E503E9D003252FA /* TouristyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F641E503E9D003252FA /* TouristyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristyTests.swift; sourceTree = "<group>"; };
@@ -186,7 +188,6 @@
 				A70B7F571E54F1C4003E587A /* Controller */,
 				A70B7F581E54F1CC003E587A /* View */,
 			);
-			name = AppScreen;
 			path = AppScreen;
 			sourceTree = "<group>";
 		};
@@ -196,7 +197,6 @@
 				A70B7F071E54F038003E587A /* HomeView.swift */,
 				A70B7F081E54F038003E587A /* HomeViewController.swift */,
 			);
-			name = HomeScreen;
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
@@ -206,7 +206,6 @@
 				A70B7F0E1E54F038003E587A /* QueryView.swift */,
 				A70B7F0F1E54F038003E587A /* QueryViewController.swift */,
 			);
-			name = QueryScreen;
 			path = QueryScreen;
 			sourceTree = "<group>";
 		};
@@ -216,7 +215,6 @@
 				A70B7F551E54F1AD003E587A /* Controller */,
 				A70B7F561E54F1B5003E587A /* View */,
 			);
-			name = SplashScreen;
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
@@ -226,7 +224,6 @@
 				A70B7F191E54F038003E587A /* TourMapViewController.swift */,
 				A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */,
 			);
-			name = TourScreen;
 			path = TourScreen;
 			sourceTree = "<group>";
 		};
@@ -236,7 +233,6 @@
 				A70B7F111E54F038003E587A /* SettingsCell.swift */,
 				A70B7F121E54F038003E587A /* SettingsViewController.swift */,
 			);
-			name = SettingsScreen;
 			path = SettingsScreen;
 			sourceTree = "<group>";
 		};
@@ -246,7 +242,6 @@
 				A70B7F011E54F038003E587A /* Camera.swift */,
 				A70B7F021E54F038003E587A /* CameraViewController.swift */,
 			);
-			name = Camera;
 			path = Camera;
 			sourceTree = "<group>";
 		};
@@ -256,7 +251,6 @@
 				A70B7F5A1E54F1EF003E587A /* DataModels */,
 				A70B7F591E54F1E3003E587A /* LocationModels */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -267,7 +261,6 @@
 				A70B7F4F1E54F154003E587A /* Network */,
 				A70B7F051E54F038003E587A /* DataDefaults.swift */,
 			);
-			name = Data;
 			path = Data;
 			sourceTree = "<group>";
 		};
@@ -279,7 +272,6 @@
 				A70B7F511E54F178003E587A /* Variables */,
 				A70B7F521E54F188003E587A /* Views */,
 			);
-			name = Shared;
 			path = Shared;
 			sourceTree = "<group>";
 		};
@@ -290,7 +282,6 @@
 				A70B7F061E54F038003E587A /* FirebaseAPIClient.swift */,
 				A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */,
 			);
-			name = Network;
 			path = Network;
 			sourceTree = "<group>";
 		};
@@ -301,7 +292,6 @@
 				A70B7F171E54F038003E587A /* TourDataStore.swift */,
 				A70B7F1E1E54F038003E587A /* UserLocationData.swift */,
 			);
-			name = Location;
 			path = Location;
 			sourceTree = "<group>";
 		};
@@ -311,7 +301,6 @@
 				A70B7F041E54F038003E587A /* Constants.swift */,
 				A70B7F101E54F038003E587A /* Secrets.swift */,
 			);
-			name = Variables;
 			path = Variables;
 			sourceTree = "<group>";
 		};
@@ -321,7 +310,6 @@
 				A70B7F0C1E54F038003E587A /* MenuView.swift */,
 				A70B7F161E54F038003E587A /* TabBarController.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -331,7 +319,6 @@
 				A70B7F001E54F038003E587A /* CALayer+Extension.swift */,
 				A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -340,7 +327,6 @@
 			children = (
 				A70B7EFF1E54F038003E587A /* Buttons.swift */,
 			);
-			name = UI;
 			path = UI;
 			sourceTree = "<group>";
 		};
@@ -349,7 +335,6 @@
 			children = (
 				A70B7F141E54F038003E587A /* SplashViewController.swift */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -359,7 +344,6 @@
 				A70B7F131E54F038003E587A /* SplashView.swift */,
 				A70B7F151E54F038003E587A /* SplashViewModel.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -368,7 +352,6 @@
 			children = (
 				A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -378,7 +361,6 @@
 				A70B7EFA1E54F038003E587A /* AppScreenView.swift */,
 				A70B7EFC1E54F038003E587A /* AppScreenViewModel.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -388,7 +370,6 @@
 				A70B7F0A1E54F038003E587A /* Location.swift */,
 				A70B7F1B1E54F038003E587A /* TourStop.swift */,
 			);
-			name = LocationModels;
 			path = LocationModels;
 			sourceTree = "<group>";
 		};
@@ -398,7 +379,6 @@
 				A70B7F0D1E54F038003E587A /* Query.swift */,
 				A70B7F181E54F038003E587A /* Tourist.swift */,
 			);
-			name = DataModels;
 			path = DataModels;
 			sourceTree = "<group>";
 		};
@@ -410,7 +390,6 @@
 				A70B7EFE1E54F038003E587A /* Base.lproj */,
 				A70B7F091E54F038003E587A /* Info.plist */,
 			);
-			name = AppIncludes;
 			path = AppIncludes;
 			sourceTree = "<group>";
 		};
@@ -419,7 +398,6 @@
 			children = (
 				A70B7F4D1E54F125003E587A /* Data */,
 			);
-			name = Application;
 			path = Application;
 			sourceTree = "<group>";
 		};
@@ -434,13 +412,13 @@
 				A70B7F481E54F078003E587A /* SplashScreen */,
 				A70B7F491E54F083003E587A /* TourScreen */,
 			);
-			name = UI;
 			path = UI;
 			sourceTree = "<group>";
 		};
 		A7563F431E503E9D003252FA = {
 			isa = PBXGroup;
 			children = (
+				A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */,
 				BFB47BF43CE089D2D6A2E07D /* Frameworks */,
 				708C9C4CFE96240C939FD169 /* Pods */,
 				A7563F4D1E503E9D003252FA /* Products */,
@@ -624,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70B7F241E54F038003E587A /* Base.lproj in Resources */,
+				A70B7F5F1E54FCFF003E587A /* Default-568h@2x.png in Resources */,
 				A70B7F231E54F038003E587A /* Assets.xcassets in Resources */,
 				A70B7F2F1E54F038003E587A /* Info.plist in Resources */,
 			);
