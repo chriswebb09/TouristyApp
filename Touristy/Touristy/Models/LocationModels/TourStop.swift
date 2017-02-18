@@ -2,8 +2,10 @@ import UIKit
 import CoreLocation
 
 public struct TourStop {
+    
     var location: Location
     let localHistory: String
+    
     var historicalPhotos: [UIImage]?
     var trivia: [String]
     
