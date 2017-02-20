@@ -41,7 +41,6 @@ class ConcurrentOperation: Operation {
             state = .isFinished
             return
         }
-        
         main()
         state = .isExecuting
     }

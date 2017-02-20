@@ -6,7 +6,6 @@ struct Query {
     var result: Bool
 }
 
-
 struct Queries {
     var queryOne = Query(points: 5, questionText: "Are you feeling energetic?", result: false)
     var queryTwo = Query(points: 5, questionText: "Ready to get old-timey?", result: false)
@@ -15,6 +14,4 @@ struct Queries {
     init() {
         self.questionList = [queryOne, queryTwo, queryThree]
     }
-        
-
 }
