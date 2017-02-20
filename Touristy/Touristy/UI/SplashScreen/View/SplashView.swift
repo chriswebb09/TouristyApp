@@ -7,8 +7,6 @@ final class SplashView: UIView {
     
     var animationDuration: Double = 1
     
-    //  let splashViewModel = SplashViewModel(splashImage: UIImage(named: "mapbox-logo-ihs-upload")!, animationDuration: 20)
-    
     var splashImageView: UIImageView = {
         let splashView = UIImageView(image: UIImage(named: "mapbox-logo-ihs-upload"))
         return splashView
