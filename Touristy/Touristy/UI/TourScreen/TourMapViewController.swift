@@ -82,7 +82,8 @@ extension TourMapViewController: MGLMapViewDelegate {
     
     func addAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {
         let annotation = MGLPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude:location.coordinate.longitude)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
+                                                       longitude:location.coordinate.longitude)
         annotation.title = locationName
         mapView.addAnnotation(annotation)
         mapView.selectAnnotation(annotation, animated: true)
@@ -127,7 +128,9 @@ extension TourMapViewController: MGLMapViewDelegate {
                                   fromDistance: 200,
                                   pitch: 20,
                                   heading: 0)
-        mapView.setCamera(camera, withDuration: 2, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        mapView.setCamera(camera,
+                          withDuration: 2,
+                          animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
         mapView.resetNorth()
     }
     
