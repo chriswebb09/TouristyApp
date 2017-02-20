@@ -16,6 +16,7 @@ class AppScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.topItem?.title = "Touristy"
     }
 }
 

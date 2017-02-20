@@ -44,6 +44,7 @@ extension AppScreenView {
         setupLogoImage(logoImageView: logoImageView)
         constraintSetup(views: [viewDivider, loginButton, signupButton])
         setupViewDivider(viewDivider: viewDivider)
+        
         loginButton.snp.makeConstraints { make in
             make.bottom.equalTo(viewDivider.snp.top).offset(UIScreen.main.bounds.height * 0.18)
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)

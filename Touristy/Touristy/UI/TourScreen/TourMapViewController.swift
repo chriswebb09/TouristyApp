@@ -40,8 +40,9 @@ final class TourMapViewController: UIViewController {
 extension TourMapViewController: MGLMapViewDelegate {
     
     fileprivate func setupMapView() {
-        let styleURL = NSURL(string: Secrets.mapStyle)
-        mapView  = MGLMapView(frame: view.bounds, styleURL: styleURL as URL?)
+        let styleURL = URL(string: Secrets.mapStyle)
+        mapView  = MGLMapView(frame: view.bounds,
+                              styleURL: styleURL)
         setupMapViewUI()
         tourDestinationAnnotation = addAnnotations(location: stops[0].location.location,
                                                    locationName: stops[0].location.locationName)
@@ -171,12 +172,12 @@ extension TourMapViewController: MGLMapViewDelegate {
                     var routeCoordinates = route.coordinates!
                     self.tourPath = MGLPolyline(coordinates: &routeCoordinates,
                                                 count: route.coordinateCount)
-                    
                     if let routeLine = self.tourPath {
                         self.mapView.addAnnotation(routeLine)
                         self.mapView.setVisibleCoordinates(&routeCoordinates,
                                                            count: route.coordinateCount,
-                                                           edgePadding: UIEdgeInsets.zero, animated: true)
+                                                           edgePadding: UIEdgeInsets.zero,
+                                                           animated: true)
                     }
                 }
             }
