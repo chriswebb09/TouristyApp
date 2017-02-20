@@ -46,7 +46,6 @@ public struct TourStop {
     var timePeriod: String
     var timeScore: Int
     
-    
     static let stops: [TourStop] = {
         
         let worldTraceCenterMemorial = TourStop(
