@@ -48,6 +48,7 @@
 		A74653F51E5ABA5300CC0995 /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74653F41E5ABA5300CC0995 /* TourDataStore.swift */; };
 		A7563F651E503E9D003252FA /* TouristyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F641E503E9D003252FA /* TouristyTests.swift */; };
 		A7563F701E503E9D003252FA /* TouristyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F6F1E503E9D003252FA /* TouristyUITests.swift */; };
+		A756C68E1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C68D1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift */; };
 		A7E9911C1E5AAF73001CE354 /* TourAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		A7563F6B1E503E9D003252FA /* TouristyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F6F1E503E9D003252FA /* TouristyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristyUITests.swift; sourceTree = "<group>"; };
 		A7563F711E503E9D003252FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A756C68D1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaAPIClient.swift; sourceTree = "<group>"; };
 		A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAnnotation.swift; sourceTree = "<group>"; };
 		FAF5817D633A407A91290535 /* Pods-Touristy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Touristy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Touristy/Pods-Touristy.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF540511C46731EC82F7BC3 /* Pods-TouristyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				A70B7F031E54F038003E587A /* ConcurrentOperations.swift */,
 				A70B7F061E54F038003E587A /* FirebaseAPIClient.swift */,
 				A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */,
+				A756C68D1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -771,6 +774,7 @@
 				A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */,
 				A70B7F221E54F038003E587A /* AppScreenViewModel.swift in Sources */,
 				A70B7F201E54F038003E587A /* AppScreenView.swift in Sources */,
+				A756C68E1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift in Sources */,
 				A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */,
 				A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */,
 				A70B7F321E54F038003E587A /* MenuView.swift in Sources */,

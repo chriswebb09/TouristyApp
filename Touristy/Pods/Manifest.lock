@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.3.0)
   - Firebase (3.12.0):
     - Firebase/Core (= 3.12.0)
   - Firebase/Auth (3.12.0):
@@ -42,22 +43,27 @@ PODS:
   - MapboxDirections.swift (0.6.0):
     - Polyline (~> 4.0.0)
   - MapboxGeocoder.swift (0.5.1)
+  - ObjectMapper (2.2.2)
   - Polyline (4.0.0)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
   - SnapKit (3.1.2)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.3)
   - Firebase
   - Firebase/Auth
   - FirebaseDatabase
   - Mapbox-iOS-SDK (~> 3.4)
   - MapboxDirections.swift (from `https://github.com/mapbox/MapboxDirections.swift.git`, branch `swift3`)
   - MapboxGeocoder.swift (from `https://github.com/mapbox/MapboxGeocoder.swift.git`, branch `swift3`)
+  - ObjectMapper (~> 2.2)
   - RxCocoa
   - RxSwift
   - SnapKit
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   MapboxDirections.swift:
@@ -76,6 +82,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/mapbox/MapboxGeocoder.swift.git
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Firebase: 8e99eb1ff553ad5bcc6072cc3d925bb89c1244d6
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
   FirebaseAuth: b436e4ecebe068bf8e8c6e4e29de5756ffe7ee24
@@ -89,11 +96,13 @@ SPEC CHECKSUMS:
   Mapbox-iOS-SDK: 9c0d23e9a3784e6c9e45af4339898e4598b5b09b
   MapboxDirections.swift: 4acd753d0079bae4f2fae2b2cbda98922909de09
   MapboxGeocoder.swift: 04f80b3856e5cd1ff0af9910dbf14d27058ce906
+  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   Polyline: c6de7430bf6ff0bfff1f087343597b83b38fdb69
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 56ff1c0b8e98733a010f38599d16885e551e6281
+PODFILE CHECKSUM: 7bbca3f1eeff8107da1cf0fd0c96a9dc594673c0
 
 COCOAPODS: 1.1.1

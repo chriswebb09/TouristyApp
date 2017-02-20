@@ -14,10 +14,8 @@ class TourSpotAnnotationView: MGLAnnotationView {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         let animation = CABasicAnimation(keyPath: "borderWidth")
         animation.duration = 0.1
-        
         layer.borderWidth = selected ? frame.width / 4 : 2
         layer.add(animation, forKey: "borderWidth")
     }

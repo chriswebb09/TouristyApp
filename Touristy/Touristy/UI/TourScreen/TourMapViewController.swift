@@ -24,6 +24,7 @@ final class TourMapViewController: UIViewController {
     var navLegs: [RouteLeg] = []
     var POI: [Annotation] = []
     var tourStops: [MGLAnnotation] = []
+    let directions = Directions(accessToken: Secrets.mapKey)
     
     var stops = TourStop.stops
     
@@ -154,7 +155,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         let tourStopWayPoints: [Waypoint] = locationStore.setWaypointsFromStops(startingCoordinate:startingLocation,
                                                                                 endCoordinate: destination,
                                                                                 tourStops: self.tourStops)
-        let directions = Directions(accessToken: Secrets.mapKey)
+        
         let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifierWalking)
         options.includesSteps = true
         options.routeShapeResolution = .full
@@ -221,6 +222,7 @@ extension TourMapViewController: CLLocationManagerDelegate {
     }
     
     func initializeLocationToUser() -> CLLocation? {
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
