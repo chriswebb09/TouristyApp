@@ -69,11 +69,11 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func addAnnotationsToMap() {
-        for i in 0...2 {
+        for i in 1...3 {
             let location = CLLocation(latitude: stops[i].location.coordinates.latitude,
                                       longitude: stops[i].location.coordinates.longitude)
             var tourAnnotation = addAnnotations(location: location,
-                                                locationName: stops[i].location.locationName)
+                                                locationName: "\(i). \(stops[i].location.locationName)")
             self.tourStops.append(tourAnnotation)
         }
         createPath(completion: { time in
@@ -104,15 +104,17 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        guard annotation is MGLPointAnnotation else { return nil }
-        let reuseIdentifier = String(annotation.coordinate.longitude)
-        var anotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-        if anotationView == nil {
-            anotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
-            anotationView?.frame = CGRect(x:0, y:0, width:100, height:100)
-            let imageView = UIImageView(image: UIImage(named:"Test"))
+        guard annotation is MGLPointAnnotation else {
+            return nil
         }
-        return anotationView
+        let reuseIdentifier = "\(annotation.title)"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        if annotationView == nil {
+            annotationView = TourSpotAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView?.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        }
+        annotationView?.backgroundColor = .white
+        return annotationView
     }
     
     private func setCenterCoordinateOnMapView() {
