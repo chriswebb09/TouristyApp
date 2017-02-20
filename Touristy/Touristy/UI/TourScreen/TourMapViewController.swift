@@ -179,8 +179,6 @@ extension TourMapViewController: MGLMapViewDelegate {
         }
     }
     
-    
-    
     func getTravelTimeFromInterval(interval: TimeInterval) -> String? {
         let travelTimeFormatter = DateComponentsFormatter()
         travelTimeFormatter.unitsStyle = .short
