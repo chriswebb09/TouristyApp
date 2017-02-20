@@ -12,7 +12,7 @@ final class TourMapViewController: UIViewController {
     var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
     var origin: MGLAnnotation?
-    var destination: MGLAnnotation?
+    var tourDestination: MGLAnnotation?
     var routeLine: MGLPolyline?
     var pathPin: MGLAnnotation?
     
@@ -33,7 +33,7 @@ final class TourMapViewController: UIViewController {
 extension TourMapViewController: MGLMapViewDelegate {
     
     fileprivate func setupMapView() {
-        let styleURL = NSURL(string: "mapbox://styles/chriswebb/ciz2oxgoh002s2sprtfmaeo5m")
+        let styleURL = NSURL(string: Secrets.mapStyle)
         mapView  = MGLMapView(frame: view.bounds,
                               styleURL: styleURL as URL?)
         view.addSubview(mapView)
@@ -41,7 +41,6 @@ extension TourMapViewController: MGLMapViewDelegate {
         mapView.delegate = self
         mapView.userTrackingMode = .follow
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        
         mapView.snp.makeConstraints { make in
             make.left.equalTo(view.snp.left)
             make.right.equalTo(view.snp.right)
@@ -52,18 +51,41 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func addAnnotation() {
-        let annotation = MGLPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
-        annotation.title = "New York City"
-        
-        mapView.addAnnotation(annotation)
-        mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
-        mapView.selectAnnotation(annotation, animated: true)
+        var centerAnnotation = addAnnotations(location: startCoordinates, locationName: "Begin")
+        mapView.setCenter(centerAnnotation.coordinate, zoomLevel: 17, animated: false)
+        mapView.selectAnnotation(centerAnnotation, animated: true)
         setupAnnotation()
+    }
+    
+    func setupAnnotation() {
+        var stops = TourStop.stops
+        for stop in stops {
+            let location = CLLocation(latitude: stop.location.coordinates.latitude, longitude: stop.location.coordinates.longitude)
+            var centerAnnotation = addAnnotations(location: location, locationName: stop.location.locationName)
+        }
+        setLocation()
+    }
+    
+    func addAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {
+        var stops = TourStop.stops
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude:location.coordinate.longitude)
+        annotation.title = stops[0].location.locationName
+        mapView.addAnnotation(annotation)
+        mapView.selectAnnotation(annotation, animated: true)
+        return annotation
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
+    }
+    
+    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
+        return UIColor.black
+    }
+    
+    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
+        return 4
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
@@ -76,33 +98,16 @@ extension TourMapViewController: MGLMapViewDelegate {
             let imageView = UIImageView(image: UIImage(named:"Test"))
         }
         return anotationView
-       // return mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as! MGLAnnotationView?
     }
-    
-    func setupAnnotation() {
-        var stops = TourStop.stops
-        for stop in stops {
-            var tourStop = MGLPointAnnotation()
-            tourStop.coordinate = stop.location.coordinates
-            tourStop.title = stop.location.locationName
-            mapView.addAnnotation(tourStop)
-        }
-        setLocation()
-    }
-
     
     private func setLocation() {
         if let location = initializeLocationToUser() {
-           startCoordinates = location
+            startCoordinates = location
         }
     }
     
     private func setCenterCoordinateOnMapView() {
-        
-        let lat: CLLocationDegrees = 40.706697302800182
-        let lng: CLLocationDegrees = -74.014699650804047
-        
-        let downtownManhattan = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        let downtownManhattan = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
         mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
     }
     
@@ -151,15 +156,12 @@ extension TourMapViewController: CLLocationManagerDelegate {
             return locationManager.location
             
         case .denied:
-            
             return nil
             
         case .notDetermined:
-            
             return nil
             
         case .restricted:
-            
             return nil
         }
     }

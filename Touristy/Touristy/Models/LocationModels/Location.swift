@@ -13,5 +13,11 @@ struct Location {
 struct Coordinates {
     var latitude: Float
     var longitude: Float
+    
+    func midpointCoordinates(origin: Location, tourDestination: Location) -> CLLocation {
+        let centerLatitidue = (origin.coordinates.latitude + tourDestination.coordinates.latitude) / 2
+        let centerLongitude = (origin.coordinates.longitude + tourDestination.coordinates.longitude) / 2
+        return CLLocation(latitude: centerLatitidue, longitude: centerLongitude)
+    }
 }
 
