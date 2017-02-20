@@ -31,7 +31,7 @@ class TourDataStore {
             waypoints.append(waypoint)
         }
         
-        sortWaypoints(origin: startingCoordinate, waypoints: waypoints)
+        sortWaypointsByDistance(origin: startingCoordinate, waypoints: waypoints)
         
         let originWaypoint = Waypoint(coordinate: startingCoordinate.coordinate)
         let destinationWaypoint = Waypoint(coordinate:endCoordinate.coordinate)
@@ -41,7 +41,7 @@ class TourDataStore {
         return waypoints
     }
     
-    func sortWaypoints(origin: MGLAnnotation, waypoints: [Waypoint]) {
+    func sortWaypointsByDistance(origin: MGLAnnotation, waypoints: [Waypoint]) {
         var waypoints = waypoints
         if let origin = initialLocation {
             let current = CLLocation(latitude: origin.coordinate.latitude, longitude: origin.coordinate.longitude)
@@ -51,5 +51,34 @@ class TourDataStore {
                 return current.distance(from: loc1) < current.distance(from: loc2)
             }
         }
+    }
+    
+    func midpointCoordinates(origin: CLLocation, destination: CLLocation) -> CLLocation {
+        let centerLatitidue = (origin.coordinate.latitude + destination.coordinate.latitude) / 2
+        let centerLongitude = (origin.coordinate.longitude + destination.coordinate.longitude) / 2
+        return CLLocation(latitude: centerLatitidue, longitude: centerLongitude)
+    }
+    
+    func getClosestDestination(locations: [TourStop]) -> CLLocation {
+        var totalLat = 0.0
+        var totalLong = 0.0
+        let numberOfLocations = Double(locations.count)
+        locations.forEach { location in
+            dump(location)
+            totalLat = totalLat + location.location.location.coordinate.latitude
+            totalLong = totalLong + location.location.location.coordinate.longitude
+        }
+        return CLLocation(latitude: totalLat/numberOfLocations, longitude: totalLong/numberOfLocations)
+    }
+    
+    func getClosestDestination(locations: [CLLocation]) -> CLLocation {
+        var totalLat = 0.0
+        var totalLong = 0.0
+        let numberOfLocations = Double(locations.count)
+        locations.forEach { location in
+            totalLat = totalLat + location.coordinate.latitude
+            totalLong = totalLong + location.coordinate.longitude
+        }
+        return CLLocation(latitude: totalLat/numberOfLocations, longitude: totalLong/numberOfLocations)
     }
 }

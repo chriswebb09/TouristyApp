@@ -41,11 +41,10 @@ extension TourMapViewController: MGLMapViewDelegate {
     
     fileprivate func setupMapView() {
         let styleURL = URL(string: Secrets.mapStyle)
-        mapView  = MGLMapView(frame: view.bounds,
-                              styleURL: styleURL)
+        mapView  = MGLMapView(frame: view.bounds, styleURL: styleURL)
         setupMapViewUI()
-        tourDestinationAnnotation = addAnnotations(location: stops[0].location.location,
-                                                   locationName: stops[0].location.locationName)
+        tourDestinationAnnotation = createAnnotations(location: stops[0].location.location,
+                                                      locationName: stops[0].location.locationName)
         mapView.delegate = self
         mapView.userTrackingMode = .follow
     }
@@ -64,26 +63,28 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func addAnnotation() {
-        var centerAnnotation = addAnnotations(location: startCoordinates, locationName: "Begin")
+        var centerAnnotation = createAnnotations(location: startCoordinates, locationName: "Begin")
         initialLocationAnnotation = centerAnnotation
         addAnnotationsToMap()
         setCenterCoordinateOnMapView()
     }
     
     func addAnnotationsToMap() {
+        var newTourStops = [TourStop]()
         for i in 1...3 {
-            let location = CLLocation(latitude: stops[i].location.coordinates.latitude,
-                                      longitude: stops[i].location.coordinates.longitude)
-            var tourAnnotation = addAnnotations(location: location,
-                                                locationName: "\(i). \(stops[i].location.locationName)")
+            let location = CLLocation(latitude: stops[i].location.coordinates.latitude, longitude: stops[i].location.coordinates.longitude)
+            var tourAnnotation = createAnnotations(location: location, locationName: "\(i). \(stops[i].location.locationName)")
+            newTourStops.append(stops[i])
             self.tourStops.append(tourAnnotation)
         }
+        
+        print(locationStore.getClosestDestination(locations: newTourStops))
         createPath() { time in
             print(time)
         }
     }
     
-    func addAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {
+    func createAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
                                                        longitude:location.coordinate.longitude)
@@ -122,10 +123,7 @@ extension TourMapViewController: MGLMapViewDelegate {
     private func setCenterCoordinateOnMapView() {
         let downtownManhattan = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude,
                                                        longitude: startCoordinates.coordinate.longitude)
-        mapView.setCenter(downtownManhattan,
-                          zoomLevel: 15,
-                          direction: 25.0,
-                          animated: false)
+        mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
@@ -133,9 +131,7 @@ extension TourMapViewController: MGLMapViewDelegate {
                                   fromDistance: 200,
                                   pitch: 20,
                                   heading: 0)
-        mapView.setCamera(camera,
-                          withDuration: 2,
-                          animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        mapView.setCamera(camera, withDuration: 2, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
         mapView.resetNorth()
     }
     
@@ -170,14 +166,10 @@ extension TourMapViewController: MGLMapViewDelegate {
                 
                 if route.coordinateCount > 0 {
                     var routeCoordinates = route.coordinates!
-                    self.tourPath = MGLPolyline(coordinates: &routeCoordinates,
-                                                count: route.coordinateCount)
+                    self.tourPath = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
                     if let routeLine = self.tourPath {
                         self.mapView.addAnnotation(routeLine)
-                        self.mapView.setVisibleCoordinates(&routeCoordinates,
-                                                           count: route.coordinateCount,
-                                                           edgePadding: UIEdgeInsets.zero,
-                                                           animated: true)
+                        self.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets.zero, animated: true)
                     }
                 }
             }
@@ -223,24 +215,22 @@ extension TourMapViewController: CLLocationManagerDelegate {
     }
     
     func initializeLocationToUser() -> CLLocation? {
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
         
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedWhenInUse:
-            locationManager.startUpdatingLocation()
-            return locationManager.location
-        case .authorizedAlways:
-            locationManager.startUpdatingLocation()
-            return locationManager.location
-        case .denied:
-            return nil
-        case .notDetermined:
-            return nil
-        case .restricted:
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+                return nil
+            case .authorizedAlways, .authorizedWhenInUse:
+                locationManager.startUpdatingLocation()
+                return locationManager.location
+            }
+        } else {
+            print("Location services are not enabled")
             return nil
         }
     }

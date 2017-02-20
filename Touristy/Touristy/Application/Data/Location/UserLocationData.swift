@@ -77,6 +77,8 @@ public struct TourStop {
             timeScore: -15
         )
         
+        //40.73386000,-73.99470333
+        
         let theTombs = TourStop(
             location: Location(
                 streetAddress: "125 White St, New York, NY 10013",
