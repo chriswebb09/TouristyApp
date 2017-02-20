@@ -27,8 +27,6 @@
 		A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F071E54F038003E587A /* HomeView.swift */; };
 		A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F081E54F038003E587A /* HomeViewController.swift */; };
 		A70B7F2F1E54F038003E587A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A70B7F091E54F038003E587A /* Info.plist */; };
-		A70B7F301E54F038003E587A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0A1E54F038003E587A /* Location.swift */; };
-		A70B7F311E54F038003E587A /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0B1E54F038003E587A /* LocationServices.swift */; };
 		A70B7F321E54F038003E587A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0C1E54F038003E587A /* MenuView.swift */; };
 		A70B7F331E54F038003E587A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0D1E54F038003E587A /* Query.swift */; };
 		A70B7F341E54F038003E587A /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0E1E54F038003E587A /* QueryView.swift */; };
@@ -40,15 +38,14 @@
 		A70B7F3A1E54F038003E587A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F141E54F038003E587A /* SplashViewController.swift */; };
 		A70B7F3B1E54F038003E587A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F151E54F038003E587A /* SplashViewModel.swift */; };
 		A70B7F3C1E54F038003E587A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F161E54F038003E587A /* TabBarController.swift */; };
-		A70B7F3D1E54F038003E587A /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F171E54F038003E587A /* TourDataStore.swift */; };
 		A70B7F3E1E54F038003E587A /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F181E54F038003E587A /* Tourist.swift */; };
 		A70B7F3F1E54F038003E587A /* TourMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F191E54F038003E587A /* TourMapViewController.swift */; };
 		A70B7F401E54F038003E587A /* TourSpotAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */; };
-		A70B7F411E54F038003E587A /* TourStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1B1E54F038003E587A /* TourStop.swift */; };
 		A70B7F421E54F038003E587A /* TriviaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */; };
 		A70B7F431E54F038003E587A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */; };
 		A70B7F441E54F038003E587A /* UserLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1E1E54F038003E587A /* UserLocationData.swift */; };
 		A70B7F5F1E54FCFF003E587A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */; };
+		A74653F51E5ABA5300CC0995 /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74653F41E5ABA5300CC0995 /* TourDataStore.swift */; };
 		A7563F651E503E9D003252FA /* TouristyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F641E503E9D003252FA /* TouristyTests.swift */; };
 		A7563F701E503E9D003252FA /* TouristyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F6F1E503E9D003252FA /* TouristyUITests.swift */; };
 		A7E9911C1E5AAF73001CE354 /* TourAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */; };
@@ -109,8 +106,6 @@
 		A70B7F071E54F038003E587A /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A70B7F081E54F038003E587A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A70B7F091E54F038003E587A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A70B7F0A1E54F038003E587A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		A70B7F0B1E54F038003E587A /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		A70B7F0C1E54F038003E587A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		A70B7F0D1E54F038003E587A /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		A70B7F0E1E54F038003E587A /* QueryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
@@ -122,15 +117,14 @@
 		A70B7F141E54F038003E587A /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A70B7F151E54F038003E587A /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		A70B7F161E54F038003E587A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		A70B7F171E54F038003E587A /* TourDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDataStore.swift; sourceTree = "<group>"; };
 		A70B7F181E54F038003E587A /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
 		A70B7F191E54F038003E587A /* TourMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourMapViewController.swift; sourceTree = "<group>"; };
 		A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSpotAnnotationView.swift; sourceTree = "<group>"; };
-		A70B7F1B1E54F038003E587A /* TourStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourStop.swift; sourceTree = "<group>"; };
 		A70B7F1C1E54F038003E587A /* TriviaAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaAPIClient.swift; sourceTree = "<group>"; };
 		A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		A70B7F1E1E54F038003E587A /* UserLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationData.swift; sourceTree = "<group>"; };
+		A70B7F1E1E54F038003E587A /* UserLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationData.swift; path = ../../Application/Data/Location/UserLocationData.swift; sourceTree = "<group>"; };
 		A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A74653F41E5ABA5300CC0995 /* TourDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDataStore.swift; sourceTree = "<group>"; };
 		A7563F4C1E503E9D003252FA /* Touristy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touristy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F601E503E9D003252FA /* TouristyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F641E503E9D003252FA /* TouristyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristyTests.swift; sourceTree = "<group>"; };
@@ -252,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				A70B7F5A1E54F1EF003E587A /* DataModels */,
-				A70B7F591E54F1E3003E587A /* LocationModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,9 +284,7 @@
 		A70B7F501E54F15D003E587A /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				A70B7F0B1E54F038003E587A /* LocationServices.swift */,
-				A70B7F171E54F038003E587A /* TourDataStore.swift */,
-				A70B7F1E1E54F038003E587A /* UserLocationData.swift */,
+				A70B7F591E54F1E3003E587A /* LocationModels */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -370,10 +361,11 @@
 		A70B7F591E54F1E3003E587A /* LocationModels */ = {
 			isa = PBXGroup;
 			children = (
-				A70B7F0A1E54F038003E587A /* Location.swift */,
-				A70B7F1B1E54F038003E587A /* TourStop.swift */,
+				A70B7F1E1E54F038003E587A /* UserLocationData.swift */,
+				A74653F41E5ABA5300CC0995 /* TourDataStore.swift */,
 			);
-			path = LocationModels;
+			name = LocationModels;
+			path = ../../../Models/LocationModels;
 			sourceTree = "<group>";
 		};
 		A70B7F5A1E54F1EF003E587A /* DataModels */ = {
@@ -774,6 +766,7 @@
 				A70B7F251E54F038003E587A /* Buttons.swift in Sources */,
 				A70B7F3E1E54F038003E587A /* Tourist.swift in Sources */,
 				A70B7F341E54F038003E587A /* QueryView.swift in Sources */,
+				A74653F51E5ABA5300CC0995 /* TourDataStore.swift in Sources */,
 				A70B7F3C1E54F038003E587A /* TabBarController.swift in Sources */,
 				A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */,
 				A70B7F221E54F038003E587A /* AppScreenViewModel.swift in Sources */,
@@ -784,7 +777,6 @@
 				A70B7F3A1E54F038003E587A /* SplashViewController.swift in Sources */,
 				A70B7F351E54F038003E587A /* QueryViewController.swift in Sources */,
 				A70B7F371E54F038003E587A /* SettingsCell.swift in Sources */,
-				A70B7F301E54F038003E587A /* Location.swift in Sources */,
 				A70B7F211E54F038003E587A /* AppScreenViewController.swift in Sources */,
 				A70B7F331E54F038003E587A /* Query.swift in Sources */,
 				A70B7F2A1E54F038003E587A /* Constants.swift in Sources */,
@@ -797,15 +789,12 @@
 				A7E9911C1E5AAF73001CE354 /* TourAnnotation.swift in Sources */,
 				A70B7F361E54F038003E587A /* Secrets.swift in Sources */,
 				A70B7F3B1E54F038003E587A /* SplashViewModel.swift in Sources */,
-				A70B7F411E54F038003E587A /* TourStop.swift in Sources */,
 				A70B7F271E54F038003E587A /* Camera.swift in Sources */,
 				A70B7F291E54F038003E587A /* ConcurrentOperations.swift in Sources */,
 				A70B7F421E54F038003E587A /* TriviaAPIClient.swift in Sources */,
-				A70B7F311E54F038003E587A /* LocationServices.swift in Sources */,
 				A70B7F401E54F038003E587A /* TourSpotAnnotationView.swift in Sources */,
 				A70B7F441E54F038003E587A /* UserLocationData.swift in Sources */,
 				A70B7F261E54F038003E587A /* CALayer+Extension.swift in Sources */,
-				A70B7F3D1E54F038003E587A /* TourDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

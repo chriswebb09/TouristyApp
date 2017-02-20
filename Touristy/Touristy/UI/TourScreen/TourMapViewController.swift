@@ -3,6 +3,8 @@ import SnapKit
 import CoreLocation
 import Mapbox
 import MapboxGeocoder
+import MapboxDirections
+
 
 let MapboxAccessToken = Secrets.mapKey
 
@@ -11,11 +13,14 @@ final class TourMapViewController: UIViewController {
     var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
-    var origin: MGLAnnotation?
+    var initialLocation: MGLAnnotation?
     var tourDestination: MGLAnnotation?
-    var routeLine: MGLPolyline?
-    var pathPin: MGLAnnotation?
-    
+    var tourPath: MGLPolyline?
+    var navigationRoutes: [Route] = []
+    var navigationLegs: [RouteLeg] = []
+    var POI: [Annotation] = []
+    var tourStops: [Annotation] = []
+    var stops = TourStop.stops
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
@@ -38,6 +43,7 @@ extension TourMapViewController: MGLMapViewDelegate {
                               styleURL: styleURL as URL?)
         view.addSubview(mapView)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.tourDestination = addAnnotations(location: stops[0].location.location, locationName: stops[0].location.locationName)
         mapView.delegate = self
         mapView.userTrackingMode = .follow
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,25 +58,29 @@ extension TourMapViewController: MGLMapViewDelegate {
     
     func addAnnotation() {
         var centerAnnotation = addAnnotations(location: startCoordinates, locationName: "Begin")
+        initialLocation = centerAnnotation
         mapView.setCenter(centerAnnotation.coordinate, zoomLevel: 17, animated: false)
         mapView.selectAnnotation(centerAnnotation, animated: true)
         setupAnnotation()
     }
     
     func setupAnnotation() {
-        var stops = TourStop.stops
+        let stops = TourStop.stops
         for stop in stops {
             let location = CLLocation(latitude: stop.location.coordinates.latitude, longitude: stop.location.coordinates.longitude)
             var centerAnnotation = addAnnotations(location: location, locationName: stop.location.locationName)
         }
         setLocation()
+        createPath(completion: { time in
+            print(time)
+        })
     }
     
     func addAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {
-        var stops = TourStop.stops
+       
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude:location.coordinate.longitude)
-        annotation.title = stops[0].location.locationName
+        annotation.title = locationName
         mapView.addAnnotation(annotation)
         mapView.selectAnnotation(annotation, animated: true)
         return annotation
@@ -111,7 +121,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
     }
     
-    func mapViewDidFinishLoadingMap(mapView: MGLMapView) {
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate, fromDistance: 200, pitch: 60, heading: 0)
         mapView.setCamera(camera, withDuration: 2, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
         mapView.resetNorth()
@@ -127,6 +137,63 @@ extension TourMapViewController: MGLMapViewDelegate {
     
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
+    }
+    
+    func createPath(completion: @escaping (_ time: String) -> ()) {
+        var tourStops: [Waypoint] = []
+        
+        for waypoint in self.tourStops {
+            let waypoint = Waypoint(coordinate: waypoint.coordinate)
+            tourStops.append(waypoint)
+        }
+        
+        //  sortWaypoints(tourStops)
+        
+        guard let startingLocation = initialLocation, let destination = tourDestination else {
+            return
+        }
+        
+        let originWaypoint = Waypoint(coordinate: startingLocation.coordinate)
+        let destinationWaypoint = Waypoint(coordinate: destination.coordinate)
+
+        tourStops.insert(originWaypoint, at: 0)
+        tourStops.append(destinationWaypoint)
+        let directions = Directions(accessToken: Secrets.mapKey)
+        let options = RouteOptions(waypoints: tourStops, profileIdentifier: MBDirectionsProfileIdentifierWalking)
+        options.includesSteps = true
+        options.routeShapeResolution = .full
+        directions.calculate(options, completionHandler: { waypoints, routes, error in
+            guard error == nil else {
+                print("Error getting directions: \(error!)")
+                return
+            }
+            
+            if let routes = routes {
+                self.navigationRoutes = routes
+            }
+            
+            if let route = routes?.first {
+                self.navigationLegs = route.legs
+                let travelTimeFormatter = DateComponentsFormatter()
+                travelTimeFormatter.unitsStyle = .short
+                let formattedTravelTime = travelTimeFormatter.string(from: route.expectedTravelTime)
+                completion(formattedTravelTime!)
+                
+                // TODO: Remove testing data stuff
+                // Call this function when user saves path
+                
+                
+                if route.coordinateCount > 0 {
+                    var routeCoordinates = route.coordinates!
+                    self.tourPath = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
+                    
+                    if let routeLine = self.tourPath {
+                        self.mapView.addAnnotation(routeLine)
+                        self.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets.zero, animated: true)
+                    }
+                }
+            }
+        })
     }
 }
 
@@ -146,21 +213,16 @@ extension TourMapViewController: CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
         
         switch CLLocationManager.authorizationStatus() {
-            
         case .authorizedWhenInUse:
             locationManager.startUpdatingLocation()
             return locationManager.location
-            
         case .authorizedAlways:
             locationManager.startUpdatingLocation()
             return locationManager.location
-            
         case .denied:
             return nil
-            
         case .notDetermined:
             return nil
-            
         case .restricted:
             return nil
         }
