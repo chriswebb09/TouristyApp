@@ -59,7 +59,7 @@ class TabBarController: UITabBarController {
     }
     
     fileprivate func setupMapTab(mapVC: TourMapViewController) -> UINavigationController {
-         mapVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal))
+        mapVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "planet")?.withRenderingMode(.alwaysOriginal))
         let mapTab = UINavigationController(rootViewController: mapVC)
         configureNav(nav: mapTab.navigationBar, view: view)
         mapTab.navigationBar.topItem?.title = "Map"

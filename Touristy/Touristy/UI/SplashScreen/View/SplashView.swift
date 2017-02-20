@@ -28,8 +28,7 @@ final class SplashView: UIView {
             make.centerY.equalTo(self)
         }
     }
-
-   
+    
     func zoomAnimation(_ handler: completion? = nil) {
         let duration: TimeInterval = animationDuration * 0.5
         UIView.animate(withDuration: duration, animations:{ [weak self] in
@@ -53,5 +52,4 @@ final class SplashView: UIView {
         let zoomOutTranform: CGAffineTransform = CGAffineTransform(scaleX: 05, y: 05)
         return zoomOutTranform
     }
-    
 }
