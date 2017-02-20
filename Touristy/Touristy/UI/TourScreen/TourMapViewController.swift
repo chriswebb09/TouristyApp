@@ -124,8 +124,6 @@ extension TourMapViewController: MGLMapViewDelegate {
         return anotationView
     }
     
-    
-    
     private func setCenterCoordinateOnMapView() {
         let downtownManhattan = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
         mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
