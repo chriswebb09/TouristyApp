@@ -36,7 +36,6 @@ struct UserLocationData {
     }
 }
 
-
 public struct TourStop {
     
     var location: Location
