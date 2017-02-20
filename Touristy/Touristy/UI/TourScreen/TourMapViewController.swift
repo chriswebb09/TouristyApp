@@ -11,10 +11,15 @@ final class TourMapViewController: UIViewController {
     var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
+    var origin: MGLAnnotation?
+    var destination: MGLAnnotation?
+    var routeLine: MGLPolyline?
+    var pathPin: MGLAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
+        var geocoder = Geocoder(accessToken: Secrets.mapKey)
         if let location = initializeLocationToUser()  { self.startCoordinates = location }
         view.backgroundColor = .white
         locationManager.delegate = self
@@ -22,7 +27,6 @@ final class TourMapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         addAnnotation()
-        //setupAnnotation()
     }
 }
 
@@ -32,12 +36,10 @@ extension TourMapViewController: MGLMapViewDelegate {
         let styleURL = NSURL(string: "mapbox://styles/chriswebb/ciz2oxgoh002s2sprtfmaeo5m")
         mapView  = MGLMapView(frame: view.bounds,
                               styleURL: styleURL as URL?)
-        
+        view.addSubview(mapView)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         mapView.userTrackingMode = .follow
-        
-        view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
         
         mapView.snp.makeConstraints { make in
@@ -87,16 +89,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         }
         setLocation()
     }
-    
-//    func addAnnotation() {
-//        let annotation = MGLPointAnnotation()
-//        annotation.coordinate = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
-//        annotation.title = "New York City"
-//        
-//        mapView.addAnnotation(annotation)
-//        mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
-//        mapView.selectAnnotation(annotation, animated: true)
-//    }
+
     
     private func setLocation() {
         if let location = initializeLocationToUser() {

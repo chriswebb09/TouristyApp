@@ -1,4 +1,5 @@
 import UIKit
+import Mapbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -10,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        MGLAccountManager.setAccessToken(Secrets.mapKey)
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barTintColor = .navigationBarColor()
       //  navigationBarAppearace.tintColor = UIColor.white

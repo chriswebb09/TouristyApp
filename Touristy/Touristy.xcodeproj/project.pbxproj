@@ -51,6 +51,7 @@
 		A70B7F5F1E54FCFF003E587A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */; };
 		A7563F651E503E9D003252FA /* TouristyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F641E503E9D003252FA /* TouristyTests.swift */; };
 		A7563F701E503E9D003252FA /* TouristyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F6F1E503E9D003252FA /* TouristyUITests.swift */; };
+		A7E9911C1E5AAF73001CE354 /* TourAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		A7563F6B1E503E9D003252FA /* TouristyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F6F1E503E9D003252FA /* TouristyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristyUITests.swift; sourceTree = "<group>"; };
 		A7563F711E503E9D003252FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAnnotation.swift; sourceTree = "<group>"; };
 		FAF5817D633A407A91290535 /* Pods-Touristy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Touristy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Touristy/Pods-Touristy.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF540511C46731EC82F7BC3 /* Pods-TouristyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +225,7 @@
 			children = (
 				A70B7F191E54F038003E587A /* TourMapViewController.swift */,
 				A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */,
+				A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */,
 			);
 			path = TourScreen;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				A70B7F431E54F038003E587A /* UIColor+Extension.swift in Sources */,
 				A70B7F3F1E54F038003E587A /* TourMapViewController.swift in Sources */,
 				A70B7F2B1E54F038003E587A /* DataDefaults.swift in Sources */,
+				A7E9911C1E5AAF73001CE354 /* TourAnnotation.swift in Sources */,
 				A70B7F361E54F038003E587A /* Secrets.swift in Sources */,
 				A70B7F3B1E54F038003E587A /* SplashViewModel.swift in Sources */,
 				A70B7F411E54F038003E587A /* TourStop.swift in Sources */,
@@ -957,7 +961,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
 					"\"${PODS_ROOT}/Headers/Public/Mapbox-iOS-SDK\"",
 				);
-				INFOPLIST_FILE = Touristy/Extras/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Touristy/AppIncludes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.froleeyo.Touristy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -995,7 +999,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
 					"\"${PODS_ROOT}/Headers/Public/Mapbox-iOS-SDK\"",
 				);
-				INFOPLIST_FILE = Touristy/Extras/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Touristy/AppIncludes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.froleeyo.Touristy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
