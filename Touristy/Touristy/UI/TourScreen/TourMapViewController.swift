@@ -214,6 +214,7 @@ extension TourMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {
             self.startCoordinates = location
+            self.locationStore.initialLocation = location
         }
     }
     

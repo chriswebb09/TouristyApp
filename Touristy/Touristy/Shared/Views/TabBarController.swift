@@ -24,7 +24,6 @@ class TabBarController: UITabBarController {
             self.tabBar.items?[0].title = "Map"
             self.tabBar.items?[1].title = "Home"
             self.selectedIndex = 0
-           // self.tabBar.layoutSubviews()
         }
     }
     
@@ -38,7 +37,6 @@ class TabBarController: UITabBarController {
         let homeTab = self.setupHomeTab(homeVC: HomeViewController())
         let controllers = [mapTab, homeTab]
         setTabTitles(controllers: controllers)
-       // tabBar.reloadInputViews()
     }
     
     func setupTabBar(tabBar:UITabBar, view:UIView) {

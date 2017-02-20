@@ -9,5 +9,10 @@ final class HomeViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(homeView)
         homeView.layoutSubviews()
+        homeView.loginButton.addTarget(self, action: #selector(newTourButtonTapped), for: .touchUpInside)
+    }
+    
+    func newTourButtonTapped() {
+        navigationController?.pushViewController(QueryViewController(), animated: true)
     }
 }
