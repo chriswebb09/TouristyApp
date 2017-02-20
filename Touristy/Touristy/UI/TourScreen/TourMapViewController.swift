@@ -146,9 +146,6 @@ extension TourMapViewController: MGLMapViewDelegate {
         return true
     }
     
-    
-    
-    
     func createPath(completion: @escaping (_ time: String) -> ()) {
         guard let startingLocation = initialLocationAnnotation, let destination = tourDestinationAnnotation else { return }
         let tourStopWayPoints: [Waypoint] = locationStore.setWaypointsFromStops(startingCoordinate:startingLocation,
