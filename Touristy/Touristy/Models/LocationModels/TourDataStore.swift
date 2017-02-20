@@ -32,12 +32,20 @@ class TourDataStore {
         return totalDistance/2
     }
     
-    func setWaypointsFromStops(tourStops: [MGLAnnotation]) -> [Waypoint] {
+    func setWaypointsFromStops(startingCoordinate: MGLAnnotation, endCoordinate: MGLAnnotation, tourStops: [MGLAnnotation]) -> [Waypoint] {
         var waypoints = [Waypoint]()
         for waypoint in tourStops {
             let waypoint = Waypoint(coordinate: waypoint.coordinate)
             waypoints.append(waypoint)
         }
+        
+        sortWaypoints(origin: startingCoordinate, waypoints: waypoints)
+        
+        let originWaypoint = Waypoint(coordinate: startingCoordinate.coordinate)
+        let destinationWaypoint = Waypoint(coordinate:endCoordinate.coordinate)
+        
+        waypoints.insert(originWaypoint, at: 0)
+        waypoints.append(destinationWaypoint)
         return waypoints
     }
     
