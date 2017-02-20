@@ -11,7 +11,7 @@ let MapboxAccessToken = Secrets.mapKey
 final class TourMapViewController: UIViewController {
     
     let locationStore = TourDataStore.shared
-    
+    var geocoder = Geocoder(accessToken: Secrets.mapKey)
     var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
@@ -23,17 +23,26 @@ final class TourMapViewController: UIViewController {
     var POI: [Annotation] = []
     var tourStops: [MGLAnnotation] = []
     var stops = TourStop.stops
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMapView()
-        var geocoder = Geocoder(accessToken: Secrets.mapKey)
-        if let location = initializeLocationToUser()  { self.startCoordinates = location }
+        setLocation()
+        
         view.backgroundColor = .white
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        setLocation()
+        setupMapView()
         addAnnotation()
+    }
+    
+    private func setLocation() {
+        if let location = initializeLocationToUser() {
+            startCoordinates = location
+        }
     }
 }
 
@@ -41,13 +50,18 @@ extension TourMapViewController: MGLMapViewDelegate {
     
     fileprivate func setupMapView() {
         let styleURL = NSURL(string: Secrets.mapStyle)
+        
         mapView  = MGLMapView(frame: view.bounds,
                               styleURL: styleURL as URL?)
-        view.addSubview(mapView)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.tourDestination = addAnnotations(location: stops[0].location.location, locationName: stops[0].location.locationName)
+        setupMapViewUI()
+        tourDestination = addAnnotations(location: stops[0].location.location, locationName: stops[0].location.locationName)
         mapView.delegate = self
         mapView.userTrackingMode = .follow
+    }
+    
+    func setupMapViewUI() {
+        view.addSubview(mapView)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.snp.makeConstraints { make in
             make.left.equalTo(view.snp.left)
@@ -63,16 +77,15 @@ extension TourMapViewController: MGLMapViewDelegate {
         initialLocation = centerAnnotation
         mapView.setCenter(centerAnnotation.coordinate, zoomLevel: 17, animated: false)
         mapView.selectAnnotation(centerAnnotation, animated: true)
-        setupAnnotation()
+        addAnnotationsToMap()
     }
     
-    func setupAnnotation() {
-        for stop in stops {
-            let location = CLLocation(latitude: stop.location.coordinates.latitude, longitude: stop.location.coordinates.longitude)
-            var centerAnnotation = addAnnotations(location: location, locationName: stop.location.locationName)
+    func addAnnotationsToMap() {
+        for i in 0...2 {
+            let location = CLLocation(latitude: stops[i].location.coordinates.latitude, longitude: stops[i].location.coordinates.longitude)
+            var centerAnnotation = addAnnotations(location: location, locationName: stops[i].location.locationName)
             self.tourStops.append(centerAnnotation)
         }
-        setLocation()
         createPath(completion: { time in
             print(time)
         })
@@ -111,11 +124,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         return anotationView
     }
     
-    private func setLocation() {
-        if let location = initializeLocationToUser() {
-            startCoordinates = location
-        }
-    }
+    
     
     private func setCenterCoordinateOnMapView() {
         let downtownManhattan = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude, longitude: startCoordinates.coordinate.longitude)
@@ -191,9 +200,9 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func removeUnusedWaypoints() {
-       POI.removeAll()
+        POI.removeAll()
     }
- 
+    
 }
 
 extension TourMapViewController: CLLocationManagerDelegate {
