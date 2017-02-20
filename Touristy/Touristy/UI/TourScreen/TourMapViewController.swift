@@ -151,10 +151,8 @@ extension TourMapViewController: MGLMapViewDelegate {
         let tourStopWayPoints: [Waypoint] = locationStore.setWaypointsFromStops(startingCoordinate:startingLocation,
                                                                                 endCoordinate: destination,
                                                                                 tourStops: self.tourStops)
-        
         let directions = Directions(accessToken: Secrets.mapKey)
         let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifierWalking)
-        
         options.includesSteps = true
         options.routeShapeResolution = .full
         
