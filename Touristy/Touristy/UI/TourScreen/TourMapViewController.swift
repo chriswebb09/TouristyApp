@@ -10,16 +10,18 @@ let MapboxAccessToken = Secrets.mapKey
 
 final class TourMapViewController: UIViewController {
     
+    let locationStore = TourDataStore.shared
+    
     var mapView: MGLMapView!
     var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
     var initialLocation: MGLAnnotation?
     var tourDestination: MGLAnnotation?
     var tourPath: MGLPolyline?
-    var navigationRoutes: [Route] = []
-    var navigationLegs: [RouteLeg] = []
+    var navRoutes: [Route] = []
+    var navLegs: [RouteLeg] = []
     var POI: [Annotation] = []
-    var tourStops: [Annotation] = []
+    var tourStops: [MGLAnnotation] = []
     var stops = TourStop.stops
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +67,10 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func setupAnnotation() {
-        let stops = TourStop.stops
         for stop in stops {
             let location = CLLocation(latitude: stop.location.coordinates.latitude, longitude: stop.location.coordinates.longitude)
             var centerAnnotation = addAnnotations(location: location, locationName: stop.location.locationName)
+            self.tourStops.append(centerAnnotation)
         }
         setLocation()
         createPath(completion: { time in
@@ -77,7 +79,6 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func addAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {
-       
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude:location.coordinate.longitude)
         annotation.title = locationName
@@ -91,11 +92,11 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
-        return UIColor.black
+        return UIColor.darkGray
     }
     
     func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
-        return 4
+        return 2
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
@@ -140,61 +141,59 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func createPath(completion: @escaping (_ time: String) -> ()) {
-        var tourStops: [Waypoint] = []
+        var tourStopWayPoints: [Waypoint] = locationStore.setWaypointsFromStops(tourStops: self.tourStops)
         
-        for waypoint in self.tourStops {
-            let waypoint = Waypoint(coordinate: waypoint.coordinate)
-            tourStops.append(waypoint)
-        }
-        
-        //  sortWaypoints(tourStops)
-        
-        guard let startingLocation = initialLocation, let destination = tourDestination else {
-            return
-        }
+        guard let startingLocation = initialLocation, let destination = tourDestination else { return }
+        locationStore.sortWaypoints(origin: startingLocation, waypoints: tourStopWayPoints)
         
         let originWaypoint = Waypoint(coordinate: startingLocation.coordinate)
         let destinationWaypoint = Waypoint(coordinate: destination.coordinate)
-
-        tourStops.insert(originWaypoint, at: 0)
-        tourStops.append(destinationWaypoint)
+        
+        tourStopWayPoints.insert(originWaypoint, at: 0)
+        tourStopWayPoints.append(destinationWaypoint)
+        
         let directions = Directions(accessToken: Secrets.mapKey)
-        let options = RouteOptions(waypoints: tourStops, profileIdentifier: MBDirectionsProfileIdentifierWalking)
+        let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifierWalking)
+        
         options.includesSteps = true
         options.routeShapeResolution = .full
-        directions.calculate(options, completionHandler: { waypoints, routes, error in
-            guard error == nil else {
-                print("Error getting directions: \(error!)")
-                return
-            }
-            
-            if let routes = routes {
-                self.navigationRoutes = routes
-            }
-            
-            if let route = routes?.first {
-                self.navigationLegs = route.legs
+        
+        directions.calculate(options) { waypoints, routes, error in
+            guard error == nil else { print("Error getting directions: \(error!)"); return }
+            if let routes = routes , let route = routes.first {
+                self.navRoutes = routes
+                self.navLegs = route.legs
                 let travelTimeFormatter = DateComponentsFormatter()
                 travelTimeFormatter.unitsStyle = .short
                 let formattedTravelTime = travelTimeFormatter.string(from: route.expectedTravelTime)
                 completion(formattedTravelTime!)
-                
-                // TODO: Remove testing data stuff
-                // Call this function when user saves path
-                
-                
                 if route.coordinateCount > 0 {
                     var routeCoordinates = route.coordinates!
                     self.tourPath = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
-                    
                     if let routeLine = self.tourPath {
                         self.mapView.addAnnotation(routeLine)
                         self.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets.zero, animated: true)
                     }
                 }
             }
-        })
+        }
     }
+    
+    func removePath() {
+        if let path = tourPath {
+            mapView.removeAnnotation(path)
+        }
+        tourPath = nil
+    }
+    
+    func removeWaypoints() {
+        tourStops.removeAll()
+    }
+    
+    func removeUnusedWaypoints() {
+       POI.removeAll()
+    }
+ 
 }
 
 extension TourMapViewController: CLLocationManagerDelegate {

@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import Mapbox
+import MapboxDirections
 
 struct Location {
     let streetAddress: String
@@ -160,6 +162,28 @@ public struct TourStop {
             historicalPhotos: [UIImage()],
             trivia: ["None"])
         
+        let cityHall = TourStop(
+            location: Location(
+                streetAddress: "City Hall Park, New York, NY 10007",
+                distanceTo: "Unknown", locationName: "New York City Hall",
+                coordinates: CLLocationCoordinate2D(latitude: 40.712850, longitude: -74.006465),
+                location: CLLocation(latitude: 40.712850, longitude: -74.006465)
+            ),
+            localHistory: "New York City Hall, the seat of New York City government, is located at the center of City Hall Park in the Civic Center area of Lower Manhattan, between Broadway, Park Row, and Chambers Street. The building is the oldest city hall in the United States that still houses its original governmental functions, such as the office of the Mayor of New York City and the chambers of the New York City Council. While the Mayor's Office is in the building, the staff of thirteen municipal agencies under mayoral control are located in the nearby Manhattan Municipal Building, one of the largest government buildings in the world.",
+            historicalPhotos: [UIImage()],
+            trivia: ["None"])
+        
+        let grandCentral = TourStop(
+            location: Location(
+                streetAddress: "89 E 42nd St, New York, NY 10017",
+                distanceTo: "Unknown", locationName: "Grand Central Terminal",
+                coordinates: CLLocationCoordinate2D(latitude: 40.752496, longitude: -73.977302),
+                location: CLLocation(latitude: 40.752496, longitude: -73.977302)
+            ),
+            localHistory: "Grand Central Terminal (GCT; also referred to as Grand Central Station or simply as Grand Central) is a commuter, rapid transit (and former intercity) railroad terminal at 42nd Street and Park Avenue in Midtown Manhattan in New York City, United States. Built by and named for the New York Central and Hudson River Railroad in the heyday of American long-distance passenger rail travel, it covers 48 acres (19 ha) and has 44 platforms, more than any other railroad station in the world. Its platforms, all below ground, serve 41 tracks on the upper level and 26 on the lower, though the total number of tracks along platforms and in rail yards exceeds 100.",
+            historicalPhotos: [UIImage()],
+            trivia: ["None"])
+        
         return [
             worldTraceCenterMemorial,
             centralPark,
@@ -167,7 +191,9 @@ public struct TourStop {
             triangleFire,
             ussIntrepid,
             tenamentMuseum,
-            africanBurialGround
+            africanBurialGround,
+            cityHall,
+            grandCentral
         ]
     }()
 }
