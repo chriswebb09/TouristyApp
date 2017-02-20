@@ -78,9 +78,9 @@ extension TourMapViewController: MGLMapViewDelegate {
                                                 locationName: "\(i). \(stops[i].location.locationName)")
             self.tourStops.append(tourAnnotation)
         }
-        createPath(completion: { time in
+        createPath() { time in
             print(time)
-        })
+        }
     }
     
     func addAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {

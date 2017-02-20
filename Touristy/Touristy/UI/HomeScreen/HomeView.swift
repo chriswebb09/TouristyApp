@@ -58,7 +58,6 @@ extension HomeView {
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)
             make.height.equalTo(self).multipliedBy(0.075)
             make.centerX.equalTo(self)
-            
         }
         
         signupButton.isHidden = true
@@ -90,7 +89,6 @@ extension HomeView {
         view.snp.makeConstraints { make in
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)
             make.height.equalTo(self).multipliedBy(Constants.Login.loginFieldHeight)
-            // make.height.equalTo.self.multipliedBy(Constants.Login.loginFieldHeight)
             make.centerX.equalTo(self)
         }
     }
