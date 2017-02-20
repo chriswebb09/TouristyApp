@@ -13,9 +13,9 @@ final class TourMapViewController: UIViewController {
     let locationStore = TourDataStore.shared
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
     var mapView: MGLMapView!
+    
     var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
-    
     var initialLocationAnnotation: MGLAnnotation?
     var tourDestinationAnnotation: MGLAnnotation?
     
@@ -24,6 +24,7 @@ final class TourMapViewController: UIViewController {
     var navLegs: [RouteLeg] = []
     var POI: [Annotation] = []
     var tourStops: [MGLAnnotation] = []
+    
     var stops = TourStop.stops
     
     override func viewDidLoad() {

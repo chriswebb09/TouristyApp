@@ -25,6 +25,7 @@ struct Coordinate {
 }
 
 struct UserLocationData {
+    
     func midpointCoordinates(origin: CLLocation, destination: CLLocation) -> CLLocation {
         let centerLatitidue = (origin.coordinate.latitude + destination.coordinate.latitude) / 2
         let centerLongitude = (origin.coordinate.longitude + destination.coordinate.longitude) / 2
@@ -48,9 +49,11 @@ public struct TourStop {
     
     var location: Location
     let localHistory: String
-    
     var historicalPhotos: [UIImage]?
     var trivia: [String]
+    var timePeriod: String
+    var timeScore: Int
+    
     
     static let stops: [TourStop] = {
         
@@ -64,7 +67,10 @@ public struct TourStop {
             ),
             localHistory: "The National September 11 Memorial & Museum (also known as the 9/11 Memorial and 9/11 Memorial Museum) are the principal memorial and museum, respectively. They commemorate the September 11, 2001 attacks, which killed 2,977 victims, and the World Trade Center bombing of 1993, which killed six.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "2000's",
+            timeScore: 15
+        )
         
         let centralPark = TourStop(
             location: Location(
@@ -76,7 +82,10 @@ public struct TourStop {
             ),
             localHistory: "Central Park is an urban park in Manhattan, New York City. Central Park is the most visited urban park in the United States, with 40 million visitors in 2013 and one of the most filmed locations in the world.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "18th Century",
+            timeScore: -15
+        )
         
         let theTombs = TourStop(
             location: Location(
@@ -88,7 +97,9 @@ public struct TourStop {
             ),
             localHistory: "The Tombs is the colloquial name for the Manhattan Detention Complex (formerly the Bernard B. Kerik Complex), a municipal jail in Lower Manhattan at 125 White Street, as well as the nickname for three previous city-run jails in the former Five Points neighborhood of lower Manhattan, an area now known as the Civic Center.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"]
+            trivia: ["None"],
+            timePeriod: "1990s",
+            timeScore: 15
         )
         
         let triangleFire = TourStop(
@@ -101,7 +112,10 @@ public struct TourStop {
             ),
             localHistory: "The Triangle Shirtwaist Factory fire in New York City on March 25, 1911 was the deadliest industrial disaster in the history of the city, and one of the deadliest in US history. The fire caused the deaths of 146 garment workers – 123 women and 23 men – who died from the fire, smoke inhalation, or falling or jumping to their deaths. Most of the victims were recent Jewish and Italian immigrant women aged 16 to 23 of the victims whose ages are known, the oldest victim was Providenza Panno at 43, and the youngest were 14-year-olds Kate Leone and 'Sara' Rosaria Maltese.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "1900s",
+            timeScore: -15
+        )
         
         let ussIntrepid = TourStop(
             location: Location(
@@ -112,7 +126,11 @@ public struct TourStop {
                 location: CLLocation(latitude: 40.764527, longitude: -73.999608)
             ),
             localHistory: "Launched in 1943, the aircraft carrier Intrepid fought in World War II, surviving five kamikaze attacks and one torpedo strike. The ship later served in the Cold War and the Vietnam War. Intrepid also served as a NASA recovery vessel in the 1960s. More than 50,000 men served on board Intrepid during the ship's time in service, and more than 270 men made the ultimate sacrifice. Intrepid was decommissioned in 1974. Today, Intrepid is berthed on the Hudson River as the centerpiece of the Intrepid Sea, Air & Space Museum.",
-            historicalPhotos: [UIImage()], trivia: ["None"])
+            historicalPhotos: [UIImage()],
+            trivia: ["None"],
+            timePeriod: "World War II",
+            timeScore: 5
+        )
         
         let tenamentMuseum = TourStop(
             location: Location(
@@ -125,7 +143,10 @@ public struct TourStop {
             ),
             localHistory: "The Lower East Side Tenement Museum, located at 97 Orchard Street in the Lower East Side neighborhood of Manhattan, New York City, is a National Historic Site. The five-story brick tenement building was home to an estimated 7,000 people, from over 20 nations, between 1863 and 1935. The museum, which includes a visitors' center down the block, promotes tolerance and historical perspective on the immigrant experience.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "1880s",
+            timeScore: -15
+        )
         
         let africanBurialGround = TourStop(
             location: Location(
@@ -137,7 +158,10 @@ public struct TourStop {
             ),
             localHistory: "African Burial Ground National Monument is a monument at Duane Street and African Burial Ground Way (Elk Street) in the Civic Center section of Lower Manhattan, New York City. Its main building is the Ted Weiss Federal Building at 290 Broadway. The site contains the remains of more than 419 Africans buried during the late 17th and 18th centuries in a portion of what was the largest colonial-era cemetery for people of African descent, some free, most enslaved. Historians estimate there may have been 10,000–20,000 burials in what was called the 'Negroes Burial Ground' in the 1700s.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "Colonial",
+            timeScore: -25
+        )
         
         let SixtyNinthRegimentArmory = TourStop(
             location: Location(
@@ -149,7 +173,10 @@ public struct TourStop {
             ),
             localHistory: "The 69th Regiment Armory is located at 68 Lexington Avenue between East 25th and 26th Streets in the Rose Hill section of Manhattan, New York City. The historic building began construction in 1904 and was completed in 1906.[1][4] The building is still used to house the headquarters of the New York Army National Guard's 1st Battalion, 69th Infantry Regiment (known as the 'Fightin Irish' since Gettsyburg), as well as for the presentation of special events.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "1900s",
+            timeScore: -10
+        )
         
         let frauncesTavern = TourStop(
             location: Location(
@@ -160,7 +187,10 @@ public struct TourStop {
             ),
             localHistory: "Fraunces Tavern is a landmark museum and restaurant in New York City, situated at 54 Pearl Street at the corner of Broad Street. The location played a prominent role in history before, during and after the American Revolution, serving as a headquarters for George Washington, a venue for peace negotiations with the British, and housing federal offices in the Early Republic.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "Colonial",
+            timeScore: -25
+        )
         
         let cityHall = TourStop(
             location: Location(
@@ -171,7 +201,10 @@ public struct TourStop {
             ),
             localHistory: "New York City Hall, the seat of New York City government, is located at the center of City Hall Park in the Civic Center area of Lower Manhattan, between Broadway, Park Row, and Chambers Street. The building is the oldest city hall in the United States that still houses its original governmental functions, such as the office of the Mayor of New York City and the chambers of the New York City Council. While the Mayor's Office is in the building, the staff of thirteen municipal agencies under mayoral control are located in the nearby Manhattan Municipal Building, one of the largest government buildings in the world.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "Colonial",
+            timeScore: -25
+        )
         
         let grandCentral = TourStop(
             location: Location(
@@ -182,7 +215,10 @@ public struct TourStop {
             ),
             localHistory: "Grand Central Terminal (GCT; also referred to as Grand Central Station or simply as Grand Central) is a commuter, rapid transit (and former intercity) railroad terminal at 42nd Street and Park Avenue in Midtown Manhattan in New York City, United States. Built by and named for the New York Central and Hudson River Railroad in the heyday of American long-distance passenger rail travel, it covers 48 acres (19 ha) and has 44 platforms, more than any other railroad station in the world. Its platforms, all below ground, serve 41 tracks on the upper level and 26 on the lower, though the total number of tracks along platforms and in rail yards exceeds 100.",
             historicalPhotos: [UIImage()],
-            trivia: ["None"])
+            trivia: ["None"],
+            timePeriod: "1900s",
+            timeScore: -10
+        )
         
         return [
             worldTraceCenterMemorial,

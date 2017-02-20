@@ -18,15 +18,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                                     style: UITableViewStyle.plain)
         tableView.delegate = self
         tableView.dataSource = self
-        self.view.addSubview(tableView)
+        view.addSubview(tableView)
         tableView.frame.origin.y = self.view.bounds.height * 0.5
-      //  tableView.frame.origin.y += 166
-       // view.translatesAutoresizingMaskIntoConstraints = false
-      //  tableView.translatesAutoresizingMaskIntoConstraints = false
-       // tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        self.tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView(frame: .zero)
-      //  tableView.frame.size.height = self.view.bounds.height * (UIScreen.main.bounds.height * 0.5)
         tableView.frame.size.height = UIScreen.main.bounds.height * 0.5
     }
     
@@ -39,8 +34,4 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-
-    
-    
-    
 }
