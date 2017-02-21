@@ -4,11 +4,14 @@ import CoreLocation
 import Mapbox
 import MapboxGeocoder
 import MapboxDirections
+import RealmSwift
 
 
 let MapboxAccessToken = Secrets.mapKey
 
 final class TourMapViewController: UIViewController {
+    
+    var tourist: Results<Tourist>!
     
     let locationStore = TourDataStore.shared
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
@@ -30,6 +33,11 @@ final class TourMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let realm = try? Realm() {
+            tourist = realm.objects(Tourist.self)
+        }
+        
         setLocation()
         setLocation()
         setupMapView()

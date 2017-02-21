@@ -8,7 +8,7 @@ class Tourist: Object {
     dynamic var tourType: String = ""
     dynamic var distanceTravelled: String = ""
     dynamic var triviaScore: Int = 0
-    dynamic var pictureTaken: [Data] = [Data]()
+    var pictureTaken: List = List()
     dynamic var levelOfActivity: String = ""
     dynamic var distanceToTravel: String = ""
     
