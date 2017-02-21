@@ -11,16 +11,16 @@ let MapboxAccessToken = Secrets.mapKey
 final class TourMapViewController: UIViewController {
     
     var tourist: Results<Tourist>!
-    
+    var currentStage: CurrentStage?
     let locationStore = TourDataStore.shared
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
     var mapView: MGLMapView!
-    
+    var createMode = false
     var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
     var initialLocationAnnotation: MGLAnnotation?
     var tourDestinationAnnotation: MGLAnnotation?
-    
+    var tourPoints: [Annotation] = []
     var tourPath: MGLPolyline?
     var navRoutes: [Route] = []
     var navLegs: [RouteLeg] = []
@@ -30,6 +30,10 @@ final class TourMapViewController: UIViewController {
     var tourStops: [MGLAnnotation] = []
     let directions = Directions(accessToken: Secrets.mapKey)
     var stops = TourStop.stops
+    
+    enum CurrentStage {
+        case defaultStage, waypoints, route
+    }
     
     init(_ coder: NSCoder? = nil) {
         self.startLocation = Annotation(typeSelected: .origin)
@@ -91,6 +95,29 @@ extension TourMapViewController: MGLMapViewDelegate {
         setCenterCoordinateOnMapView()
     }
     
+    func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
+        guard let annotationSelected = annotation as? Annotation else {
+            return nil
+        }
+        
+        switch annotationSelected.type {
+        case .tourStop:
+            let removeButton = UIButton(type: .system)
+            let myAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 22, weight: UIFontWeightLight)]
+            let buttonIcon = NSAttributedString(string: "ⓧ", attributes: myAttributes)
+            removeButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
+            removeButton.setAttributedTitle(buttonIcon, for: .normal)
+            removeButton.tintColor = UIColor.red
+            return removeButton
+        case .POI:
+            let addButton = UIButton(type: .contactAdd)
+            addButton.tintColor = UIColor.green
+            return addButton
+        default:
+            return nil
+        }
+    }
+    
     func addAnnotationsToMap() {
         var newTourStops = [TourStop]()
         for i in 1...3 {
@@ -141,6 +168,59 @@ extension TourMapViewController: MGLMapViewDelegate {
         annotationView?.backgroundColor = .white
         return annotationView
     }
+    func containsWaypoint(waypoint: Annotation) -> Bool {
+        if tourPoints.contains(where: { $0.title! == waypoint.title! }) {
+            return true
+        }
+        
+        return false
+    }
+    
+    func setToWaypoints() {
+        createMode = true
+        currentStage = .waypoints
+        //dropdownView.hide()
+        
+        // disableControlsForBuffer(true)
+        
+        // getWaypoints()
+        
+        UIView.animate(withDuration: 0.3) {
+            // elf.dropdownBarButton.image = UIImage(named: "cancel")
+        }
+    }
+    
+    func mapView(mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
+        // Hide the callout view.
+        mapView.deselectAnnotation(annotation, animated: false)
+        
+        guard let selectedAnnotation = annotation as? Annotation else {
+            return
+        }
+        
+        
+        if createMode && currentStage == .waypoints {
+            
+            if containsWaypoint(waypoint: selectedAnnotation) {
+                if let index = tourPoints.index(where: { $0.title! == selectedAnnotation.title! }) {
+                    tourPoints.remove(at: index)
+                }
+                selectedAnnotation.type = .POI
+                POI.append(selectedAnnotation)
+                let annotationView = mapView.view(for: annotation)
+                annotationView?.backgroundColor = selectedAnnotation.annotationColor
+            } else {
+                if let index = self.POI.index(of: selectedAnnotation) {
+                    self.POI.remove(at: index)
+                }
+                selectedAnnotation.type = .tourStop
+                tourPoints.append(selectedAnnotation)
+                let annotationView = mapView.view(for: annotation)
+                annotationView?.backgroundColor = selectedAnnotation.annotationColor
+            }
+        }
+    }
+    
     
     private func setCenterCoordinateOnMapView() {
         let downtownManhattan = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude,
