@@ -25,10 +25,25 @@ final class TourMapViewController: UIViewController {
     var navRoutes: [Route] = []
     var navLegs: [RouteLeg] = []
     var POI: [Annotation] = []
+    var startLocation: Annotation?
+    var end: Annotation?
     var tourStops: [MGLAnnotation] = []
     let directions = Directions(accessToken: Secrets.mapKey)
-    
     var stops = TourStop.stops
+    
+    init(_ coder: NSCoder? = nil) {
+        self.startLocation = Annotation(typeSelected: .origin)
+        self.end = Annotation(typeSelected: .tourStop)
+        if let coder = coder {
+            super.init(coder: coder)!
+        } else {
+            super.init(nibName: nil, bundle:nil)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,12 +157,34 @@ extension TourMapViewController: MGLMapViewDelegate {
         mapView.resetNorth()
     }
     
-    func mapView(_ mapView: MGLMapView, didSelect annotationView: MGLAnnotationView) {
-        print("Here we are")
+    func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+        guard let selectedAnnotation = annotation as? Annotation else {
+            return
+        }
+        
+        guard let origin = startLocation, let destination = end else {
+            return
+        }
+        switch selectedAnnotation.type {
+        case .origin:
+            mapView.deselectAnnotation(annotation, animated: true)
+        case .POI:
+            mapView.deselectAnnotation(annotation, animated: true)
+        case .tourStop:
+            mapView.deselectAnnotation(annotation, animated: true)
+        default:
+            break
+        }
+        
     }
     
+    
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
-        // implement
+        if view.isKind(of: TourSpotAnnotationView.self) {
+            for subview in view.subviews {
+                subview.removeFromSuperview()
+            }
+        }
     }
     
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
@@ -169,7 +206,8 @@ extension TourMapViewController: MGLMapViewDelegate {
             if let routes = routes , let route = routes.first {
                 self.navRoutes = routes
                 self.navLegs = route.legs
-                completion(self.getTravelTimeFromInterval(interval: route.expectedTravelTime)!)
+                //getTravelTimeFromInterval(interval: route.expectedTravelTime)!
+                completion("time")
                 
                 if route.coordinateCount > 0 {
                     var routeCoordinates = route.coordinates!
@@ -183,32 +221,62 @@ extension TourMapViewController: MGLMapViewDelegate {
         }
     }
     
-    func getTravelTimeFromInterval(interval: TimeInterval) -> String? {
-        let travelTimeFormatter = DateComponentsFormatter()
-        travelTimeFormatter.unitsStyle = .short
-        let formattedTravelTime = travelTimeFormatter.string(from: interval)
-        return formattedTravelTime
-    }
     
-    func removePath() {
-        if let path = tourPath {
-            mapView.removeAnnotation(path)
+    func setStartPoint(startPoint: Annotation) {
+        if let start = startLocation {
+            mapView.removeAnnotation(start)
         }
-        tourPath = nil
+        self.startLocation = startPoint
+        mapView.addAnnotation(startPoint)
+        mapView.setCenter(startPoint.coordinate, animated: true)
     }
     
-    func removeWaypoints() {
-        tourStops.removeAll()
-    }
-    
-    func removeUnusedWaypoints() {
-        POI.removeAll()
+    func getDestination(destinationPoint: Annotation) {
+        if let destination = end {
+            mapView.removeAnnotation(destination)
+        }
+        self.end = destinationPoint
+        mapView.addAnnotation(destinationPoint)
+        mapView.setCenter(destinationPoint.coordinate, animated: true)
+        
+        func getTravelTimeFromInterval(interval: TimeInterval) -> String? {
+            let travelTimeFormatter = DateComponentsFormatter()
+            travelTimeFormatter.unitsStyle = .short
+            let formattedTravelTime = travelTimeFormatter.string(from: interval)
+            return formattedTravelTime
+        }
+        
+        func removePath() {
+            if let path = tourPath {
+                mapView.removeAnnotation(path)
+            }
+            tourPath = nil
+        }
+        
+        func removeWaypoints() {
+            tourStops.removeAll()
+        }
+        
+        func removeUnusedWaypoints() {
+            POI.removeAll()
+        }
+        
+        func coordinatesEqual(location: CLLocationCoordinate2D, other: CLLocationCoordinate2D) -> Bool {
+            return location.latitude == other.latitude && location.longitude == other.longitude
+        }
+        
+        func containsWaypoint(waypoint: Annotation) -> Bool {
+            if POI.contains(where: { $0.title! == waypoint.title! }) {
+                return true
+            }
+            return false
+        }
     }
 }
 
 extension TourMapViewController: CLLocationManagerDelegate {
     
-    fileprivate func setLocation() {
+    func setLocation() {
         if let location = initializeLocationToUser() {
             startCoordinates = location
         }
