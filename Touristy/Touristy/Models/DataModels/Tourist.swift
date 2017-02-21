@@ -2,18 +2,25 @@ import UIKit
 import Realm
 import RealmSwift
 
-
 class RealmImage: Object {
+    
+    dynamic var image: Data = Data()
+    
     required init() {
         super.init()
     }
     
-    required init(value: Any, schema: RLMSchema) {
-        fatalError("init(value:schema:) has not been implemented")
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
     }
     
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        fatalError("init(realm:schema:) has not been implemented")
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+    }
+    
+    init(image: Data) {
+        self.image = image
+        super.init()
     }
 }
 
@@ -25,14 +32,13 @@ class Tourist: Object {
     dynamic var tourType: String = ""
     dynamic var distanceTravelled: String = ""
     dynamic var triviaScore: Int = 0
-    var picturesTaken: List<RealmImage> = List()
+    let picturesTaken = List<RealmImage>()
     dynamic var levelOfActivity: String = ""
     dynamic var distanceToTravel: String = ""
     
     required init() {
         super.init()
     }
-    
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
         super.init(realm: realm, schema: schema)
@@ -52,7 +58,6 @@ class Tourist: Object {
         self.tourType = tourType
         self.distanceToTravel = distanceToTravel
         self.triviaScore = triviaScore
-        self.picturesTaken = picturesTaken
         self.levelOfActivity = levelOfActivity
         self.distanceToTravel = distanceToTravel
         super.init()
@@ -60,5 +65,27 @@ class Tourist: Object {
     
     static func getPicturesFrom(data: Data) -> UIImage {
         return UIImage(data: data)!
+    }
+    
+    func save() {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(self)
+            }
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    func delete() {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
     }
 }
