@@ -6,7 +6,6 @@ import MapboxGeocoder
 import MapboxDirections
 import RealmSwift
 
-
 let MapboxAccessToken = Secrets.mapKey
 
 final class TourMapViewController: UIViewController {
