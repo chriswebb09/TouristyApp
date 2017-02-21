@@ -9,6 +9,7 @@ target 'Touristy' do
     pod 'SnapKit'
     pod 'RxCocoa'
     pod 'RxSwift'
+    pod 'RealmSwift'
     pod 'Alamofire', '~> 4.3'
     pod 'SwiftyJSON'
     pod 'ObjectMapper', '~> 2.2'

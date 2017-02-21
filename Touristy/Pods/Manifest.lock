@@ -45,6 +45,11 @@ PODS:
   - MapboxGeocoder.swift (0.5.1)
   - ObjectMapper (2.2.2)
   - Polyline (4.0.0)
+  - Realm (2.4.2):
+    - Realm/Headers (= 2.4.2)
+  - Realm/Headers (2.4.2)
+  - RealmSwift (2.4.2):
+    - Realm (= 2.4.2)
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
@@ -60,6 +65,7 @@ DEPENDENCIES:
   - MapboxDirections.swift (from `https://github.com/mapbox/MapboxDirections.swift.git`, branch `swift3`)
   - MapboxGeocoder.swift (from `https://github.com/mapbox/MapboxGeocoder.swift.git`, branch `swift3`)
   - ObjectMapper (~> 2.2)
+  - RealmSwift
   - RxCocoa
   - RxSwift
   - SnapKit
@@ -98,11 +104,13 @@ SPEC CHECKSUMS:
   MapboxGeocoder.swift: 04f80b3856e5cd1ff0af9910dbf14d27058ce906
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   Polyline: c6de7430bf6ff0bfff1f087343597b83b38fdb69
+  Realm: d27b758e12d62a3371879a065d4c40aa212c5a54
+  RealmSwift: 9556c0fe0f0cfecacfb755ae9e68ff379fc6bead
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 7bbca3f1eeff8107da1cf0fd0c96a9dc594673c0
+PODFILE CHECKSUM: 70dfd3e65e6578afc1af88070faa8b90e78561fd
 
 COCOAPODS: 1.1.1

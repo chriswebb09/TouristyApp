@@ -251,12 +251,14 @@
 			children = (
 				A70B7F5A1E54F1EF003E587A /* DataModels */,
 			);
-			path = Models;
+			name = Models;
+			path = ../../Models;
 			sourceTree = "<group>";
 		};
 		A70B7F4D1E54F125003E587A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A70B7F4C1E54F11B003E587A /* Models */,
 				A70B7F501E54F15D003E587A /* Location */,
 				A70B7F4F1E54F154003E587A /* Network */,
 				A70B7F051E54F038003E587A /* DataDefaults.swift */,
@@ -444,7 +446,6 @@
 			children = (
 				A70B7F5B1E54F213003E587A /* AppIncludes */,
 				A70B7F5C1E54F223003E587A /* Application */,
-				A70B7F4C1E54F11B003E587A /* Models */,
 				A70B7F4E1E54F130003E587A /* Shared */,
 				A70B7F5D1E54F238003E587A /* UI */,
 			);

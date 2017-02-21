@@ -63,7 +63,7 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func addAnnotation() {
-        var centerAnnotation = createAnnotations(location: startCoordinates, locationName: "Begin")
+        let centerAnnotation = createAnnotations(location: startCoordinates, locationName: "Begin")
         initialLocationAnnotation = centerAnnotation
         addAnnotationsToMap()
         setCenterCoordinateOnMapView()
@@ -73,7 +73,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         var newTourStops = [TourStop]()
         for i in 1...3 {
             let location = CLLocation(latitude: stops[i].location.coordinates.latitude, longitude: stops[i].location.coordinates.longitude)
-            var tourAnnotation = createAnnotations(location: location, locationName: "\(i). \(stops[i].location.locationName)")
+            let tourAnnotation = createAnnotations(location: location, locationName: "\(i). \(stops[i].location.locationName)")
             newTourStops.append(stops[i])
             self.tourStops.append(tourAnnotation)
         }
