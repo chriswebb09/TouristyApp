@@ -57,24 +57,13 @@ final class TourMapViewController: UIViewController {
             tourist = realm.objects(Tourist.self)
         }
         
-        
         viewModel.setLocation(controller: self)
-        setupMapView()
-        addAnnotation()
+        viewModel.setupMapView(controller: self)
+        viewModel.addAnnotation(controller: self)
     }
 }
 
 extension TourMapViewController: MGLMapViewDelegate {
-    
-    fileprivate func setupMapView() {
-        let styleURL = URL(string: Secrets.mapStyle)
-        mapView  = MGLMapView(frame: view.bounds, styleURL: styleURL)
-        setupMapViewUI()
-        tourDestinationAnnotation = viewModel.createAnnotations(controller: self, location: stops[0].location.location,
-                                                      locationName: stops[0].location.locationName)
-        mapView.delegate = self
-        mapView.userTrackingMode = .follow
-    }
     
     func setupMapViewUI() {
         view.addSubview(mapView)
@@ -87,13 +76,6 @@ extension TourMapViewController: MGLMapViewDelegate {
             make.top.equalTo(view.snp.top)
         }
         mapView.tintColor = .gray
-    }
-    
-    func addAnnotation() {
-        let centerAnnotation = viewModel.createAnnotations(controller: self, location: startCoordinates, locationName: "Begin")
-        initialLocationAnnotation = centerAnnotation
-        addAnnotationsToMap()
-        viewModel.setCenterCoordinateOnMapView(controller: self)
     }
     
     func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
@@ -158,20 +140,6 @@ extension TourMapViewController: MGLMapViewDelegate {
         }
         annotationView?.backgroundColor = .white
         return annotationView
-    }
-    
-    func setToWaypoints() {
-        createMode = true
-        currentStage = .waypoints
-        //dropdownView.hide()
-        
-        // disableControlsForBuffer(true)
-        
-        // getWaypoints()
-        
-        UIView.animate(withDuration: 0.3) {
-            // elf.dropdownBarButton.image = UIImage(named: "cancel")
-        }
     }
     
     func mapView(mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
@@ -293,41 +261,13 @@ extension TourMapViewController: MGLMapViewDelegate {
             return formattedTravelTime
         }
         
-        func removePath() {
-            if let path = tourPath {
-                mapView.removeAnnotation(path)
-            }
-            tourPath = nil
-        }
-        
-        func removeWaypoints() {
-            tourStops.removeAll()
-        }
-        
-        func removeUnusedWaypoints() {
-            POI.removeAll()
-        }
-        
         func coordinatesEqual(location: CLLocationCoordinate2D, other: CLLocationCoordinate2D) -> Bool {
             return location.latitude == other.latitude && location.longitude == other.longitude
-        }
-        
-        func containsWaypoint(waypoint: Annotation) -> Bool {
-            if POI.contains(where: { $0.title! == waypoint.title! }) {
-                return true
-            }
-            return false
         }
     }
 }
 
 extension TourMapViewController: CLLocationManagerDelegate {
-    
-//    func setLocation() {
-//        if let location = initializeLocationToUser() {
-//            startCoordinates = location
-//        }
-//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {

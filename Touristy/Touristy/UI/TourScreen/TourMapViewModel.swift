@@ -42,6 +42,50 @@ struct TourMapViewModel {
         return false
     }
     
+    func setToWaypoints(controller: TourMapViewController) {
+        controller.createMode = true
+        controller.currentStage = .waypoints
+    }
+    
+    func removeWaypoints(controller: TourMapViewController) {
+        controller.tourStops.removeAll()
+    }
+    
+    func removeUnusedWaypoints(controller: TourMapViewController) {
+        controller.POI.removeAll()
+    }
+    
+    func setupMapView(controller: TourMapViewController) {
+        let styleURL = URL(string: Secrets.mapStyle)
+        controller.mapView  = MGLMapView(frame: controller.view.bounds, styleURL: styleURL)
+        controller.setupMapViewUI()
+        controller.tourDestinationAnnotation = createAnnotations(controller: controller, location: controller.stops[0].location.location,
+                                                                locationName: controller.stops[0].location.locationName)
+        controller.mapView.delegate = controller
+        controller.mapView.userTrackingMode = .follow
+    }
+    
+    func removePath(controller: TourMapViewController) {
+        if let path = controller.tourPath {
+            controller.mapView.removeAnnotation(path)
+        }
+        controller.tourPath = nil
+    }
+    
+    func containsWaypoint(controller: TourMapViewController, waypoint: Annotation) -> Bool {
+        if controller.POI.contains(where: { $0.title! == waypoint.title! }) {
+            return true
+        }
+        return false
+    }
+    
+    func addAnnotation(controller: TourMapViewController) {
+        let centerAnnotation = createAnnotations(controller: controller, location: controller.startCoordinates, locationName: "Begin")
+        controller.initialLocationAnnotation = centerAnnotation
+        controller.addAnnotationsToMap()
+        setCenterCoordinateOnMapView(controller: controller)
+    }
+    
     func createAnnotations(controller: TourMapViewController, location: CLLocation, locationName: String) -> MGLPointAnnotation {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
