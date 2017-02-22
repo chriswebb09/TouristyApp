@@ -8,6 +8,7 @@
 
 import UIKit
 import Mapbox
+import SnapKit
 
 struct TourMapViewModel {
     var lineWidth: CGFloat = 2
@@ -34,6 +35,19 @@ struct TourMapViewModel {
         controller.mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
     }
     
+    func setupMapViewUI(controller: TourMapViewController) {
+        controller.view.addSubview(controller.mapView)
+        controller.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        controller.mapView.translatesAutoresizingMaskIntoConstraints = false
+        controller.mapView.snp.makeConstraints { make in
+            make.left.equalTo(controller.view.snp.left)
+            make.right.equalTo(controller.view.snp.right)
+            make.bottom.equalTo(controller.view.snp.bottom)
+            make.top.equalTo(controller.view.snp.top)
+        }
+        controller.mapView.tintColor = .gray
+    }
+    
     func containsWaypoint(tourPoints: [Annotation], waypoint: Annotation) -> Bool {
         if tourPoints.contains(where: { $0.title! == waypoint.title! }) {
             return true
@@ -58,7 +72,7 @@ struct TourMapViewModel {
     func setupMapView(controller: TourMapViewController) {
         let styleURL = URL(string: Secrets.mapStyle)
         controller.mapView  = MGLMapView(frame: controller.view.bounds, styleURL: styleURL)
-        controller.setupMapViewUI()
+        setupMapViewUI(controller: controller)
         controller.tourDestinationAnnotation = createAnnotations(controller: controller, location: controller.stops[0].location.location,
                                                                 locationName: controller.stops[0].location.locationName)
         controller.mapView.delegate = controller

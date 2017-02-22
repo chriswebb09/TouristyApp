@@ -65,19 +65,6 @@ final class TourMapViewController: UIViewController {
 
 extension TourMapViewController: MGLMapViewDelegate {
     
-    func setupMapViewUI() {
-        view.addSubview(mapView)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.snp.makeConstraints { make in
-            make.left.equalTo(view.snp.left)
-            make.right.equalTo(view.snp.right)
-            make.bottom.equalTo(view.snp.bottom)
-            make.top.equalTo(view.snp.top)
-        }
-        mapView.tintColor = .gray
-    }
-    
     func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
         guard let annotationSelected = annotation as? Annotation else {
             return nil
