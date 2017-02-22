@@ -159,9 +159,7 @@ extension TourMapViewController: MGLMapViewDelegate {
             return
         }
         
-        guard let origin = startLocation, let destination = end else {
-            return
-        }
+        guard let origin = startLocation, let destination = end else { return }
         switch selectedAnnotation.type {
         case .origin:
             mapView.deselectAnnotation(annotation, animated: true)
@@ -172,9 +170,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         default:
             break
         }
-        
     }
-    
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
         if view.isKind(of: TourSpotAnnotationView.self) {
