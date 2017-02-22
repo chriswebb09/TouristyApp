@@ -46,6 +46,7 @@
 		A70B7F441E54F038003E587A /* UserLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1E1E54F038003E587A /* UserLocationData.swift */; };
 		A70B7F5F1E54FCFF003E587A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */; };
 		A74653F51E5ABA5300CC0995 /* TourDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74653F41E5ABA5300CC0995 /* TourDataStore.swift */; };
+		A746FB081E5E2AC200D3BF65 /* TourMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746FB071E5E2AC200D3BF65 /* TourMapViewModel.swift */; };
 		A7563F651E503E9D003252FA /* TouristyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F641E503E9D003252FA /* TouristyTests.swift */; };
 		A7563F701E503E9D003252FA /* TouristyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7563F6F1E503E9D003252FA /* TouristyUITests.swift */; };
 		A756C68E1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C68D1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift */; };
@@ -127,6 +128,7 @@
 		A70B7F1E1E54F038003E587A /* UserLocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationData.swift; path = ../../Application/Data/Location/UserLocationData.swift; sourceTree = "<group>"; };
 		A70B7F5E1E54FCFF003E587A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A74653F41E5ABA5300CC0995 /* TourDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourDataStore.swift; sourceTree = "<group>"; };
+		A746FB071E5E2AC200D3BF65 /* TourMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourMapViewModel.swift; sourceTree = "<group>"; };
 		A7563F4C1E503E9D003252FA /* Touristy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touristy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F601E503E9D003252FA /* TouristyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouristyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7563F641E503E9D003252FA /* TouristyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristyTests.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				A70B7F191E54F038003E587A /* TourMapViewController.swift */,
+				A746FB071E5E2AC200D3BF65 /* TourMapViewModel.swift */,
 				A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */,
 				A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */,
 			);
@@ -782,6 +785,7 @@
 				A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */,
 				A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */,
 				A70B7F321E54F038003E587A /* MenuView.swift in Sources */,
+				A746FB081E5E2AC200D3BF65 /* TourMapViewModel.swift in Sources */,
 				A70B7F3A1E54F038003E587A /* SplashViewController.swift in Sources */,
 				A70B7F351E54F038003E587A /* QueryViewController.swift in Sources */,
 				A70B7F371E54F038003E587A /* SettingsCell.swift in Sources */,

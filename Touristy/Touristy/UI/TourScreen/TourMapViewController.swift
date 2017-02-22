@@ -11,6 +11,7 @@ let MapboxAccessToken = Secrets.mapKey
 final class TourMapViewController: UIViewController {
     
     var tourist: Results<Tourist>!
+    var viewModel = TourMapViewModel()
     var currentStage: CurrentStage?
     let locationStore = TourDataStore.shared
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
@@ -56,8 +57,8 @@ final class TourMapViewController: UIViewController {
             tourist = realm.objects(Tourist.self)
         }
         
-        setLocation()
-        setLocation()
+        
+        viewModel.setLocation(controller: self)
         setupMapView()
         addAnnotation()
     }
@@ -69,7 +70,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         let styleURL = URL(string: Secrets.mapStyle)
         mapView  = MGLMapView(frame: view.bounds, styleURL: styleURL)
         setupMapViewUI()
-        tourDestinationAnnotation = createAnnotations(location: stops[0].location.location,
+        tourDestinationAnnotation = viewModel.createAnnotations(controller: self, location: stops[0].location.location,
                                                       locationName: stops[0].location.locationName)
         mapView.delegate = self
         mapView.userTrackingMode = .follow
@@ -89,10 +90,10 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func addAnnotation() {
-        let centerAnnotation = createAnnotations(location: startCoordinates, locationName: "Begin")
+        let centerAnnotation = viewModel.createAnnotations(controller: self, location: startCoordinates, locationName: "Begin")
         initialLocationAnnotation = centerAnnotation
         addAnnotationsToMap()
-        setCenterCoordinateOnMapView()
+        viewModel.setCenterCoordinateOnMapView(controller: self)
     }
     
     func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
@@ -122,7 +123,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         var newTourStops = [TourStop]()
         for i in 1...3 {
             let location = CLLocation(latitude: stops[i].location.coordinates.latitude, longitude: stops[i].location.coordinates.longitude)
-            let tourAnnotation = createAnnotations(location: location, locationName: "\(i). \(stops[i].location.locationName)")
+            let tourAnnotation = viewModel.createAnnotations(controller: self, location: location, locationName: "\(i). \(stops[i].location.locationName)")
             newTourStops.append(stops[i])
             self.tourStops.append(tourAnnotation)
         }
@@ -133,26 +134,16 @@ extension TourMapViewController: MGLMapViewDelegate {
         }
     }
     
-    func createAnnotations(location: CLLocation, locationName: String) -> MGLPointAnnotation {
-        let annotation = MGLPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
-                                                       longitude:location.coordinate.longitude)
-        annotation.title = locationName
-        mapView.addAnnotation(annotation)
-        mapView.selectAnnotation(annotation, animated: true)
-        return annotation
-    }
-    
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
     
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
-        return UIColor.darkGray
+        return viewModel.lineColor
     }
     
     func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
-        return 2
+        return viewModel.lineWidth
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
@@ -167,13 +158,6 @@ extension TourMapViewController: MGLMapViewDelegate {
         }
         annotationView?.backgroundColor = .white
         return annotationView
-    }
-    func containsWaypoint(waypoint: Annotation) -> Bool {
-        if tourPoints.contains(where: { $0.title! == waypoint.title! }) {
-            return true
-        }
-        
-        return false
     }
     
     func setToWaypoints() {
@@ -201,7 +185,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         
         if createMode && currentStage == .waypoints {
             
-            if containsWaypoint(waypoint: selectedAnnotation) {
+            if viewModel.containsWaypoint(tourPoints: tourPoints, waypoint: selectedAnnotation) {
                 if let index = tourPoints.index(where: { $0.title! == selectedAnnotation.title! }) {
                     tourPoints.remove(at: index)
                 }
@@ -219,13 +203,6 @@ extension TourMapViewController: MGLMapViewDelegate {
                 annotationView?.backgroundColor = selectedAnnotation.annotationColor
             }
         }
-    }
-    
-    
-    private func setCenterCoordinateOnMapView() {
-        let downtownManhattan = CLLocationCoordinate2D(latitude: startCoordinates.coordinate.latitude,
-                                                       longitude: startCoordinates.coordinate.longitude)
-        mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
@@ -301,16 +278,6 @@ extension TourMapViewController: MGLMapViewDelegate {
         }
     }
     
-    
-    func setStartPoint(startPoint: Annotation) {
-        if let start = startLocation {
-            mapView.removeAnnotation(start)
-        }
-        self.startLocation = startPoint
-        mapView.addAnnotation(startPoint)
-        mapView.setCenter(startPoint.coordinate, animated: true)
-    }
-    
     func getDestination(destinationPoint: Annotation) {
         if let destination = end {
             mapView.removeAnnotation(destination)
@@ -356,11 +323,11 @@ extension TourMapViewController: MGLMapViewDelegate {
 
 extension TourMapViewController: CLLocationManagerDelegate {
     
-    func setLocation() {
-        if let location = initializeLocationToUser() {
-            startCoordinates = location
-        }
-    }
+//    func setLocation() {
+//        if let location = initializeLocationToUser() {
+//            startCoordinates = location
+//        }
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {
