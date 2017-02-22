@@ -65,7 +65,7 @@ final class TourMapViewController: UIViewController {
 
 extension TourMapViewController: MGLMapViewDelegate {
     
-    func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
+    func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
         guard let annotationSelected = annotation as? Annotation else {
             return nil
         }
@@ -85,21 +85,6 @@ extension TourMapViewController: MGLMapViewDelegate {
             return addButton
         default:
             return nil
-        }
-    }
-    
-    func addAnnotationsToMap() {
-        var newTourStops = [TourStop]()
-        for i in 1...3 {
-            let location = CLLocation(latitude: stops[i].location.coordinates.latitude, longitude: stops[i].location.coordinates.longitude)
-            let tourAnnotation = viewModel.createAnnotations(controller: self, location: location, locationName: "\(i). \(stops[i].location.locationName)")
-            newTourStops.append(stops[i])
-            self.tourStops.append(tourAnnotation)
-        }
-        
-        print(locationStore.getClosestDestination(locations: newTourStops))
-        createPath() { time in
-            print(time)
         }
     }
     

@@ -105,7 +105,7 @@ struct TourMapViewModel {
     func addAnnotation(controller: TourMapViewController) {
         let centerAnnotation = createAnnotations(controller: controller, location: controller.startCoordinates, locationName: "Begin")
         controller.initialLocationAnnotation = centerAnnotation
-        controller.addAnnotationsToMap()
+        addAnnotationsToMap(controller: controller)
         setCenterCoordinateOnMapView(controller: controller)
     }
     
@@ -128,5 +128,20 @@ struct TourMapViewModel {
         travelTimeFormatter.unitsStyle = .short
         let formattedTravelTime = travelTimeFormatter.string(from: interval)
         return formattedTravelTime
+    }
+    
+    func addAnnotationsToMap(controller: TourMapViewController) {
+        var newTourStops = [TourStop]()
+        for i in 1...3 {
+            let location = CLLocation(latitude: controller.stops[i].location.coordinates.latitude, longitude: controller.stops[i].location.coordinates.longitude)
+            let tourAnnotation = createAnnotations(controller: controller, location: location, locationName: "\(i). \(controller.stops[i].location.locationName)")
+            newTourStops.append(controller.stops[i])
+            controller.tourStops.append(tourAnnotation)
+        }
+        
+        print(controller.locationStore.getClosestDestination(locations: newTourStops))
+        controller.createPath() { time in
+            print(time)
+        }
     }
 }
