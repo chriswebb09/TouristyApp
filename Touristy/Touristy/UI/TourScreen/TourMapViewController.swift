@@ -245,27 +245,8 @@ extension TourMapViewController: MGLMapViewDelegate {
             }
         }
     }
-    
-    func getDestination(destinationPoint: Annotation) {
-        if let destination = end {
-            mapView.removeAnnotation(destination)
-        }
-        self.end = destinationPoint
-        mapView.addAnnotation(destinationPoint)
-        mapView.setCenter(destinationPoint.coordinate, animated: true)
-        
-        func getTravelTimeFromInterval(interval: TimeInterval) -> String? {
-            let travelTimeFormatter = DateComponentsFormatter()
-            travelTimeFormatter.unitsStyle = .short
-            let formattedTravelTime = travelTimeFormatter.string(from: interval)
-            return formattedTravelTime
-        }
-        
-        func coordinatesEqual(location: CLLocationCoordinate2D, other: CLLocationCoordinate2D) -> Bool {
-            return location.latitude == other.latitude && location.longitude == other.longitude
-        }
-    }
 }
+
 
 extension TourMapViewController: CLLocationManagerDelegate {
     

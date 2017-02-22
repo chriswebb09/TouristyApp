@@ -79,6 +79,15 @@ struct TourMapViewModel {
         return false
     }
     
+    func getDestination(controller: TourMapViewController, destinationPoint: Annotation) {
+        if let destination = controller.end {
+            controller.mapView.removeAnnotation(destination)
+        }
+        controller.end = destinationPoint
+        controller.mapView.addAnnotation(destinationPoint)
+        controller.mapView.setCenter(destinationPoint.coordinate, animated: true)
+    }
+    
     func addAnnotation(controller: TourMapViewController) {
         let centerAnnotation = createAnnotations(controller: controller, location: controller.startCoordinates, locationName: "Begin")
         controller.initialLocationAnnotation = centerAnnotation
@@ -96,4 +105,14 @@ struct TourMapViewModel {
         return annotation
     }
     
+    func coordinatesEqual(location: CLLocationCoordinate2D, other: CLLocationCoordinate2D) -> Bool {
+        return location.latitude == other.latitude && location.longitude == other.longitude
+    }
+    
+    func getTravelTimeFromInterval(interval: TimeInterval) -> String? {
+        let travelTimeFormatter = DateComponentsFormatter()
+        travelTimeFormatter.unitsStyle = .short
+        let formattedTravelTime = travelTimeFormatter.string(from: interval)
+        return formattedTravelTime
+    }
 }
