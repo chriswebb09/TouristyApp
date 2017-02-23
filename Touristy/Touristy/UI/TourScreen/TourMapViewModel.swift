@@ -9,10 +9,16 @@
 import UIKit
 import Mapbox
 import SnapKit
+import MapboxDirections
+import MapboxGeocoder
 
 struct TourMapViewModel {
     var lineWidth: CGFloat = 2
     var lineColor: UIColor = UIColor.darkGray
+    let directions = Directions(accessToken: Secrets.mapKey)
+    var geocoder = Geocoder(accessToken: Secrets.mapKey)
+    var showAnnotation: Bool = true 
+    //var controller = TourMapViewController()
     
     func setStartPoint(controller: TourMapViewController, mapView: MGLMapView, startPoint: Annotation) {
         if let start = controller.startLocation {
@@ -33,6 +39,32 @@ struct TourMapViewModel {
         let downtownManhattan = CLLocationCoordinate2D(latitude: controller.startCoordinates.coordinate.latitude,
                                                        longitude: controller.startCoordinates.coordinate.longitude)
         controller.mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
+    }
+    
+    func tapCalloutAcessory(controller: TourMapViewController, annotation: MGLAnnotation) {
+        controller.mapView.deselectAnnotation(annotation, animated: false)
+        guard let selectedAnnotation = annotation as? Annotation else { return }
+        
+        if controller.createMode && controller.currentStage == .waypoints {
+            
+            if containsWaypoint(tourPoints: controller.tourPoints, waypoint: selectedAnnotation) {
+                if let index = controller.tourPoints.index(where: { $0.title! == selectedAnnotation.title! }) {
+                    controller.tourPoints.remove(at: index)
+                }
+                selectedAnnotation.type = .POI
+                controller.POI.append(selectedAnnotation)
+                let annotationView = controller.mapView.view(for: annotation)
+                annotationView?.backgroundColor = selectedAnnotation.annotationColor
+            } else {
+                if let index = controller.POI.index(of: selectedAnnotation) {
+                    controller.POI.remove(at: index)
+                }
+                selectedAnnotation.type = .tourStop
+                controller.tourPoints.append(selectedAnnotation)
+                let annotationView = controller.mapView.view(for: annotation)
+                annotationView?.backgroundColor = selectedAnnotation.annotationColor
+            }
+        }
     }
     
     func setupMapViewUI(controller: TourMapViewController) {
@@ -74,7 +106,7 @@ struct TourMapViewModel {
         controller.mapView  = MGLMapView(frame: controller.view.bounds, styleURL: styleURL)
         setupMapViewUI(controller: controller)
         controller.tourDestinationAnnotation = createAnnotations(controller: controller, location: controller.stops[0].location.location,
-                                                                locationName: controller.stops[0].location.locationName)
+                                                                 locationName: controller.stops[0].location.locationName)
         controller.mapView.delegate = controller
         controller.mapView.userTrackingMode = .follow
     }
@@ -91,6 +123,53 @@ struct TourMapViewModel {
             return true
         }
         return false
+    }
+    
+    func path(controller: TourMapViewController) -> String {
+        // var tourPath: MGLPolyline?
+        var navRoutes: [Route] = []
+        var navLegs: [RouteLeg] = []
+        var time: String = ""
+        guard let startingLocation = controller.initialLocationAnnotation, let destination = controller.tourDestinationAnnotation else { return time }
+        let tourStopWayPoints = controller.locationStore.setWaypointsFromStops(startingCoordinate:startingLocation,
+                                                                               endCoordinate: destination,
+                                                                               tourStops: controller.tourStops)
+        
+        let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifierWalking)
+        options.includesSteps = true
+        options.routeShapeResolution = .full
+        
+        _ = controller.directions.calculate(options) { waypoints, routes, error in
+            guard error == nil else { print("Error getting directions: \(error!)"); return }
+            if let routes = routes , let route = routes.first {
+                navRoutes = routes
+                navLegs = route.legs
+                //completion(self.viewModel.getTravelTimeFromInterval(interval: route.expectedTravelTime)!)
+                
+                if route.coordinateCount > 0 {
+                    var routeCoordinates = route.coordinates!
+                    controller.tourPath = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
+                    if let routeLine = controller.tourPath {
+                        controller.mapView.addAnnotation(routeLine)
+                        controller.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets.zero, animated: true)
+                    }
+                }
+                time = self.getTravelTimeFromInterval(interval: route.expectedTravelTime)!
+            }
+        }
+        return time
+    }
+    
+    func viewForAnnotation(controller: TourMapViewController, annotation: MGLAnnotation) -> MGLAnnotationView? {
+        //  guard annotation is MGLPointAnnotation else { return nil }
+        let reuseIdentifier = "\(annotation.title)"
+        var annotationView = controller.mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        if annotationView == nil {
+            annotationView = TourSpotAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView?.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        }
+        annotationView?.backgroundColor = .white
+        return annotationView
     }
     
     func getDestination(controller: TourMapViewController, destinationPoint: Annotation) {
