@@ -31,21 +31,28 @@ final class SplashView: UIView {
     
     func zoomAnimation(_ handler: completion? = nil) {
         let duration: TimeInterval = animationDuration * 0.5
-        UIView.animate(withDuration: duration, animations:{ [weak self] in
-            if let zoom = self?.zoomOut() {
-                self?.splashImageView.transform = zoom
-                self?.layoutIfNeeded()
-            }
-            self?.alpha = 0
-            }, completion: { finished in
-                self.backgroundColor = UIColor(red:0.30, green:0.40, blue:0.50, alpha:1.0)
-                DispatchQueue.main.async {
-                    let appScreenVC = UINavigationController(rootViewController:AppScreenViewController())
-                    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
-                    appDelegate?.window?.rootViewController = appScreenVC
-                }
-                handler?()
+        
+        UIView.animate(withDuration: duration, animations: {
+            
+            let zoom = self.zoomOut()
+            self.splashImageView.transform = zoom
+            self.layoutIfNeeded()
+            self.alpha = 0
+            
+        }, completion: { finished in
+            
+            self.backgroundColor = UIColor(red:0.30, green:0.40, blue:0.50, alpha:1.0)
+            self.setupAppScreenOnMain()
+            handler?()
         })
+    }
+    
+    
+    func setupAppScreenOnMain() {
+        DispatchQueue.main.async {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = UINavigationController(rootViewController:AppScreenViewController())
+        }
     }
     
     fileprivate func zoomOut() -> CGAffineTransform {
