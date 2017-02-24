@@ -13,11 +13,12 @@ final class TourMapViewController: UIViewController {
     var tourist: Results<Tourist>!
     var viewModel = TourMapViewModel()
     var currentStage: CurrentStage?
+    
     let locationStore = TourDataStore.shared
+    var locationService = LocationService.sharedInstance
     
     var mapView: MGLMapView!
     var createMode = false
-    var locationManager: CLLocationManager = CLLocationManager()
     var startCoordinates = CLLocation()
     var initialLocationAnnotation: MGLAnnotation?
     var tourDestinationAnnotation: MGLAnnotation?
@@ -35,8 +36,10 @@ final class TourMapViewController: UIViewController {
     }
     
     init(_ coder: NSCoder? = nil) {
-        self.startLocation = Annotation(typeSelected: .origin)
-        self.end = Annotation(typeSelected: .tourStop)
+        
+        startLocation = Annotation(typeSelected: .origin)
+        end = Annotation(typeSelected: .tourStop)
+        
         if let coder = coder {
             super.init(coder: coder)!
         } else {
@@ -54,7 +57,6 @@ final class TourMapViewController: UIViewController {
         if let realm = try? Realm() {
             tourist = realm.objects(Tourist.self)
         }
-        
         viewModel.setLocation(controller: self)
         viewModel.setupMapView(controller: self)
         viewModel.addAnnotation(controller: self)
@@ -102,7 +104,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         return viewModel.viewForAnnotation(controller: self, annotation: annotation)
     }
     
-    func mapView(mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
         viewModel.tapCalloutAcessory(controller: self, annotation: annotation)
     }
     
@@ -149,36 +151,3 @@ extension TourMapViewController: MGLMapViewDelegate {
         completion(viewModel.path(controller: self))
     }
 }
-
-
-extension TourMapViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = manager.location {
-            self.startCoordinates = location
-            self.locationStore.initialLocation = location
-        }
-    }
-    
-    func initializeLocationToUser() -> CLLocation? {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startMonitoringSignificantLocationChanges()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            switch(CLLocationManager.authorizationStatus()) {
-            case .notDetermined, .restricted, .denied:
-                print("No access")
-                return nil
-            case .authorizedAlways, .authorizedWhenInUse:
-                locationManager.startUpdatingLocation()
-                return locationManager.location
-            }
-        } else {
-            print("Location services are not enabled")
-            return nil
-        }
-    }
-}
-

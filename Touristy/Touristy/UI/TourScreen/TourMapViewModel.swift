@@ -30,9 +30,7 @@ struct TourMapViewModel {
     }
     
     func setLocation(controller: TourMapViewController) {
-        if let location = controller.initializeLocationToUser() {
-            controller.startCoordinates = location
-        }
+        controller.startCoordinates = controller.locationService.lastLocation!
     }
     
     func setCenterCoordinateOnMapView(controller: TourMapViewController) {
@@ -126,7 +124,6 @@ struct TourMapViewModel {
     }
     
     func path(controller: TourMapViewController) -> String {
-        // var tourPath: MGLPolyline?
         var navRoutes: [Route] = []
         var navLegs: [RouteLeg] = []
         var time: String = ""
