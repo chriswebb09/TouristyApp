@@ -112,20 +112,17 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        let camera = MGLMapCamera(lookingAtCenter: mapView.centerCoordinate,
-                                  fromDistance: 200,
-                                  pitch: 20,
-                                  heading: 0)
+        let centerCoordinate = mapView.centerCoordinate
+        let camera = MGLMapCamera(lookingAtCenter: centerCoordinate, fromDistance: 200, pitch: 20, heading: 0)
         mapView.setCamera(camera, withDuration: 2, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
         mapView.resetNorth()
     }
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-        guard let selectedAnnotation = annotation as? Annotation else {
-            return
-        }
         
+        guard let selectedAnnotation = annotation as? Annotation else { return }
         guard let origin = startLocation, let destination = end else { return }
+        
         switch selectedAnnotation.type {
         case .origin:
             mapView.deselectAnnotation(annotation, animated: true)
