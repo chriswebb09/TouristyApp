@@ -13,12 +13,12 @@ import MapboxDirections
 import MapboxGeocoder
 
 struct TourMapViewModel {
+    
     var lineWidth: CGFloat = 2
+    var showAnnotation: Bool = true
     var lineColor: UIColor = UIColor.darkGray
-    let directions = Directions(accessToken: Secrets.mapKey)
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
-    var showAnnotation: Bool = true 
-    //var controller = TourMapViewController()
+    let directions = Directions(accessToken: Secrets.mapKey)
     
     func setStartPoint(controller: TourMapViewController, mapView: MGLMapView, startPoint: Annotation) {
         if let start = controller.startLocation {
@@ -34,8 +34,9 @@ struct TourMapViewModel {
     }
     
     func setCenterCoordinateOnMapView(controller: TourMapViewController) {
-        let downtownManhattan = CLLocationCoordinate2D(latitude: controller.startCoordinates.coordinate.latitude,
-                                                       longitude: controller.startCoordinates.coordinate.longitude)
+        let longitude = controller.startCoordinates.coordinate.longitude
+        let latitude = controller.startCoordinates.coordinate.latitude
+        let downtownManhattan = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         controller.mapView.setCenter(downtownManhattan, zoomLevel: 15, direction: 25.0, animated: false)
     }
     
@@ -103,8 +104,10 @@ struct TourMapViewModel {
         let styleURL = URL(string: Secrets.mapStyle)
         controller.mapView  = MGLMapView(frame: controller.view.bounds, styleURL: styleURL)
         setupMapViewUI(controller: controller)
-        controller.tourDestinationAnnotation = createAnnotations(controller: controller, location: controller.stops[0].location.location,
-                                                                 locationName: controller.stops[0].location.locationName)
+        let location = controller.stops[0].location
+        let locationName = location.locationName
+        let annotationLocation = location.location
+        controller.tourDestinationAnnotation = createAnnotations(controller: controller, location: annotationLocation, locationName: locationName)
         controller.mapView.delegate = controller
         controller.mapView.userTrackingMode = .follow
     }
@@ -124,13 +127,13 @@ struct TourMapViewModel {
     }
     
     func path(controller: TourMapViewController) -> String {
-        var navRoutes: [Route] = []
-        var navLegs: [RouteLeg] = []
+        var navRoutes: [Route] = [Route]()
+        var navLegs: [RouteLeg] = [RouteLeg]()
         var time: String = ""
+        let stops = controller.tourStops
+        let locationStore = controller.locationStore
         guard let startingLocation = controller.initialLocationAnnotation, let destination = controller.tourDestinationAnnotation else { return time }
-        let tourStopWayPoints = controller.locationStore.setWaypointsFromStops(startingCoordinate:startingLocation,
-                                                                               endCoordinate: destination,
-                                                                               tourStops: controller.tourStops)
+        let tourStopWayPoints = locationStore.setWaypointsFromStops(startingCoordinate: startingLocation, endCoordinate: destination, tourStops:  stops)
         
         let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifierWalking)
         options.includesSteps = true
@@ -141,14 +144,13 @@ struct TourMapViewModel {
             if let routes = routes , let route = routes.first {
                 navRoutes = routes
                 navLegs = route.legs
-                //completion(self.viewModel.getTravelTimeFromInterval(interval: route.expectedTravelTime)!)
-                
                 if route.coordinateCount > 0 {
                     var routeCoordinates = route.coordinates!
                     controller.tourPath = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
                     if let routeLine = controller.tourPath {
-                        controller.mapView.addAnnotation(routeLine)
-                        controller.mapView.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets.zero, animated: true)
+                        let mapView = controller.mapView
+                        mapView?.addAnnotation(routeLine)
+                        mapView?.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets.zero, animated: true)
                     }
                 }
                 time = self.getTravelTimeFromInterval(interval: route.expectedTravelTime)!
@@ -158,7 +160,6 @@ struct TourMapViewModel {
     }
     
     func viewForAnnotation(controller: TourMapViewController, annotation: MGLAnnotation) -> MGLAnnotationView? {
-        //  guard annotation is MGLPointAnnotation else { return nil }
         let reuseIdentifier = "\(annotation.title)"
         var annotationView = controller.mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
         if annotationView == nil {
@@ -187,9 +188,8 @@ struct TourMapViewModel {
     
     func createAnnotations(controller: TourMapViewController, location: CLLocation, locationName: String) -> MGLPointAnnotation {
         let annotation = MGLPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
-                                                       longitude: location.coordinate.longitude)
         annotation.title = locationName
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         controller.mapView.addAnnotation(annotation)
         controller.mapView.selectAnnotation(annotation, animated: true)
         return annotation
@@ -208,14 +208,17 @@ struct TourMapViewModel {
     
     func addAnnotationsToMap(controller: TourMapViewController) {
         var newTourStops = [TourStop]()
+        
         for i in 1...3 {
-            let location = CLLocation(latitude: controller.stops[i].location.coordinates.latitude, longitude: controller.stops[i].location.coordinates.longitude)
-            let tourAnnotation = createAnnotations(controller: controller, location: location, locationName: "\(i). \(controller.stops[i].location.locationName)")
+            let location = controller.stops[i].location
+            let latitude = location.coordinates.latitude
+            let longitude = location.coordinates.longitude
+            let newlocation = CLLocation(latitude: latitude, longitude: longitude)
+            let tourAnnotation = createAnnotations(controller: controller, location: newlocation, locationName: "\(i). \(location.locationName)")
+            
             newTourStops.append(controller.stops[i])
             controller.tourStops.append(tourAnnotation)
         }
-        
-        print(controller.locationStore.getClosestDestination(locations: newTourStops))
         controller.createPath() { time in
             print(time)
         }

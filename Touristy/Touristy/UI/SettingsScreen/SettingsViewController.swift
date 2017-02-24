@@ -6,8 +6,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView = UITableView(frame: view.bounds,
-                                    style: UITableViewStyle.plain)
+        self.tableView = UITableView(frame: view.bounds, style: UITableViewStyle.plain)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -17,12 +16,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.frame.size.height = UIScreen.main.bounds.height * 0.5
     }
     
-   
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }

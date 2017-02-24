@@ -65,20 +65,23 @@ final class TourMapViewController: UIViewController {
 
 extension TourMapViewController: MGLMapViewDelegate {
     
+    func setupTourStopButton() -> UIButton {
+        let removeButton = UIButton(type: .system)
+        let myAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 22, weight: UIFontWeightLight)]
+        let buttonIcon = NSAttributedString(string: "ⓧ", attributes: myAttributes)
+        removeButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
+        removeButton.setAttributedTitle(buttonIcon, for: .normal)
+        removeButton.tintColor = UIColor.red
+        return removeButton
+    }
+    
     func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
-        guard let annotationSelected = annotation as? Annotation else {
-            return nil
-        }
+        
+        guard let annotationSelected = annotation as? Annotation else { return nil }
         
         switch annotationSelected.type {
         case .tourStop:
-            let removeButton = UIButton(type: .system)
-            let myAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 22, weight: UIFontWeightLight)]
-            let buttonIcon = NSAttributedString(string: "ⓧ", attributes: myAttributes)
-            removeButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
-            removeButton.setAttributedTitle(buttonIcon, for: .normal)
-            removeButton.tintColor = UIColor.red
-            return removeButton
+            return setupTourStopButton()
         case .POI:
             let addButton = UIButton(type: .contactAdd)
             addButton.tintColor = UIColor.green
