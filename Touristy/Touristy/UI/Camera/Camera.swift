@@ -12,5 +12,3 @@ final class Camera: UIView {
         super.layoutSubviews()
     }
 }
-
-
