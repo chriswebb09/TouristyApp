@@ -10,13 +10,12 @@ let MapboxAccessToken = Secrets.mapKey
 
 final class TourMapViewController: UIViewController {
     
+    let directions = Directions(accessToken: Secrets.mapKey)
+    let locationStore = TourDataStore.shared
+    var locationService = LocationService.sharedInstance
     var tourist: Results<Tourist>!
     var viewModel = TourMapViewModel()
     var currentStage: CurrentStage?
-    
-    let locationStore = TourDataStore.shared
-    var locationService = LocationService.sharedInstance
-    
     var mapView: MGLMapView!
     var createMode = false
     var startCoordinates = CLLocation()
@@ -28,7 +27,7 @@ final class TourMapViewController: UIViewController {
     var startLocation: Annotation?
     var end: Annotation?
     var tourStops: [MGLAnnotation] = []
-    let directions = Directions(accessToken: Secrets.mapKey)
+    
     var stops: [TourStop] = TourStop.stops
     
     enum CurrentStage {
@@ -54,9 +53,8 @@ final class TourMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let realm = try? Realm() {
-            tourist = realm.objects(Tourist.self)
-        }
+        if let realm = try? Realm() { tourist = realm.objects(Tourist.self) }
+        
         viewModel.setLocation(controller: self)
         viewModel.setupMapView(controller: self)
         viewModel.addAnnotation(controller: self)
@@ -66,28 +64,33 @@ final class TourMapViewController: UIViewController {
 extension TourMapViewController: MGLMapViewDelegate {
     
     func setupTourStopButton() -> UIButton {
+        
         let removeButton = UIButton(type: .system)
         let myAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 22, weight: UIFontWeightLight)]
         let buttonIcon = NSAttributedString(string: "ⓧ", attributes: myAttributes)
+        
         removeButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
         removeButton.setAttributedTitle(buttonIcon, for: .normal)
         removeButton.tintColor = .red
+        
         return removeButton
     }
     
     func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
-        
         guard let annotationSelected = annotation as? Annotation else { return nil }
-        
         switch annotationSelected.type {
+            
         case .tourStop:
             return setupTourStopButton()
+            
         case .POI:
             let addButton = UIButton(type: .contactAdd)
             addButton.tintColor = .green
             return addButton
+            
         default:
             return nil
+            
         }
     }
     
@@ -114,27 +117,35 @@ extension TourMapViewController: MGLMapViewDelegate {
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         let centerCoordinate = mapView.centerCoordinate
         let camera = MGLMapCamera(lookingAtCenter: centerCoordinate, fromDistance: 200, pitch: 20, heading: 0)
+        
         mapView.setCamera(camera, withDuration: 2, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
         mapView.resetNorth()
     }
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+        
         guard let selectedAnnotation = annotation as? Annotation else { return }
         guard let origin = startLocation, let destination = end else { return }
         
         switch selectedAnnotation.type {
+            
         case .origin:
             mapView.deselectAnnotation(annotation, animated: true)
+            
         case .POI:
             mapView.deselectAnnotation(annotation, animated: true)
+            
         case .tourStop:
             mapView.deselectAnnotation(annotation, animated: true)
+            
         default:
             break
+            
         }
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+        
         if view.isKind(of: TourSpotAnnotationView.self) {
             for subview in view.subviews {
                 subview.removeFromSuperview()
