@@ -97,9 +97,11 @@ struct TourMapViewModel {
         let styleURL = URL(string: Secrets.mapStyle)
         controller.mapView  = MGLMapView(frame: controller.view.bounds, styleURL: styleURL)
         setupMapViewUI(controller: controller)
+        
         let location = controller.stops[0].location
         let locationName = location.locationName
         let annotationLocation = location.location
+        
         controller.tourDestinationAnnotation = createAnnotations(controller: controller, location: annotationLocation, locationName: locationName)
         controller.mapView.delegate = controller
         controller.mapView.userTrackingMode = .follow
@@ -179,8 +181,11 @@ struct TourMapViewModel {
     
     func createAnnotations(controller: TourMapViewController, location: CLLocation, locationName: String) -> MGLPointAnnotation {
         let annotation = MGLPointAnnotation()
+        
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         annotation.title = locationName
-        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         controller.mapView.addAnnotation(annotation)
         controller.mapView.selectAnnotation(annotation, animated: true)
         return annotation
@@ -201,15 +206,18 @@ struct TourMapViewModel {
         var newTourStops = [TourStop]()
         let range = 1...3
         for i in range {
-            let location = controller.stops[i].location
+            let stop = controller.stops[i]
+            
+            let location = stop.location
+            let locationName = location.locationName
             
             let latitude = location.coordinates.latitude
             let longitude = location.coordinates.longitude
             
             let newlocation = CLLocation(latitude: latitude, longitude: longitude)
-            let tourAnnotation = createAnnotations(controller: controller, location: newlocation, locationName: "\(i). \(location.locationName)")
+            let tourAnnotation = createAnnotations(controller: controller, location: newlocation, locationName: "\(i). \(locationName)")
             
-            newTourStops.append(controller.stops[i])
+            newTourStops.append(stop)
             controller.tourStops.append(tourAnnotation)
         }
         controller.createPath() { time in
