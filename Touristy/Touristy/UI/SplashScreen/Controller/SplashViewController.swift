@@ -8,6 +8,10 @@ public final class SplashViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    func setupUI() {
         edgesForExtendedLayout = []
         view.addSubview(splashView)
         view.backgroundColor = .white
@@ -16,8 +20,8 @@ public final class SplashViewController: UIViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
-        let when = DispatchTime.now() + 0.5 //
-        DispatchQueue.main.asyncAfter(deadline: when) {
+        let when = DispatchTime.now() + 0.5
+        DispatchQueue.main.asyncAfter(deadline: when) { [unowned self] in
             self.splashView.zoomAnimation() {
                 print("Animating")
             }
@@ -25,9 +29,8 @@ public final class SplashViewController: UIViewController {
     }
     
     fileprivate func setupTabBar() {
-        let tabBar = AppScreenViewController()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = tabBar
+        appDelegate.window?.rootViewController = AppScreenViewController()
     }
 }
 

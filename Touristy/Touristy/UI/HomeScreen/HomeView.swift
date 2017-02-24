@@ -46,6 +46,7 @@ extension HomeView {
         setupLogoImage(logoImageView: logoImageView)
         constraintSetup(views: [viewDivider, loginButton, signupButton])
         setupViewDivider(viewDivider: viewDivider)
+        
         loginButton.snp.makeConstraints { make in
             make.bottom.equalTo(viewDivider.snp.top).offset(UIScreen.main.bounds.height * 0.18)
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)
@@ -66,6 +67,7 @@ extension HomeView {
     private func setupLogoImage(logoImageView: UIView) {
         addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
         logoImageView.snp.makeConstraints { make in
             make.width.equalTo(self).multipliedBy(0.78)
             make.height.equalTo(self).multipliedBy(0.42)
@@ -86,6 +88,7 @@ extension HomeView {
     private func setupView(view: UIView) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         view.snp.makeConstraints { make in
             make.width.equalTo(self).multipliedBy(Constants.Login.loginFieldWidth)
             make.height.equalTo(self).multipliedBy(Constants.Login.loginFieldHeight)
