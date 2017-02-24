@@ -6,12 +6,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView = UITableView(frame: view.bounds, style: UITableViewStyle.plain)
-        tableView.delegate = self
-        tableView.dataSource = self
+        setupTableView()
         view.addSubview(tableView)
+    }
+    
+    func setupTableView() {
         tableView.frame.origin.y = self.view.bounds.height * 0.5
         tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView = UITableView(frame: view.bounds, style: UITableViewStyle.plain)
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.frame.size.height = UIScreen.main.bounds.height * 0.5
     }

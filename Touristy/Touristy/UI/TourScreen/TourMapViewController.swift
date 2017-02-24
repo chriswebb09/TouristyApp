@@ -29,7 +29,7 @@ final class TourMapViewController: UIViewController {
     var end: Annotation?
     var tourStops: [MGLAnnotation] = []
     let directions = Directions(accessToken: Secrets.mapKey)
-    var stops = TourStop.stops
+    var stops: [TourStop] = TourStop.stops
     
     enum CurrentStage {
         case defaultStage, waypoints, route
@@ -71,7 +71,7 @@ extension TourMapViewController: MGLMapViewDelegate {
         let buttonIcon = NSAttributedString(string: "ⓧ", attributes: myAttributes)
         removeButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
         removeButton.setAttributedTitle(buttonIcon, for: .normal)
-        removeButton.tintColor = UIColor.red
+        removeButton.tintColor = .red
         return removeButton
     }
     
@@ -84,7 +84,7 @@ extension TourMapViewController: MGLMapViewDelegate {
             return setupTourStopButton()
         case .POI:
             let addButton = UIButton(type: .contactAdd)
-            addButton.tintColor = UIColor.green
+            addButton.tintColor = .green
             return addButton
         default:
             return nil
@@ -119,7 +119,6 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-        
         guard let selectedAnnotation = annotation as? Annotation else { return }
         guard let origin = startLocation, let destination = end else { return }
         

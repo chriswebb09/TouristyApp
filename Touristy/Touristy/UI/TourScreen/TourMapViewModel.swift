@@ -21,9 +21,7 @@ struct TourMapViewModel {
     let directions = Directions(accessToken: Secrets.mapKey)
     
     func setStartPoint(controller: TourMapViewController, mapView: MGLMapView, startPoint: Annotation) {
-        if let start = controller.startLocation {
-            mapView.removeAnnotation(start)
-        }
+        if let start = controller.startLocation { mapView.removeAnnotation(start) }
         controller.startLocation = startPoint
         mapView.addAnnotation(startPoint)
         mapView.setCenter(startPoint.coordinate, animated: true)
@@ -55,9 +53,7 @@ struct TourMapViewModel {
                 let annotationView = controller.mapView.view(for: annotation)
                 annotationView?.backgroundColor = selectedAnnotation.annotationColor
             } else {
-                if let index = controller.POI.index(of: selectedAnnotation) {
-                    controller.POI.remove(at: index)
-                }
+                if let index = controller.POI.index(of: selectedAnnotation) { controller.POI.remove(at: index) }
                 selectedAnnotation.type = .tourStop
                 controller.tourPoints.append(selectedAnnotation)
                 let annotationView = controller.mapView.view(for: annotation)
@@ -80,10 +76,7 @@ struct TourMapViewModel {
     }
     
     func containsWaypoint(tourPoints: [Annotation], waypoint: Annotation) -> Bool {
-        if tourPoints.contains(where: { $0.title! == waypoint.title! }) {
-            return true
-        }
-        
+        if tourPoints.contains(where: { $0.title! == waypoint.title! }) { return true }
         return false
     }
     
@@ -120,9 +113,7 @@ struct TourMapViewModel {
     }
     
     func containsWaypoint(controller: TourMapViewController, waypoint: Annotation) -> Bool {
-        if controller.POI.contains(where: { $0.title! == waypoint.title! }) {
-            return true
-        }
+        if controller.POI.contains(where: { $0.title! == waypoint.title! }) { return true }
         return false
     }
     
@@ -208,11 +199,13 @@ struct TourMapViewModel {
     
     func addAnnotationsToMap(controller: TourMapViewController) {
         var newTourStops = [TourStop]()
-        
-        for i in 1...3 {
+        let range = 1...3
+        for i in range {
             let location = controller.stops[i].location
+            
             let latitude = location.coordinates.latitude
             let longitude = location.coordinates.longitude
+            
             let newlocation = CLLocation(latitude: latitude, longitude: longitude)
             let tourAnnotation = createAnnotations(controller: controller, location: newlocation, locationName: "\(i). \(location.locationName)")
             
