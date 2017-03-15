@@ -8,7 +8,8 @@ import RealmSwift
 
 let MapboxAccessToken = Secrets.mapKey
 
-final class TourMapViewController: UIViewController {
+final class TourMapViewController: UIViewController  {
+    
     
     let directions = Directions(accessToken: Secrets.mapKey)
     let locationStore = TourDataStore.shared
@@ -125,7 +126,6 @@ extension TourMapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
         
         guard let selectedAnnotation = annotation as? Annotation else { return }
-        guard let origin = startLocation, let destination = end else { return }
         
         switch selectedAnnotation.type {
             
@@ -160,4 +160,16 @@ extension TourMapViewController: MGLMapViewDelegate {
     func createPath(completion: @escaping (_ time: String) -> ()) {
         completion(viewModel.path(controller: self))
     }
+}
+
+extension TourMapViewController: LocationServiceDelegate {
+    
+    func tracingLocationDidFailWithError(error: NSError) {
+        
+    }
+    
+    func tracingLocation(currentLocation: CLLocation) {
+        
+    }
+
 }

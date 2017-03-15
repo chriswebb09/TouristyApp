@@ -51,9 +51,11 @@ class QueryView: UIView {
         questionLabel.text = questions.queryOne.questionText
         firstChoiceButton.setTitle("Hell yeah", for: .normal)
         secondChoiceButton.setTitle("Shnope", for: .normal)
+        
         queryViews.forEach { view in
             addSubviewsToView(subview: view)
         }
+        
         questionLabel.snp.makeConstraints { make in
             make.centerX.equalTo(self)
             make.centerY.equalTo(self).offset(UIScreen.main.bounds.height * -0.2)

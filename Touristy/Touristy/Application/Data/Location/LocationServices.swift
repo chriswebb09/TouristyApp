@@ -15,8 +15,8 @@ protocol LocationServiceDelegate {
 }
 
 class LocationService: NSObject, CLLocationManagerDelegate {
-    private static let _shared = LocationService()
     
+    private static let _shared = LocationService()
     public static var sharedInstance: LocationService{ return _shared }
     
     var locationManager: CLLocationManager?
@@ -25,18 +25,23 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     
     private override init() {
         super.init()
+        
         self.locationManager = CLLocationManager()
         guard let locationManager = locationManager else { return }
+        
         switch(CLLocationManager.authorizationStatus()) {
+            
         case .notDetermined, .restricted, .denied:
-            print("No access")
             locationManager.stopUpdatingLocation()
-            //locationManager.stopMonitoringSignificantLocationChanges()
+            locationManager.stopUpdatingHeading()
+            lastLocation = nil
+            
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
             lastLocation = locationManager.location
         }
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()

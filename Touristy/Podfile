@@ -7,8 +7,8 @@ target 'Touristy' do
 
   # Pods for Touristy
     pod 'SnapKit'
-    pod 'RxCocoa'
-    pod 'RxSwift'
+    #  pod 'RxCocoa'
+    # pod 'RxSwift'
     pod 'RealmSwift'
     pod 'Alamofire', '~> 4.3'
     pod 'SwiftyJSON'

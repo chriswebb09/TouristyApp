@@ -1,7 +1,6 @@
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
+
 
 class HomeView: UIView {
     
