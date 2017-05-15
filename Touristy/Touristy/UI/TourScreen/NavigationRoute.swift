@@ -18,17 +18,15 @@ class Router {
     var tourDestinationAnnotation: MGLAnnotation?
     var startLocation: Annotation?
     var end: Annotation?
-     var startCoordinates = CLLocation()
+    var startCoordinates = CLLocation()
     var tourStops: [MGLAnnotation] = []
-     let locationStore = TourDataStore.shared
+    let locationStore = TourDataStore.shared
     let locationService = LocationService.sharedInstance
     var stops: [TourStop] = TourStop.stops
     
+    @discardableResult
     func path(completion: @escaping ([Waypoint]?, [Route]?, NSError?) -> Void) -> String {
         addAnnotationsToMap()
-       
-        var navRoutes: [Route] = [Route]()
-        var navLegs: [RouteLeg] = [RouteLeg]()
         var time: String = ""
         let stops = tourStops
         initialLocationAnnotation = stops[0]
@@ -43,7 +41,7 @@ class Router {
         
         var new = directions.calculate(options) { waypoints, routes, error in
             completion(waypoints, routes, error)
-
+            
             guard error == nil else { print("Error getting directions: \(error!)"); return }
             if let routes = routes , let route = routes.first {
                 

@@ -52,9 +52,7 @@ final class TourMapViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let realm = try? Realm() { tourist = realm.objects(Tourist.self) }
-        
         viewModel.setLocation(controller: self)
         viewModel.setupMapView(controller: self)
         viewModel.addAnnotation(controller: self)
@@ -99,11 +97,11 @@ extension TourMapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
-        return viewModel.lineColor
+        return viewModel.lineCreator.lineColor
     }
     
     func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
-        return viewModel.lineWidth
+        return viewModel.lineCreator.lineWidth
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {

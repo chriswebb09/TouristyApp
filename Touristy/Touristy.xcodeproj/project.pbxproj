@@ -10,6 +10,8 @@
 		17FDBA67C046219896B687A1 /* Pods_Touristy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */; };
 		7CEC08CF3A75032CE7505417 /* Pods_TouristyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141921D74F37B4D043D42C39 /* Pods_TouristyUITests.framework */; };
 		8E6ABE91B36933341F41DD9E /* Pods_TouristyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D11CFCDC95C5D19059A9F7 /* Pods_TouristyTests.framework */; };
+		A70776C01EC9AF870028A72B /* LineCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776BF1EC9AF870028A72B /* LineCreator.swift */; };
+		A70776C21EC9B2FA0028A72B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776C11EC9B2FA0028A72B /* String+Extension.swift */; };
 		A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EF91E54F038003E587A /* AppDelegate.swift */; };
 		A70B7F201E54F038003E587A /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFA1E54F038003E587A /* AppScreenView.swift */; };
 		A70B7F211E54F038003E587A /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */; };
@@ -26,7 +28,6 @@
 		A70B7F2C1E54F038003E587A /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F061E54F038003E587A /* FirebaseAPIClient.swift */; };
 		A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F071E54F038003E587A /* HomeView.swift */; };
 		A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F081E54F038003E587A /* HomeViewController.swift */; };
-		A70B7F2F1E54F038003E587A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A70B7F091E54F038003E587A /* Info.plist */; };
 		A70B7F321E54F038003E587A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0C1E54F038003E587A /* MenuView.swift */; };
 		A70B7F331E54F038003E587A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0D1E54F038003E587A /* Query.swift */; };
 		A70B7F341E54F038003E587A /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0E1E54F038003E587A /* QueryView.swift */; };
@@ -99,6 +100,8 @@
 		33192084FC4A1513003DEBC7 /* Pods-TouristyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyUITests/Pods-TouristyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A4AB0C357325C50140BA1C2 /* Pods-TouristyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouristyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouristyTests/Pods-TouristyTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Touristy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70776BF1EC9AF870028A72B /* LineCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCreator.swift; sourceTree = "<group>"; };
+		A70776C11EC9B2FA0028A72B /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A70B7EF91E54F038003E587A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppIncludes/AppDelegate.swift; sourceTree = "<group>"; };
 		A70B7EFA1E54F038003E587A /* AppScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
 		A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 				A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */,
 				A7E9911B1E5AAF73001CE354 /* TourAnnotation.swift */,
 				A76184AA1EC94D9600FADE6C /* NavigationRoute.swift */,
+				A70776BF1EC9AF870028A72B /* LineCreator.swift */,
 			);
 			path = TourScreen;
 			sourceTree = "<group>";
@@ -338,6 +342,7 @@
 			children = (
 				A70B7F001E54F038003E587A /* CALayer+Extension.swift */,
 				A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */,
+				A70776C11EC9B2FA0028A72B /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -578,7 +583,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Christopher Webb-Orenstein";
 				TargetAttributes = {
 					A7563F4B1E503E9D003252FA = {
@@ -631,7 +636,6 @@
 				A70B7F241E54F038003E587A /* Base.lproj in Resources */,
 				A70B7F5F1E54FCFF003E587A /* Default-568h@2x.png in Resources */,
 				A70B7F231E54F038003E587A /* Assets.xcassets in Resources */,
-				A70B7F2F1E54F038003E587A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +802,7 @@
 				A70B7F251E54F038003E587A /* Buttons.swift in Sources */,
 				A76184A51EC94B4F00FADE6C /* Location.swift in Sources */,
 				A70B7F3E1E54F038003E587A /* Tourist.swift in Sources */,
+				A70776C01EC9AF870028A72B /* LineCreator.swift in Sources */,
 				A70B7F341E54F038003E587A /* QueryView.swift in Sources */,
 				A74653F51E5ABA5300CC0995 /* TourDataStore.swift in Sources */,
 				A70B7F3C1E54F038003E587A /* TabBarController.swift in Sources */,
@@ -821,6 +826,7 @@
 				A76184A91EC94B9500FADE6C /* TourStop.swift in Sources */,
 				A70B7F381E54F038003E587A /* SettingsViewController.swift in Sources */,
 				A7AC24E71EC9492800A668AF /* Queries.swift in Sources */,
+				A70776C21EC9B2FA0028A72B /* String+Extension.swift in Sources */,
 				A70B7F281E54F038003E587A /* CameraViewController.swift in Sources */,
 				A70B7F391E54F038003E587A /* SplashView.swift in Sources */,
 				A70B7F431E54F038003E587A /* UIColor+Extension.swift in Sources */,

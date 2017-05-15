@@ -14,19 +14,11 @@ import MapboxGeocoder
 
 struct TourMapViewModel {
     
-    var lineWidth: CGFloat = 2
+    var lineCreator = LineCreator()
     var showAnnotation: Bool = true
-    var lineColor: UIColor = .darkGray
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
     let directions = Directions(accessToken: Secrets.mapKey)
     var router = Router()
-    
-    func setStartPoint(controller: TourMapViewController, mapView: MGLMapView, startPoint: Annotation) {
-        if let start = controller.startLocation { mapView.removeAnnotation(start) }
-        controller.startLocation = startPoint
-        mapView.addAnnotation(startPoint)
-        mapView.setCenter(startPoint.coordinate, animated: true)
-    }
     
     func setLocation(controller: TourMapViewController) {
         guard let lastLocation = controller.locationService.lastLocation else { return }
@@ -104,7 +96,9 @@ struct TourMapViewModel {
         let locationName = location.locationName
         let annotationLocation = location.location
         
-        controller.tourDestinationAnnotation = createAnnotations(controller: controller, location: annotationLocation, locationName: locationName)
+        controller.tourDestinationAnnotation = createAnnotations(controller: controller,
+                                                                 location: annotationLocation,
+                                                                 locationName: locationName)
         controller.mapView.delegate = controller
         controller.mapView.userTrackingMode = .follow
     }
@@ -122,8 +116,6 @@ struct TourMapViewModel {
     }
     
     func path(controller: TourMapViewController) -> String {
-        var navRoutes: [Route] = [Route]()
-        var navLegs: [RouteLeg] = [RouteLeg]()
         var time: String = ""
         let stops = controller.tourStops
         let locationStore = controller.locationStore
@@ -134,11 +126,9 @@ struct TourMapViewModel {
         options.includesSteps = true
         options.routeShapeResolution = .full
         
-        _ = controller.directions.calculate(options) { waypoints, routes, error in
+        router.path { waypoints, routes, error in
             guard error == nil else { print("Error getting directions: \(error!)"); return }
             if let routes = routes , let route = routes.first {
-                navRoutes = routes
-                navLegs = route.legs
                 if route.coordinateCount > 0 {
                     var routeCoordinates = route.coordinates!
                     controller.tourPath = MGLPolyline(coordinates: &routeCoordinates, count: route.coordinateCount)
@@ -148,8 +138,10 @@ struct TourMapViewModel {
                         mapView?.setVisibleCoordinates(&routeCoordinates, count: route.coordinateCount, edgePadding: UIEdgeInsets.zero, animated: true)
                     }
                 }
-                time = self.getTravelTimeFromInterval(interval: route.expectedTravelTime)!
+                time = String.getTravelTimeFromInterval(interval: route.expectedTravelTime)!
+              
             }
+            
         }
         return time
     }
@@ -194,13 +186,6 @@ struct TourMapViewModel {
     
     func coordinatesEqual(location: CLLocationCoordinate2D, other: CLLocationCoordinate2D) -> Bool {
         return location.latitude == other.latitude && location.longitude == other.longitude
-    }
-    
-    func getTravelTimeFromInterval(interval: TimeInterval) -> String? {
-        let travelTimeFormatter = DateComponentsFormatter()
-        travelTimeFormatter.unitsStyle = .short
-        let formattedTravelTime = travelTimeFormatter.string(from: interval)
-        return formattedTravelTime
     }
     
     func addAnnotationsToMap(controller: TourMapViewController) {
