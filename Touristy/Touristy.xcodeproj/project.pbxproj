@@ -15,6 +15,13 @@
 		A70776C41EC9B5920028A72B /* MGLMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776C31EC9B5920028A72B /* MGLMapView+Extension.swift */; };
 		A70776C61EC9B8CF0028A72B /* CLLocationCoordinate2D+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776C51EC9B8CF0028A72B /* CLLocationCoordinate2D+extension.swift */; };
 		A70776C81EC9BA020028A72B /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776C71EC9BA020028A72B /* CLLocation+Extension.swift */; };
+		A70776DA1EC9BD3D0028A72B /* BasePopoverMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776D41EC9BD3D0028A72B /* BasePopoverMenu.swift */; };
+		A70776DB1EC9BD3D0028A72B /* MenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776D51EC9BD3D0028A72B /* MenuOptionView.swift */; };
+		A70776DC1EC9BD3D0028A72B /* MenuPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776D61EC9BD3D0028A72B /* MenuPopover.swift */; };
+		A70776DD1EC9BD3D0028A72B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776D71EC9BD3D0028A72B /* MenuView.swift */; };
+		A70776DE1EC9BD3D0028A72B /* MenuViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776D81EC9BD3D0028A72B /* MenuViewConstants.swift */; };
+		A70776DF1EC9BD3D0028A72B /* MenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776D91EC9BD3D0028A72B /* MenuViewDelegate.swift */; };
+		A70776E11EC9BD4E0028A72B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776E01EC9BD4E0028A72B /* TabBarController.swift */; };
 		A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EF91E54F038003E587A /* AppDelegate.swift */; };
 		A70B7F201E54F038003E587A /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFA1E54F038003E587A /* AppScreenView.swift */; };
 		A70B7F211E54F038003E587A /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */; };
@@ -31,7 +38,6 @@
 		A70B7F2C1E54F038003E587A /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F061E54F038003E587A /* FirebaseAPIClient.swift */; };
 		A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F071E54F038003E587A /* HomeView.swift */; };
 		A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F081E54F038003E587A /* HomeViewController.swift */; };
-		A70B7F321E54F038003E587A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0C1E54F038003E587A /* MenuView.swift */; };
 		A70B7F331E54F038003E587A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0D1E54F038003E587A /* Query.swift */; };
 		A70B7F341E54F038003E587A /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0E1E54F038003E587A /* QueryView.swift */; };
 		A70B7F351E54F038003E587A /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F0F1E54F038003E587A /* QueryViewController.swift */; };
@@ -40,7 +46,6 @@
 		A70B7F391E54F038003E587A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F131E54F038003E587A /* SplashView.swift */; };
 		A70B7F3A1E54F038003E587A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F141E54F038003E587A /* SplashViewController.swift */; };
 		A70B7F3B1E54F038003E587A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F151E54F038003E587A /* SplashViewModel.swift */; };
-		A70B7F3C1E54F038003E587A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F161E54F038003E587A /* TabBarController.swift */; };
 		A70B7F3E1E54F038003E587A /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F181E54F038003E587A /* Tourist.swift */; };
 		A70B7F3F1E54F038003E587A /* TourMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F191E54F038003E587A /* TourMapViewController.swift */; };
 		A70B7F401E54F038003E587A /* TourSpotAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */; };
@@ -108,6 +113,13 @@
 		A70776C31EC9B5920028A72B /* MGLMapView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGLMapView+Extension.swift"; sourceTree = "<group>"; };
 		A70776C51EC9B8CF0028A72B /* CLLocationCoordinate2D+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+extension.swift"; sourceTree = "<group>"; };
 		A70776C71EC9BA020028A72B /* CLLocation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
+		A70776D41EC9BD3D0028A72B /* BasePopoverMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePopoverMenu.swift; path = Menu/BasePopoverMenu.swift; sourceTree = "<group>"; };
+		A70776D51EC9BD3D0028A72B /* MenuOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuOptionView.swift; path = Menu/MenuOptionView.swift; sourceTree = "<group>"; };
+		A70776D61EC9BD3D0028A72B /* MenuPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuPopover.swift; path = Menu/MenuPopover.swift; sourceTree = "<group>"; };
+		A70776D71EC9BD3D0028A72B /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = Menu/MenuView.swift; sourceTree = "<group>"; };
+		A70776D81EC9BD3D0028A72B /* MenuViewConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewConstants.swift; path = Menu/MenuViewConstants.swift; sourceTree = "<group>"; };
+		A70776D91EC9BD3D0028A72B /* MenuViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewDelegate.swift; path = Menu/MenuViewDelegate.swift; sourceTree = "<group>"; };
+		A70776E01EC9BD4E0028A72B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = Views/TabBar/TabBarController.swift; sourceTree = "<group>"; };
 		A70B7EF91E54F038003E587A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppIncludes/AppDelegate.swift; sourceTree = "<group>"; };
 		A70B7EFA1E54F038003E587A /* AppScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
 		A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +137,6 @@
 		A70B7F071E54F038003E587A /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A70B7F081E54F038003E587A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A70B7F091E54F038003E587A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A70B7F0C1E54F038003E587A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		A70B7F0D1E54F038003E587A /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		A70B7F0E1E54F038003E587A /* QueryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
 		A70B7F0F1E54F038003E587A /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +145,6 @@
 		A70B7F131E54F038003E587A /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A70B7F141E54F038003E587A /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A70B7F151E54F038003E587A /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		A70B7F161E54F038003E587A /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A70B7F181E54F038003E587A /* Tourist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
 		A70B7F191E54F038003E587A /* TourMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourMapViewController.swift; sourceTree = "<group>"; };
 		A70B7F1A1E54F038003E587A /* TourSpotAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourSpotAnnotationView.swift; sourceTree = "<group>"; };
@@ -205,6 +215,19 @@
 				33192084FC4A1513003DEBC7 /* Pods-TouristyUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A70776D31EC9BCF80028A72B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A70776D41EC9BD3D0028A72B /* BasePopoverMenu.swift */,
+				A70776D51EC9BD3D0028A72B /* MenuOptionView.swift */,
+				A70776D61EC9BD3D0028A72B /* MenuPopover.swift */,
+				A70776D71EC9BD3D0028A72B /* MenuView.swift */,
+				A70776D81EC9BD3D0028A72B /* MenuViewConstants.swift */,
+				A70776D91EC9BD3D0028A72B /* MenuViewDelegate.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		A70B7F451E54F044003E587A /* AppScreen */ = {
@@ -299,6 +322,7 @@
 				A70B7F531E54F192003E587A /* Extensions */,
 				A70B7F541E54F199003E587A /* UI */,
 				A70B7F511E54F178003E587A /* Variables */,
+				A70776E01EC9BD4E0028A72B /* TabBarController.swift */,
 				A70B7F521E54F188003E587A /* Views */,
 			);
 			path = Shared;
@@ -337,8 +361,7 @@
 		A70B7F521E54F188003E587A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A70B7F0C1E54F038003E587A /* MenuView.swift */,
-				A70B7F161E54F038003E587A /* TabBarController.swift */,
+				A70776D31EC9BCF80028A72B /* Menu */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -810,11 +833,12 @@
 				A70B7F2C1E54F038003E587A /* FirebaseAPIClient.swift in Sources */,
 				A70B7F251E54F038003E587A /* Buttons.swift in Sources */,
 				A76184A51EC94B4F00FADE6C /* Location.swift in Sources */,
+				A70776E11EC9BD4E0028A72B /* TabBarController.swift in Sources */,
 				A70B7F3E1E54F038003E587A /* Tourist.swift in Sources */,
 				A70776C01EC9AF870028A72B /* LineCreator.swift in Sources */,
 				A70B7F341E54F038003E587A /* QueryView.swift in Sources */,
 				A74653F51E5ABA5300CC0995 /* TourDataStore.swift in Sources */,
-				A70B7F3C1E54F038003E587A /* TabBarController.swift in Sources */,
+				A70776DA1EC9BD3D0028A72B /* BasePopoverMenu.swift in Sources */,
 				A70B7F2D1E54F038003E587A /* HomeView.swift in Sources */,
 				A70B7F221E54F038003E587A /* AppScreenViewModel.swift in Sources */,
 				A76184AB1EC94D9600FADE6C /* NavigationRoute.swift in Sources */,
@@ -822,16 +846,20 @@
 				A756C68E1E5AEBCC00B718F9 /* SocialMediaAPIClient.swift in Sources */,
 				A70B7F2E1E54F038003E587A /* HomeViewController.swift in Sources */,
 				A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */,
-				A70B7F321E54F038003E587A /* MenuView.swift in Sources */,
 				A746FB081E5E2AC200D3BF65 /* TourMapViewModel.swift in Sources */,
 				A70B7F3A1E54F038003E587A /* SplashViewController.swift in Sources */,
+				A70776DF1EC9BD3D0028A72B /* MenuViewDelegate.swift in Sources */,
 				A70B7F351E54F038003E587A /* QueryViewController.swift in Sources */,
+				A70776DD1EC9BD3D0028A72B /* MenuView.swift in Sources */,
 				A70B7F371E54F038003E587A /* SettingsCell.swift in Sources */,
+				A70776DB1EC9BD3D0028A72B /* MenuOptionView.swift in Sources */,
 				A70B7F211E54F038003E587A /* AppScreenViewController.swift in Sources */,
 				A70B7F331E54F038003E587A /* Query.swift in Sources */,
+				A70776DC1EC9BD3D0028A72B /* MenuPopover.swift in Sources */,
 				A7AC24E31EC9488C00A668AF /* Secrets.swift in Sources */,
 				A70B7F2A1E54F038003E587A /* Constants.swift in Sources */,
 				A7AC24E51EC948F700A668AF /* RealmImage.swift in Sources */,
+				A70776DE1EC9BD3D0028A72B /* MenuViewConstants.swift in Sources */,
 				A76184A91EC94B9500FADE6C /* TourStop.swift in Sources */,
 				A70B7F381E54F038003E587A /* SettingsViewController.swift in Sources */,
 				A7AC24E71EC9492800A668AF /* Queries.swift in Sources */,
