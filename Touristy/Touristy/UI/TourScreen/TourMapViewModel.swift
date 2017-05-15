@@ -9,7 +9,6 @@
 import UIKit
 import Mapbox
 import SnapKit
-import MapboxDirections
 import MapboxGeocoder
 
 struct TourMapViewModel {
@@ -17,7 +16,6 @@ struct TourMapViewModel {
     var lineCreator = LineCreator()
     var showAnnotation: Bool = true
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
-    let directions = Directions(accessToken: Secrets.mapKey)
     var router = Router()
     
     func setLocation(controller: TourMapViewController) {
@@ -117,15 +115,6 @@ struct TourMapViewModel {
     
     func path(controller: TourMapViewController) -> String {
         var time: String = ""
-        let stops = controller.tourStops
-        let locationStore = controller.locationStore
-        guard let startingLocation = controller.initialLocationAnnotation, let destination = controller.tourDestinationAnnotation else { return time }
-        let tourStopWayPoints = locationStore.setWaypointsFromStops(startingCoordinate: startingLocation, endCoordinate: destination, tourStops:  stops)
-        
-        let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifier.walking)
-        options.includesSteps = true
-        options.routeShapeResolution = .full
-        
         router.path { waypoints, routes, error in
             guard error == nil else { print("Error getting directions: \(error!)"); return }
             if let routes = routes , let route = routes.first {
@@ -169,6 +158,7 @@ struct TourMapViewModel {
     func addAnnotation(controller: TourMapViewController) {
         let centerAnnotation = createAnnotations(controller: controller, location: controller.startCoordinates, locationName: "Begin")
         controller.initialLocationAnnotation = centerAnnotation
+        //router.addAnnotationsToMap()
         addAnnotationsToMap(controller: controller)
         setCenterCoordinateOnMapView(controller: controller)
     }
