@@ -1,7 +1,7 @@
 import UIKit
 import Mapbox
 
-class TourSpotAnnotationView: MGLAnnotationView {
+class TourSpotAnnotationView: MGLUserLocationAnnotationView {
     
     override func layoutSubviews() {
         super.layoutSubviews()

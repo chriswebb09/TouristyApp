@@ -27,7 +27,7 @@ class Router {
     @discardableResult
     func path(completion: @escaping ([Waypoint]?, [Route]?, NSError?) -> Void) -> String {
         addAnnotationsToMap()
-        var time: String = ""
+        let time: String = ""
         let stops = tourStops
         initialLocationAnnotation = stops[0]
         tourDestinationAnnotation = stops[2]

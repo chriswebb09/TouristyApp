@@ -132,7 +132,7 @@ struct TourMapViewModel {
     }
     
     func viewForAnnotation(controller: TourMapViewController, annotation: MGLAnnotation) -> MGLAnnotationView? {
-        let reuseIdentifier = "\(annotation.title)"
+        let reuseIdentifier = String(describing: annotation.title)
         var annotationView = controller.mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
         if annotationView == nil {
             annotationView = TourSpotAnnotationView(reuseIdentifier: reuseIdentifier)

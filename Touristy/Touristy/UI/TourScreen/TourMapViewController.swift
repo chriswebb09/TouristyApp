@@ -2,9 +2,7 @@ import UIKit
 import SnapKit
 import CoreLocation
 import Mapbox
-import MapboxGeocoder
 import MapboxDirections
-import RealmSwift
 
 let MapboxAccessToken = Secrets.mapKey
 
@@ -33,7 +31,7 @@ final class TourMapViewController: UIViewController  {
     }
     
     init(_ coder: NSCoder? = nil) {
-        
+       
         startLocation = Annotation(typeSelected: .origin)
         end = Annotation(typeSelected: .tourStop)
         
@@ -42,6 +40,7 @@ final class TourMapViewController: UIViewController  {
         } else {
             super.init(nibName: nil, bundle:nil)
         }
+         locationService.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -159,11 +158,11 @@ extension TourMapViewController: MGLMapViewDelegate {
 extension TourMapViewController: LocationServiceDelegate {
     
     func tracingLocationDidFailWithError(error: NSError) {
-        
+        print(error)
     }
     
     func tracingLocation(currentLocation: CLLocation) {
-        
+        print(currentLocation)
     }
 
 }
