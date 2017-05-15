@@ -14,11 +14,11 @@ target 'Touristy' do
     pod 'SwiftyJSON'
     pod 'ObjectMapper', '~> 2.2'
     pod 'Mapbox-iOS-SDK', '~> 3.4'
-    pod 'MapboxGeocoder.swift', :git => 'https://github.com/mapbox/MapboxGeocoder.swift.git', :branch => 'swift3'
+    pod 'MapboxGeocoder.swift', :git => 'https://github.com/mapbox/MapboxGeocoder.swift.git', :branch => 'master'
     pod 'Firebase'
     pod 'Firebase/Auth'
     pod 'FirebaseDatabase'
-    pod 'MapboxDirections.swift', :git => 'https://github.com/mapbox/MapboxDirections.swift.git', :branch => 'swift3'
+    pod 'MapboxDirections.swift', :git => 'https://github.com/mapbox/MapboxDirections.swift.git', :branch => 'master'
   # pod 'MapboxStatic.swift', :git => 'https://github.com/mapbox/MapboxStatic.swift.git', :branch => 'swift3'
    
 

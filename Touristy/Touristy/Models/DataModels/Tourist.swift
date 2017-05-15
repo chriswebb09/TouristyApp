@@ -2,28 +2,6 @@ import UIKit
 import Realm
 import RealmSwift
 
-class RealmImage: Object {
-    
-    dynamic var image: Data = Data()
-    
-    required init() {
-        super.init()
-    }
-    
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        super.init(realm: realm, schema: schema)
-    }
-    
-    required init(value: Any, schema: RLMSchema) {
-        super.init(value: value, schema: schema)
-    }
-    
-    init(image: Data) {
-        self.image = image
-        super.init()
-    }
-}
-
 class Tourist: Object {
     dynamic var username: String = ""
     dynamic var emailAddress: String = ""

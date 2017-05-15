@@ -10,7 +10,6 @@ let MapboxAccessToken = Secrets.mapKey
 
 final class TourMapViewController: UIViewController  {
     
-    
     let directions = Directions(accessToken: Secrets.mapKey)
     let locationStore = TourDataStore.shared
     var locationService = LocationService.sharedInstance

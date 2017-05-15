@@ -16,9 +16,10 @@ struct TourMapViewModel {
     
     var lineWidth: CGFloat = 2
     var showAnnotation: Bool = true
-    var lineColor: UIColor = UIColor.darkGray
+    var lineColor: UIColor = .darkGray
     var geocoder = Geocoder(accessToken: Secrets.mapKey)
     let directions = Directions(accessToken: Secrets.mapKey)
+    var router = Router()
     
     func setStartPoint(controller: TourMapViewController, mapView: MGLMapView, startPoint: Annotation) {
         if let start = controller.startLocation { mapView.removeAnnotation(start) }
@@ -28,7 +29,8 @@ struct TourMapViewModel {
     }
     
     func setLocation(controller: TourMapViewController) {
-        controller.startCoordinates = controller.locationService.lastLocation!
+        guard let lastLocation = controller.locationService.lastLocation else { return }
+        controller.startCoordinates = lastLocation
     }
     
     func setCenterCoordinateOnMapView(controller: TourMapViewController) {
@@ -48,7 +50,7 @@ struct TourMapViewModel {
                 if let index = controller.tourPoints.index(where: { $0.title! == selectedAnnotation.title! }) {
                     controller.tourPoints.remove(at: index)
                 }
-                selectedAnnotation.type = .POI
+                selectedAnnotation.type = .tourStop
                 controller.POI.append(selectedAnnotation)
                 let annotationView = controller.mapView.view(for: annotation)
                 annotationView?.backgroundColor = selectedAnnotation.annotationColor
@@ -128,7 +130,7 @@ struct TourMapViewModel {
         guard let startingLocation = controller.initialLocationAnnotation, let destination = controller.tourDestinationAnnotation else { return time }
         let tourStopWayPoints = locationStore.setWaypointsFromStops(startingCoordinate: startingLocation, endCoordinate: destination, tourStops:  stops)
         
-        let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifierWalking)
+        let options = RouteOptions(waypoints: tourStopWayPoints, profileIdentifier: MBDirectionsProfileIdentifier.walking)
         options.includesSteps = true
         options.routeShapeResolution = .full
         
@@ -180,15 +182,14 @@ struct TourMapViewModel {
     }
     
     func createAnnotations(controller: TourMapViewController, location: CLLocation, locationName: String) -> MGLPointAnnotation {
-        let annotation = MGLPointAnnotation()
-        
-        let latitude = location.coordinate.latitude
-        let longitude = location.coordinate.longitude
-        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        annotation.title = locationName
-        controller.mapView.addAnnotation(annotation)
-        controller.mapView.selectAnnotation(annotation, animated: true)
+        let annotation = router.createAnnotations(location: location, locationName: locationName)
+        addAnotationToMapView(annotation: annotation, mapView: controller.mapView)
         return annotation
+    }
+    
+    func addAnotationToMapView(annotation: MGLPointAnnotation, mapView: MGLMapView) {
+        mapView.addAnnotation(annotation)
+        mapView.selectAnnotation(annotation, animated: true)
     }
     
     func coordinatesEqual(location: CLLocationCoordinate2D, other: CLLocationCoordinate2D) -> Bool {
@@ -203,21 +204,15 @@ struct TourMapViewModel {
     }
     
     func addAnnotationsToMap(controller: TourMapViewController) {
-        var newTourStops = [TourStop]()
         let range = 1...3
         for i in range {
             let stop = controller.stops[i]
-            
             let location = stop.location
             let locationName = location.locationName
-            
             let latitude = location.coordinates.latitude
             let longitude = location.coordinates.longitude
-            
             let newlocation = CLLocation(latitude: latitude, longitude: longitude)
             let tourAnnotation = createAnnotations(controller: controller, location: newlocation, locationName: "\(i). \(locationName)")
-            
-            newTourStops.append(stop)
             controller.tourStops.append(tourAnnotation)
         }
         controller.createPath() { time in

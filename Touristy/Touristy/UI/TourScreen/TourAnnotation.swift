@@ -22,13 +22,13 @@ class Annotation: MGLPointAnnotation {
     var annotationColor: UIColor {
         switch type {
         case .origin:
-            return UIColor.purple
+            return .purple
         case .tourStop:
-            return UIColor.red
+            return .red
         case .POI:
-            return UIColor.blue
+            return .blue
         default:
-            return UIColor.lightGray
+            return .lightGray
         }
     }
 }
