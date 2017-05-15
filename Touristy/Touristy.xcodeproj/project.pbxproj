@@ -12,6 +12,7 @@
 		8E6ABE91B36933341F41DD9E /* Pods_TouristyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D11CFCDC95C5D19059A9F7 /* Pods_TouristyTests.framework */; };
 		A70776C01EC9AF870028A72B /* LineCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776BF1EC9AF870028A72B /* LineCreator.swift */; };
 		A70776C21EC9B2FA0028A72B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776C11EC9B2FA0028A72B /* String+Extension.swift */; };
+		A70776C41EC9B5920028A72B /* MGLMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70776C31EC9B5920028A72B /* MGLMapView+Extension.swift */; };
 		A70B7F1F1E54F038003E587A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EF91E54F038003E587A /* AppDelegate.swift */; };
 		A70B7F201E54F038003E587A /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFA1E54F038003E587A /* AppScreenView.swift */; };
 		A70B7F211E54F038003E587A /* AppScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */; };
@@ -102,6 +103,7 @@
 		9E719BAACBD25DA65B81BA10 /* Pods_Touristy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Touristy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70776BF1EC9AF870028A72B /* LineCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCreator.swift; sourceTree = "<group>"; };
 		A70776C11EC9B2FA0028A72B /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		A70776C31EC9B5920028A72B /* MGLMapView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MGLMapView+Extension.swift"; sourceTree = "<group>"; };
 		A70B7EF91E54F038003E587A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppIncludes/AppDelegate.swift; sourceTree = "<group>"; };
 		A70B7EFA1E54F038003E587A /* AppScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
 		A70B7EFB1E54F038003E587A /* AppScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreenViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				A70B7F001E54F038003E587A /* CALayer+Extension.swift */,
 				A70B7F1D1E54F038003E587A /* UIColor+Extension.swift */,
 				A70776C11EC9B2FA0028A72B /* String+Extension.swift */,
+				A70776C31EC9B5920028A72B /* MGLMapView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				A70B7F401E54F038003E587A /* TourSpotAnnotationView.swift in Sources */,
 				A70B7F441E54F038003E587A /* UserLocationData.swift in Sources */,
 				A7E23AE31E5AF65B00F95B21 /* FoodLocations.swift in Sources */,
+				A70776C41EC9B5920028A72B /* MGLMapView+Extension.swift in Sources */,
 				A70B7F261E54F038003E587A /* CALayer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
