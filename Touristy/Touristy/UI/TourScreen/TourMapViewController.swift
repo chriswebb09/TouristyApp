@@ -10,10 +10,8 @@ let MapboxAccessToken = Secrets.mapKey
 
 final class TourMapViewController: UIViewController  {
     
-    let directions = Directions(accessToken: Secrets.mapKey)
     let locationStore = TourDataStore.shared
     var locationService = LocationService.sharedInstance
-    var tourist: Results<Tourist>!
     var viewModel = TourMapViewModel()
     var currentStage: CurrentStage?
     var mapView: MGLMapView!
@@ -52,7 +50,6 @@ final class TourMapViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let realm = try? Realm() { tourist = realm.objects(Tourist.self) }
         viewModel.setLocation(controller: self)
         viewModel.setupMapView(controller: self)
         viewModel.addAnnotation(controller: self)

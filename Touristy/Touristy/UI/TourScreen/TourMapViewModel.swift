@@ -166,10 +166,6 @@ struct TourMapViewModel {
         return annotation
     }
     
-    func coordinatesEqual(location: CLLocationCoordinate2D, other: CLLocationCoordinate2D) -> Bool {
-        return location.latitude == other.latitude && location.longitude == other.longitude
-    }
-    
     func addAnnotationsToMap(controller: TourMapViewController) {
         let range = 1...3
         for i in range {
@@ -187,3 +183,4 @@ struct TourMapViewModel {
         }
     }
 }
+
