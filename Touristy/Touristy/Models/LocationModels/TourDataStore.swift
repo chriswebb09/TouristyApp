@@ -2,8 +2,6 @@ import UIKit
 import CoreLocation
 import Mapbox
 import MapboxDirections
-import Realm
-import RealmSwift
 
 class TourDataStore {
     
@@ -18,12 +16,13 @@ class TourDataStore {
     }
     
     var totalDistance: Double {
-        let distance: Double = (initialLocation != nil) && (tourDestination != nil) ? initialLocation!.distance(from: tourDestination!) : 0
-        return distance
+        guard let initialLocation = initialLocation else { return 0 }
+        guard let tourDestination = tourDestination else { return 0 }
+        return initialLocation.distance(from: tourDestination)
     }
     
     var searchRadius: Double {
-        return totalDistance/2
+        return totalDistance / 2
     }
     
     func setWaypointsFromStops(startingCoordinate: MGLAnnotation, endCoordinate: MGLAnnotation, tourStops: [MGLAnnotation]) -> [Waypoint] {
@@ -55,12 +54,6 @@ class TourDataStore {
         }
     }
     
-    func midpointCoordinates(origin: CLLocation, destination: CLLocation) -> CLLocation {
-        let centerLatitidue = (origin.coordinate.latitude + destination.coordinate.latitude) / 2
-        let centerLongitude = (origin.coordinate.longitude + destination.coordinate.longitude) / 2
-        return CLLocation(latitude: centerLatitidue, longitude: centerLongitude)
-    }
-    
     func getClosestDestination(locations: [TourStop]) -> CLLocation {
         var totalLat = 0.0
         var totalLong = 0.0
@@ -69,17 +62,6 @@ class TourDataStore {
             dump(location)
             totalLat = totalLat + location.location.location.coordinate.latitude
             totalLong = totalLong + location.location.location.coordinate.longitude
-        }
-        return CLLocation(latitude: totalLat/numberOfLocations, longitude: totalLong/numberOfLocations)
-    }
-    
-    func getClosestDestination(locations: [CLLocation]) -> CLLocation {
-        var totalLat = 0.0
-        var totalLong = 0.0
-        let numberOfLocations = Double(locations.count)
-        locations.forEach { location in
-            totalLat = totalLat + location.coordinate.latitude
-            totalLong = totalLong + location.coordinate.longitude
         }
         return CLLocation(latitude: totalLat/numberOfLocations, longitude: totalLong/numberOfLocations)
     }
